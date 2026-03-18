@@ -1,0 +1,218 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Montserrat',sans-serif;
+  background:#1438a6;
+}
+
+.container{
+  width:390px;
+  height:844px;
+  position:relative;
+  overflow:hidden;
+  background:#ffffff;
+}
+
+/* TOPO ROSA */
+
+.topo-rosa{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:58px;
+  background:#f83c72;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  overflow:hidden;
+  z-index:20;
+}
+
+.topo-rosa span{
+  width:66px;
+  height:36px;
+  background:#ffffff;
+  border-top-left-radius:36px;
+  border-top-right-radius:36px;
+  flex-shrink:0;
+}
+
+/* CONTEÚDO */
+
+.conteudo{
+  height:100%;
+  overflow-y:auto;
+  padding:70px 20px 30px 20px;
+  background:#ffffff;
+  scrollbar-width:none;
+}
+
+.conteudo::-webkit-scrollbar{
+  display:none;
+}
+
+/* CABEÇALHO */
+
+.cabecalho-pagina{
+  margin-bottom:22px;
+}
+
+.btn-voltar{
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:50%;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 3px 10px rgba(0,0,0,0.10);
+  margin-bottom:14px;
+}
+
+.btn-voltar span{
+  font-size:28px;
+  line-height:1;
+  color:#222;
+  transform:translateY(-1px);
+}
+
+.textos-cabecalho h1{
+  font-size:24px;
+  font-weight:700;
+  color:#111;
+  margin-bottom:4px;
+}
+
+.textos-cabecalho p{
+  font-size:17px;
+  color:#666;
+  font-weight:600;
+  text-transform:lowercase;
+
+  margin-bottom:20px;
+
+}
+
+/* CARDS */
+
+.cards-treino{
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+}
+
+.card-treino{
+  width:100%;
+  height:138px;
+  border-radius:22px;
+  padding:16px 14px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  cursor:pointer;
+  transition:transform .18s ease;
+  box-shadow:0 4px 4px rgba(0,0,0,0.10);
+}
+
+.card-treino:active{
+  transform:scale(.97);
+}
+
+.rodape-card{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* BOTÕES */
+
+.btn-card{
+  border:none;
+  border-radius:22px;
+  padding:9px 18px;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .18s ease;
+
+  font-family:'Montserrat',sans-serif;
+
+}
+
+.btn-card:active{
+  transform:scale(.95);
+}
+
+.btn-card.branco{
+  background:#ffffff;
+  color:#2550eb;
+}
+
+.btn-card.azul{
+  background:#2550eb;
+  color:#ffffff;
+}
+
+.btn-card.branco-laranja{
+  background:#ffffff;
+  color:#f5a126;
+}
+
+/* TEMPOS */
+
+.tempo{
+  border-radius:22px;
+  padding:8px 14px;
+  font-size:13px;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.tempo-azul{
+  background:#2550eb;
+  color:#ffffff;
+}
+
+.tempo-laranja{
+  background:#f5a126;
+  color:#ffffff;
+}
+
+/* IMAGENS DOS CARDS */
+
+.rapido{
+  background-image:url("../imagens/portugues-rapido.png");
+}
+
+.mini{
+  background-image:url("../imagens/portugues-mini.png");
+}
+
+.completo{
+  background-image:url("../imagens/matematica-completo.png");
+}
+
+/* RESPONSIVO */
+
+@media (max-width:410px){
+  .container{
+    width:100vw;
+    height:100vh;
+  }
+}

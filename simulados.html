@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulados</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/simulados.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- TOPO ROSA -->
+    <div class="topo-rosa">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <main class="conteudo">
+
+      <!-- TREINE POR MATÉRIAS -->
+      <section class="secao">
+        <h2 class="titulo">Treine por Matérias</h2>
+
+        <div class="cards-coluna">
+
+          <div class="card-cardapio portugues" data-link="desafios-portugues.html">
+            <div class="rodape">
+              <button class="btn-card">Entrar</button>
+            </div>
+          </div>
+
+          <div class="card-cardapio matematica" data-link="desafios-matematica.html">
+            <div class="rodape">
+              <button class="btn-card">Entrar</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TESTES E SIMULADOS -->
+      <section class="secao">
+        <h2 class="titulo">Testes e Simulados</h2>
+
+        <div class="cards-coluna">
+
+          <div class="card-cardapio rapido" data-link="testes-rapidos.html">
+            <div class="rodape">
+              <button class="btn-card branco">Entrar</button>
+            </div>
+          </div>
+
+          <div class="card-cardapio saeb" data-link="simulados-saeb.html">
+            <div class="rodape">
+              <button class="btn-card rosa">Entrar</button>
+            </div>
+          </div>
+
+          <div class="card-cardapio desafios" data-link="desafios.html">
+            <div class="rodape">
+              <button class="btn-card branco">Entrar</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+      <button class="nav-item" data-page="home">
+        <img src="imagens/home.svg" alt="Home">
+      </button>
+
+      <button class="nav-item ativo" data-page="simulados">
+        <img src="imagens/simulados-active.svg" class="icone-simulados" alt="Simulados">
+      </button>
+
+      <button class="nav-item" data-page="perfil">
+        <img src="imagens/perfil.svg" alt="Perfil">
+      </button>
+
+    </nav>
+
+  </div>
+
+  <script src="js/simulados.js"></script>
+</body>
+</html>

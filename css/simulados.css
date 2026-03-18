@@ -1,0 +1,213 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Montserrat',sans-serif;
+  background-color:#1438a6;
+}
+
+.container{
+  width:390px;
+  height:844px;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+  background:#ffffff;
+  border-radius:0;
+}
+
+/* TOPO ROSA */
+
+.topo-rosa{
+  position:absolute;
+  
+  top:0;
+  left:0;
+
+  width:100%;
+  height:52px;
+
+  background:#f83c72;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+
+  overflow:hidden;
+
+  z-index:5;
+}
+
+.topo-rosa span{
+  width:66px;
+  height:34px;
+  background:#ffffff;
+  border-top-left-radius:34px;
+  border-top-right-radius:34px;
+  flex-shrink:0;
+}
+
+/* CONTEÚDO */
+
+.conteudo{
+  flex:1;
+  overflow-y:auto;
+  padding:70px 20px 95px 20px;
+  background:#ffffff;
+}
+
+.conteudo::-webkit-scrollbar{
+display:none;
+}
+
+.conteudo{
+scrollbar-width:none;
+}
+
+.secao{
+  margin-bottom:12px;
+}
+
+.titulo{
+  font-size:17px;
+  font-weight:700;
+  color:#111;
+  margin:0 0 14px 0;
+}
+
+.cards-coluna{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* CARD BASE */
+
+.card-cardapio{
+  width:100%;
+  height:135px;
+  border-radius:18px;
+  padding:13px;
+  padding-inline:15px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  cursor:pointer;
+  transition:.2s;
+  box-shadow:0 8px 18px rgba(0,0,0,0.10);
+}
+
+.card-cardapio:active{
+  transform:scale(.96);
+}
+
+/* BOTÕES */
+
+.rodape{
+  display:flex;
+  align-items:center;
+}
+
+.btn-card{
+  border:none;
+  padding:8px 16px;
+  border-radius:20px;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+  transition:transform .18s ease;
+  background:#c7e432;
+  color:#1438a6;
+}
+
+.btn-card:active{
+  transform:scale(.95);
+}
+
+.btn-card.branco{
+  background:#ffffff;
+  color:#1438a6;
+}
+
+.btn-card.rosa{
+  background:#f83c72;
+  color:#ffffff;
+}
+
+/* BACKGROUNDS DOS CARDS */
+
+.portugues{
+  background-image:url("../imagens/simulados-portugues.png");
+}
+
+.matematica{
+  background-image:url("../imagens/simulados-matematica.png");
+}
+
+.rapido{
+  background-image:url("../imagens/rapido-card.png");
+}
+
+.saeb{
+  background-image:url("../imagens/simulados-saeb.png");
+}
+
+.desafios{
+  background-image:url("../imagens/simulados-desafios.png");
+}
+
+/* NAVBAR */
+
+.navbar{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:80px;
+  background:#eee;
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  z-index:10;
+  box-shadow:0 -8px 20px rgba(0,0,0,0.08);
+}
+
+.nav-item{
+  background:none;
+  border:none;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  cursor:pointer;
+}
+
+.nav-item img{
+  width:35px;
+}
+
+.nav-item.ativo img{
+  width:60px;
+  transform:translateY(-3px);
+}
+
+/* RESPONSIVIDADE EXTRA */
+
+@media (max-width: 410px){
+  .container{
+    width:100vw;
+    height:100vh;
+  }
+}

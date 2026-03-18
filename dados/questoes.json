@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "materia": "portugues",
+    "enunciado": "Qual é o plural de 'pão'?",
+    "alternativas": {
+      "A": "pãos",
+      "B": "pões",
+      "C": "pães",
+      "D": "paes"
+    },
+    "correta": "C"
+  },
+  {
+    "id": 2,
+    "materia": "portugues",
+    "enunciado": "Qual dessas palavras é um verbo?",
+    "alternativas": {
+      "A": "andar",
+      "B": "mesa",
+      "C": "janela",
+      "D": "porta"
+    },
+    "correta": "A"
+  },
+  {
+    "id": 3,
+    "materia": "portugues",
+    "enunciado": "Qual palavra está escrita corretamente?",
+    "alternativas": {
+      "A": "Excessão",
+      "B": "Exceção",
+      "C": "Exceçao",
+      "D": "Exessão"
+    },
+    "correta": "B"
+  },
+  {
+    "id": 4,
+    "materia": "portugues",
+    "enunciado": "Qual dessas palavras tem acento?",
+    "alternativas": {
+      "A": "cafe",
+      "B": "sofa",
+      "C": "lápis",
+      "D": "mesa"
+    },
+    "correta": "C"
+  },
+  {
+    "id": 5,
+    "materia": "portugues",
+    "enunciado": "Qual dessas palavras é um substantivo?",
+    "alternativas": {
+      "A": "correr",
+      "B": "feliz",
+      "C": "cidade",
+      "D": "rápido"
+    },
+    "correta": "C"
+  },
+  {
+    "id": 6,
+    "materia": "portugues",
+    "enunciado": "Qual dessas palavras é um adjetivo?",
+    "alternativas": {
+      "A": "bonito",
+      "B": "escola",
+      "C": "andar",
+      "D": "cidade"
+    },
+    "correta": "A"
+  },
+  {
+    "id": 7,
+    "materia": "matematica",
+    "enunciado": "Quanto é 8 × 7?",
+    "alternativas": {
+      "A": "54",
+      "B": "56",
+      "C": "64",
+      "D": "48"
+    },
+    "correta": "B"
+  },
+  {
+    "id": 8,
+    "materia": "matematica",
+    "enunciado": "Quanto é 36 ÷ 6?",
+    "alternativas": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8"
+    },
+    "correta": "B"
+  },
+  {
+    "id": 9,
+    "materia": "matematica",
+    "enunciado": "Quanto é 15 + 27?",
+    "alternativas": {
+      "A": "40",
+      "B": "41",
+      "C": "42",
+      "D": "43"
+    },
+    "correta": "C"
+  },
+  {
+    "id": 10,
+    "materia": "matematica",
+    "enunciado": "Um triângulo possui quantos lados?",
+    "alternativas": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "correta": "B"
+  },
+  {
+    "id": 11,
+    "materia": "matematica",
+    "enunciado": "Quanto é 50 − 18?",
+    "alternativas": {
+      "A": "30",
+      "B": "31",
+      "C": "32",
+      "D": "33"
+    },
+    "correta": "C"
+  },
+  {
+    "id": 12,
+    "materia": "matematica",
+    "enunciado": "Quanto é 9 × 6?",
+    "alternativas": {
+      "A": "54",
+      "B": "56",
+      "C": "48",
+      "D": "64"
+    },
+    "correta": "A"
+  }
+]

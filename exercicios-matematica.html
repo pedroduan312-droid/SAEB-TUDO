@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matemática</title>
+  <link rel="stylesheet" href="css/matematica.css" />
+</head>
+<body>
+  <div class="container" id="container">
+
+    <!-- SPLASH -->
+    <div id="splash" class="splash">
+      <img src="imagens/logo saeb tudo.svg" alt="SAEB Tudo" class="splash-logo">
+    </div>
+
+    <!-- OVERLAY DO MENU -->
+    <div id="overlay"></div>
+
+    <!-- MENU LATERAL -->
+    <aside id="menuLateral">
+      <div class="menu-topo">
+        <h3>Matemática</h3>
+
+        <button class="menu-item" id="btnVerQuestoes" type="button">
+          Ver questões
+        </button>
+
+        <button class="menu-item sair" id="btnSairDesafio" type="button">
+          Sair do treino
+        </button>
+      </div>
+
+      <div class="menu-logo">
+        <img src="imagens/logo saeb tudo.svg" alt="SAEB Tudo" />
+      </div>
+    </aside>
+
+    <!-- APP -->
+    <div id="app">
+      <header class="topo">
+        <span id="contador">1/20</span>
+        <h1>Matemática</h1>
+        <button id="abrirMenu" class="menu-btn" type="button">☰</button>
+      </header>
+
+      <div class="barra">
+        <div id="progresso"></div>
+      </div>
+
+      <main class="quiz">
+        <div id="statusCarregamento" class="status-carregamento">
+          Carregando questões...
+        </div>
+
+        <div id="conteudoQuiz" class="conteudo-quiz oculto">
+          <p id="enunciado" class="enunciado"></p>
+
+          <img
+            id="imagemQuestao"
+            class="imagem-questao oculto"
+            alt="Imagem da questão"
+          />
+
+          <div id="alternativas" class="alternativas"></div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <button id="btnAcao" disabled type="button">confirmar</button>
+      </footer>
+    </div>
+
+    <!-- TELA FINAL -->
+    <div id="telaFinal" class="tela-final oculto">
+      <div class="final-conteudo">
+
+        <h2 id="tituloFinal" class="titulo-final">Parabens!</h2>
+
+        <div class="cards-resultado">
+
+          <div class="coluna-esquerda">
+            <div class="card-final card-acertos">
+              <div id="acertosFinal" class="numero-acertos">0/20</div>
+              <div class="texto-acertos">Questões respondidas</div>
+            </div>
+
+            <div class="card-final card-tempo">
+              <div id="tempoNumero" class="numero-tempo">0:00min</div>
+              <div class="texto-tempo">tempo</div>
+            </div>
+          </div>
+
+          <div class="card-final card-grafico">
+            <div class="grafico-pizza" id="graficoPizza"></div>
+            <div id="porcentagemFinal" class="numero-porcentagem">0%</div>
+          </div>
+
+        </div>
+
+        <div class="botoes-finais">
+          <button id="btnRefazer" class="btn-final btn-refazer" type="button">Refazer</button>
+          <button id="btnVoltarHome" class="btn-final btn-sair" type="button">sair</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/matematica.js"></script>
+</body>
+</html>
