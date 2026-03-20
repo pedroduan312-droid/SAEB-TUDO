@@ -1,13 +1,6 @@
-/* BOTÃO VOLTAR */
-
 document.getElementById("btnVoltar").addEventListener("click", () => {
-
-history.back();
-
+  history.back();
 });
-
-
-/* CARDS CLICÁVEIS */
 
 document.querySelectorAll(".card-treino").forEach(card => {
   card.addEventListener("click", () => {
@@ -17,9 +10,6 @@ document.querySelectorAll(".card-treino").forEach(card => {
     }
   });
 });
-
-
-/* BOTÕES DOS CARDS */
 
 document.querySelectorAll(".btn-card").forEach(botao => {
   botao.addEventListener("click", (event) => {

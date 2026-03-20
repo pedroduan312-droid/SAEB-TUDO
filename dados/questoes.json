@@ -142,5 +142,414 @@
       "D": "64"
     },
     "correta": "A"
-  }
+  },
+{
+  "id": 13,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um advérbio?",
+  "alternativas": {
+    "A": "rapidamente",
+    "B": "correr",
+    "C": "bonito",
+    "D": "cidade"
+  },
+  "correta": "A"
+},
+{
+  "id": 14,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um pronome?",
+  "alternativas": {
+    "A": "ele",
+    "B": "casa",
+    "C": "andar",
+    "D": "livro"
+  },
+  "correta": "A"
+},
+{
+  "id": 15,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras está escrita corretamente?",
+  "alternativas": {
+    "A": "concerteza",
+    "B": "comcerteza",
+    "C": "com certeza",
+    "D": "concertesa"
+  },
+  "correta": "C"
+},
+{
+  "id": 16,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um substantivo?",
+  "alternativas": {
+    "A": "feliz",
+    "B": "correr",
+    "C": "amizade",
+    "D": "rápido"
+  },
+  "correta": "C"
+},
+{
+  "id": 17,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um verbo?",
+  "alternativas": {
+    "A": "bonito",
+    "B": "andar",
+    "C": "cidade",
+    "D": "mesa"
+  },
+  "correta": "B"
+},
+{
+  "id": 18,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras tem acento?",
+  "alternativas": {
+    "A": "aviao",
+    "B": "lapis",
+    "C": "papeis",
+    "D": "médico"
+  },
+  "correta": "D"
+},
+{
+  "id": 19,
+  "materia": "portugues",
+  "enunciado": "Qual é o plural de 'cão'?",
+  "alternativas": {
+    "A": "cãos",
+    "B": "cães",
+    "C": "caes",
+    "D": "cãis"
+  },
+  "correta": "B"
+},
+{
+  "id": 20,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um adjetivo?",
+  "alternativas": {
+    "A": "rápido",
+    "B": "mesa",
+    "C": "cidade",
+    "D": "andar"
+  },
+  "correta": "A"
+},
+{
+  "id": 21,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um substantivo?",
+  "alternativas": {
+    "A": "correr",
+    "B": "feliz",
+    "C": "livro",
+    "D": "rápido"
+  },
+  "correta": "C"
+},
+{
+  "id": 22,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um verbo?",
+  "alternativas": {
+    "A": "mesa",
+    "B": "porta",
+    "C": "beber",
+    "D": "janela"
+  },
+  "correta": "C"
+},
+
+{
+  "id": 23,
+  "materia": "matematica",
+  "enunciado": "Quanto é 12 × 8?",
+  "alternativas": {
+    "A": "96",
+    "B": "88",
+    "C": "104",
+    "D": "92"
+  },
+  "correta": "A"
+},
+{
+  "id": 24,
+  "materia": "matematica",
+  "enunciado": "Quanto é 81 ÷ 9?",
+  "alternativas": {
+    "A": "7",
+    "B": "8",
+    "C": "9",
+    "D": "10"
+  },
+  "correta": "C"
+},
+{
+  "id": 25,
+  "materia": "matematica",
+  "enunciado": "Quanto é 45 + 37?",
+  "alternativas": {
+    "A": "80",
+    "B": "81",
+    "C": "82",
+    "D": "83"
+  },
+  "correta": "C"
+},
+{
+  "id": 26,
+  "materia": "matematica",
+  "enunciado": "Quanto é 100 − 64?",
+  "alternativas": {
+    "A": "34",
+    "B": "35",
+    "C": "36",
+    "D": "37"
+  },
+  "correta": "C"
+},
+{
+  "id": 27,
+  "materia": "matematica",
+  "enunciado": "Quanto é 7 × 9?",
+  "alternativas": {
+    "A": "63",
+    "B": "56",
+    "C": "72",
+    "D": "49"
+  },
+  "correta": "A"
+},
+{
+  "id": 28,
+  "materia": "matematica",
+  "enunciado": "Quanto é 64 ÷ 8?",
+  "alternativas": {
+    "A": "6",
+    "B": "7",
+    "C": "8",
+    "D": "9"
+  },
+  "correta": "C"
+},
+{
+  "id": 29,
+  "materia": "matematica",
+  "enunciado": "Quanto é 25 + 19?",
+  "alternativas": {
+    "A": "43",
+    "B": "44",
+    "C": "45",
+    "D": "46"
+  },
+  "correta": "B"
+},
+{
+  "id": 30,
+  "materia": "matematica",
+  "enunciado": "Quanto é 72 − 38?",
+  "alternativas": {
+    "A": "32",
+    "B": "33",
+    "C": "34",
+    "D": "35"
+  },
+  "correta": "C"
+},
+{
+  "id": 31,
+  "materia": "matematica",
+  "enunciado": "Quanto é 6 × 6?",
+  "alternativas": {
+    "A": "30",
+    "B": "36",
+    "C": "42",
+    "D": "48"
+  },
+  "correta": "B"
+},
+{
+  "id": 32,
+  "materia": "matematica",
+  "enunciado": "Quanto é 90 ÷ 10?",
+  "alternativas": {
+    "A": "8",
+    "B": "9",
+    "C": "10",
+    "D": "7"
+  },
+  "correta": "B"
+},
+{
+  "id": 33,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um advérbio?",
+  "alternativas": {
+    "A": "lentamente",
+    "B": "casa",
+    "C": "bonito",
+    "D": "andar"
+  },
+  "correta": "A"
+},
+{
+  "id": 34,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um substantivo?",
+  "alternativas": {
+    "A": "feliz",
+    "B": "amizade",
+    "C": "correr",
+    "D": "rápido"
+  },
+  "correta": "B"
+},
+{
+  "id": 35,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras está escrita corretamente?",
+  "alternativas": {
+    "A": "derrepente",
+    "B": "de repente",
+    "C": "derepente",
+    "D": "derrepente"
+  },
+  "correta": "B"
+},
+{
+  "id": 36,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um verbo?",
+  "alternativas": {
+    "A": "mesa",
+    "B": "correr",
+    "C": "cidade",
+    "D": "livro"
+  },
+  "correta": "B"
+},
+{
+  "id": 37,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras tem acento?",
+  "alternativas": {
+    "A": "facil",
+    "B": "dificil",
+    "C": "difícil",
+    "D": "papel"
+  },
+  "correta": "C"
+},
+{
+  "id": 38,
+  "materia": "portugues",
+  "enunciado": "Qual é o plural de 'flor'?",
+  "alternativas": {
+    "A": "flors",
+    "B": "flores",
+    "C": "flore",
+    "D": "florês"
+  },
+  "correta": "B"
+},
+{
+  "id": 39,
+  "materia": "matematica",
+  "enunciado": "Quanto é 14 × 3?",
+  "alternativas": {
+    "A": "42",
+    "B": "36",
+    "C": "48",
+    "D": "40"
+  },
+  "correta": "A"
+},
+{
+  "id": 40,
+  "materia": "matematica",
+  "enunciado": "Quanto é 100 ÷ 5?",
+  "alternativas": {
+    "A": "10",
+    "B": "20",
+    "C": "25",
+    "D": "15"
+  },
+  "correta": "B"
+},
+{
+  "id": 41,
+  "materia": "matematica",
+  "enunciado": "Quanto é 23 + 19?",
+  "alternativas": {
+    "A": "40",
+    "B": "41",
+    "C": "42",
+    "D": "43"
+  },
+  "correta": "C"
+},
+{
+  "id": 42,
+  "materia": "matematica",
+  "enunciado": "Quanto é 80 − 27?",
+  "alternativas": {
+    "A": "52",
+    "B": "53",
+    "C": "54",
+    "D": "55"
+  },
+  "correta": "B"
+},
+{
+  "id": 43,
+  "materia": "matematica",
+  "enunciado": "Quanto é 5 × 11?",
+  "alternativas": {
+    "A": "50",
+    "B": "55",
+    "C": "60",
+    "D": "65"
+  },
+  "correta": "B"
+},
+{
+  "id": 44,
+  "materia": "matematica",
+  "enunciado": "Quanto é 72 ÷ 9?",
+  "alternativas": {
+    "A": "6",
+    "B": "7",
+    "C": "8",
+    "D": "9"
+  },
+  "correta": "C"
+},
+{
+  "id": 45,
+  "materia": "matematica",
+  "enunciado": "Quanto é 34 + 28?",
+  "alternativas": {
+    "A": "60",
+    "B": "61",
+    "C": "62",
+    "D": "63"
+  },
+  "correta": "C"
+},
+{
+  "id": 46,
+  "materia": "matematica",
+  "enunciado": "Quanto é 90 − 45?",
+  "alternativas": {
+    "A": "40",
+    "B": "45",
+    "C": "50",
+    "D": "55"
+  },
+  "correta": "B"
+}
 ]

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- TELA PERFIL -->
+    <section id="telaPerfil" class="tela tela-perfil ativa">
+
+      <header class="topo topo-azul">
+        <button class="btn-voltar" id="btnVoltarPerfil" aria-label="Voltar">
+          <img src="imagens/seta-voltar.svg" alt="Voltar">
+        </button>
+
+        <img src="imagens/logo saeb tudo.svg" alt="SAEB Tudo" class="logo-topo">
+      </header>
+
+      <main class="conteudo">
+        <div class="avatar-bloco">
+          <div class="avatar-circulo">
+            <img id="fotoPerfil" src="imagens/user.png" alt="Foto do perfil">
+          </div>
+
+          <h1 id="nomePerfil">Aluno</h1>
+          <p id="emailPerfil">aluno@gmail.com</p>
+        </div>
+
+        <section class="card-principal">
+          <div class="stats-grid">
+            <div class="stat-box stat-rosa">
+              <span id="statQuizzes" class="stat-numero">0</span>
+              <span class="stat-label">quizzes</span>
+            </div>
+
+            <div class="stat-box stat-rosa">
+              <span id="statQuestoes" class="stat-numero">0</span>
+              <span class="stat-label">questões</span>
+            </div>
+
+            <div class="stat-box stat-rosa">
+              <span id="statAcertos" class="stat-numero">0</span>
+              <span class="stat-label">acertos</span>
+            </div>
+          </div>
+
+          <div class="grafico-area">
+            <div class="grafico-wrapper">
+              <div class="grafico-donut" id="graficoDonut"></div>
+            </div>
+
+            <div class="legenda-desempenho">
+              <p><span class="texto-portugues" id="porcentagemPortugues">0%</span> Portugues</p>
+              <p><span class="texto-matematica" id="porcentagemMatematica">0%</span> Matematica</p>
+            </div>
+          </div>
+
+          <div class="acoes-perfil">
+            <button id="btnEditarPerfil" class="btn-acao btn-editar" type="button">
+              <span>Editar perfil</span>
+              <span class="seta-acao">›</span>
+            </button>
+
+            <button id="btnSairConta" class="btn-acao btn-sair" type="button">
+              <span>Sair</span>
+              <span class="seta-acao">›</span>
+            </button>
+          </div>
+        </section>
+      </main>
+    </section>
+
+    <!-- TELA EDITAR PERFIL -->
+    <section id="telaEditar" class="tela tela-editar">
+
+      <header class="topo topo-rosa">
+        <button class="btn-voltar" id="btnVoltarEditar" aria-label="Voltar para perfil">
+          <img src="imagens/seta-voltar.svg" alt="Voltar">
+        </button>
+
+        <img src="imagens/logo saeb tudo.svg" alt="SAEB Tudo" class="logo-topo">
+      </header>
+
+      <main class="conteudo">
+        <div class="avatar-bloco">
+          <div class="avatar-circulo">
+            <img id="fotoEditar" src="imagens/user.png" alt="Foto do perfil">
+          </div>
+
+          <h1 id="nomeEditarTitulo">Aluno</h1>
+          <p id="emailEditarTitulo">aluno@gmail.com</p>
+        </div>
+
+        <section class="card-edicao">
+          <div class="campo-bloco">
+            <label for="inputNome">nome</label>
+            <div class="campo-com-icone">
+              <input id="inputNome" type="text" value="Aluno" disabled>
+              <button class="btn-lapis" type="button" data-target="inputNome" aria-label="Editar nome">
+                <img src="imagens/lapis.svg" alt="Editar">
+              </button>
+            </div>
+          </div>
+
+          <div class="campo-bloco">
+            <label for="inputEmail">E-mail</label>
+            <div class="campo-com-icone">
+              <input id="inputEmail" type="email" value="aluno@gmail.com" disabled>
+            </div>
+          </div>
+
+          <div class="campo-bloco">
+            <label for="inputSenha">senha</label>
+            <div class="campo-com-icone campo-senha">
+              <input id="inputSenha" type="password" value="12345678" disabled>
+              <button class="btn-olho" id="btnMostrarSenha" type="button" aria-label="Mostrar ou ocultar senha">
+                <img src="imagens/olho.svg" alt="Mostrar senha">
+              </button>
+              <button class="btn-lapis" type="button" data-target="inputSenha" aria-label="Editar senha">
+                <img src="imagens/lapis.svg" alt="Editar">
+              </button>
+            </div>
+          </div>
+
+          <button id="btnSalvarAlteracoes" class="btn-confirmar" type="button">
+            confirmar alterações
+          </button>
+        </section>
+      </main>
+    </section>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <button class="nav-item" data-page="home">
+        <img src="imagens/home.svg" alt="Home">
+      </button>
+
+      <button class="nav-item" data-page="simulados">
+        <img src="imagens/simulados.svg" alt="Simulados">
+      </button>
+
+      <button class="nav-item ativo" data-page="perfil">
+        <img src="imagens/perfil-active.svg" alt="Perfil">
+      </button>
+    </nav>
+
+  </div>
+
+  <script src="js/perfil.js"></script>
+</body>
+</html>

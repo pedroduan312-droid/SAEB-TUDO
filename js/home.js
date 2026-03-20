@@ -18,24 +18,20 @@ texto = "Boa noite";
 
 }
 
-saudacao.innerText = texto + "! Duan";
+saudacao.innerText = texto + "! Aluno";
 
 
 /* DESAFIO DO DIA */
 
+
 document.getElementById("btnDesafio").onclick = () => {
-
-window.location.href = "quiz-diario.html";
-
+  window.location.href = "quiz.html?modo=geral_rapido";
 };
-
 
 /* QUESTÕES RÁPIDAS */
 
 document.getElementById("btnRapido").onclick = () => {
-
-window.location.href = "teste-rapido.html";
-
+  window.location.href = "quiz.html?modo=geral_rapido";
 };
 
 
@@ -47,7 +43,7 @@ card.onclick = () => {
 
 const materia = card.dataset.materia;
 
-window.location.href = "exercicios-" + materia + ".html";
+window.location.href = `quiz.html?materia=${materia}&modo=completo`;
 
 };
 
