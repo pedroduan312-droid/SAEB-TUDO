@@ -410,6 +410,6 @@ input{
 }
 
 .nav-item.ativo img{
-  width:42px;
+  width:30px;
   transform:translateY(-2px);
 }

@@ -366,6 +366,7 @@ textarea{
   height:100%;
   display:flex;
   flex-direction:column;
+  align-items:center;
 }
 
 .titulo-final{
@@ -373,13 +374,31 @@ textarea{
   font-size:26px;
   font-weight:700;
   margin-top:22px;
-  margin-bottom:18px;
+  margin-bottom:8px;
+  text-align:center;
+  line-height:1.2;
+}
+
+#subtituloFinal{
+  width:100%;
+  max-width:300px;
+  color:rgba(255,255,255,.9);
+  font-size:14px;
+  font-weight:500;
+  line-height:1.45;
+  text-align:center;
+  margin:0 0 20px 0;
+  opacity:0;
+  transform:translateY(10px);
+  animation:fadeUp .55s ease forwards;
+  animation-delay:.2s;
 }
 
 .cards-resultado{
   display:flex;
   gap:14px;
   margin-bottom:24px;
+  width:100%;
 }
 
 .coluna-esquerda{
@@ -475,6 +494,7 @@ textarea{
   gap:18px;
   padding:0 20px;
   margin-top:auto;
+  width:100%;
 }
 
 .btn-final{
@@ -499,4 +519,44 @@ textarea{
 
 .btn-sair{
   background:#eb3157;
+}
+
+/* CORES DINÂMICAS POR DESEMPENHO */
+
+.resultado-excelente .titulo-final,
+.resultado-excelente #subtituloFinal{
+  color:#ffffff;
+}
+
+.resultado-bom .titulo-final,
+.resultado-bom #subtituloFinal{
+  color:#ffffff;
+}
+
+.resultado-medio .titulo-final,
+.resultado-medio #subtituloFinal{
+  color:#fff7d6;
+}
+
+.resultado-atencao .titulo-final,
+.resultado-atencao #subtituloFinal{
+  color:#ffe7d6;
+}
+
+.resultado-baixo .titulo-final,
+.resultado-baixo #subtituloFinal{
+  color:#ffdede;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }

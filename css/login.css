@@ -10,10 +10,10 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-background-image:url("../imagens/Frame\ 17.png");
-background: size 380px; /* controla o tamanho */
+background-image:url("../imagens/Frame 17.png");
+background-size:380px;
 background-position:top center;
-background-repeat:repeat; /* agora ele repete corretamente */
+background-repeat:repeat;
 
 font-family:'Montserrat',sans-serif;
 }
@@ -40,7 +40,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 
-animation: subir 0.6s ease;
+animation:subir 0.6s ease;
 }
 
 @keyframes subir{
@@ -79,6 +79,7 @@ border:none;
 font-size:14px;
 background:white;
 transition:0.3s;
+font-family:'Montserrat',sans-serif;
 }
 
 input:focus{
@@ -96,18 +97,19 @@ margin-bottom:20px;
 }
 
 .btn-login{
-padding:16px;
+padding:12px 22px;
 border:none;
-border-radius:30px;
+border-radius:25px;
 background:#E91E63;
 font-weight:700;
 cursor:pointer;
 transition:0.3s;
 font-size:15px;
+font-family:'Montserrat',sans-serif;
 }
 
 .btn-login:hover{
-transform:scale(1.03);
+transform:scale(1.05);
 }
 
 .divisor{
@@ -145,6 +147,7 @@ background:white;
 cursor:pointer;
 font-weight:600;
 transition:0.3s;
+font-family:'Montserrat',sans-serif;
 }
 
 .btn-google:hover{
@@ -173,25 +176,4 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 margin-top:15px;
-}
-
-.esqueci{
-font-size:13px;
-text-decoration:none;
-color:#E91E63;
-font-weight:600;
-}
-
-.btn-login{
-padding:12px 22px;
-border:none;
-border-radius:25px;
-background:#E91E63;
-font-weight:700;
-cursor:pointer;
-transition:0.3s;
-}
-
-.btn-login:hover{
-transform:scale(1.05);
 }

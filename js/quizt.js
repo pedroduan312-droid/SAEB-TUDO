@@ -18,6 +18,7 @@
 
   const telaFinal = document.getElementById("telaFinal");
   const tituloFinal = document.getElementById("tituloFinal");
+  const subtituloFinal = document.getElementById("subtituloFinal"); // opcional no HTML
   const porcentagemFinal = document.getElementById("porcentagemFinal");
   const acertosFinal = document.getElementById("acertosFinal");
   const tempoNumero = document.getElementById("tempoNumero");
@@ -103,14 +104,6 @@
   let quizFinalizado = false;
   let respostasRegistradas = [];
 
-  const TITULOS_FINAIS = [
-    "Parabéns!",
-    "Mandou bem!",
-    "Muito bom!",
-    "Excelente!",
-    "Você arrasou!"
-  ];
-
   function obterConfiguracao() {
     const configuracaoModo = CONFIG_MODO[modo];
 
@@ -152,17 +145,17 @@
   function iniciarSplash() {
     window.addEventListener("load", () => {
       setTimeout(() => {
-        splash.classList.add("hide");
+        splash?.classList.add("hide");
       }, 1800);
     });
   }
 
   function abrirMenuLateral() {
-    container.classList.add("menu-aberto");
+    container?.classList.add("menu-aberto");
   }
 
   function fecharMenuLateral() {
-    container.classList.remove("menu-aberto");
+    container?.classList.remove("menu-aberto");
   }
 
   function voltarPaginaSegura() {
@@ -371,12 +364,61 @@
     btnAcao.disabled = false;
   }
 
-  function escolherTituloFinal(porcentagem) {
-    if (porcentagem === 100) return "Você arrasou!";
-    if (porcentagem >= 80) return "Excelente!";
-    if (porcentagem >= 60) return "Mandou bem!";
-    if (porcentagem >= 40) return "Muito bom!";
-    return TITULOS_FINAIS[Math.floor(Math.random() * TITULOS_FINAIS.length)];
+  function obterResultadoFinal(porcentagem) {
+    if (porcentagem >= 90) {
+      return {
+        titulo: "Excelente!",
+        subtitulo: "Seu desempenho foi incrível. Continue assim!",
+        nivel: "excelente",
+        classe: "resultado-excelente"
+      };
+    }
+
+    if (porcentagem >= 70) {
+      return {
+        titulo: "Mandou bem!",
+        subtitulo: "Você teve um ótimo resultado e está no caminho certo.",
+        nivel: "bom",
+        classe: "resultado-bom"
+      };
+    }
+
+    if (porcentagem >= 50) {
+      return {
+        titulo: "Bom trabalho!",
+        subtitulo: "Você foi bem, mas ainda pode evoluir mais com prática.",
+        nivel: "medio",
+        classe: "resultado-medio"
+      };
+    }
+
+    if (porcentagem >= 30) {
+      return {
+        titulo: "Pode melhorar!",
+        subtitulo: "Você já começou. Agora é revisar os erros e continuar treinando.",
+        nivel: "atencao",
+        classe: "resultado-atencao"
+      };
+    }
+
+    return {
+      titulo: "Vamos praticar mais!",
+      subtitulo: "Não desanime. Cada tentativa ajuda você a aprender e melhorar.",
+      nivel: "baixo",
+      classe: "resultado-baixo"
+    };
+  }
+
+  function limparClassesResultado() {
+    if (!telaFinal) return;
+
+    telaFinal.classList.remove(
+      "resultado-excelente",
+      "resultado-bom",
+      "resultado-medio",
+      "resultado-atencao",
+      "resultado-baixo"
+    );
   }
 
   function animarContador(inicio, fim, duracao, callback) {
@@ -467,14 +509,28 @@
       config.tempoLimiteSegundos
     );
 
-    const porcentagem = Math.round((acertos / treino.length) * 100);
+    const totalQuestoes = treino.length;
+    const porcentagem = totalQuestoes > 0
+      ? Math.round((acertos / totalQuestoes) * 100)
+      : 0;
+
+    const resultadoFinal = obterResultadoFinal(porcentagem);
 
     salvarEstatisticasQuiz();
 
-    tituloFinal.textContent = escolherTituloFinal(porcentagem);
+    tituloFinal.textContent = resultadoFinal.titulo;
+
+    if (subtituloFinal) {
+      subtituloFinal.textContent = resultadoFinal.subtitulo;
+    }
+
+    limparClassesResultado();
+    telaFinal.classList.add(resultadoFinal.classe);
+    telaFinal.dataset.nivel = resultadoFinal.nivel;
+
     telaFinal.classList.remove("oculto");
 
-    animarResultados(acertos, treino.length, tempoTotal, porcentagem);
+    animarResultados(acertos, totalQuestoes, tempoTotal, porcentagem);
   }
 
   function finalizarQuiz() {
@@ -493,22 +549,22 @@
     finalizarQuiz();
   }
 
-  abrirMenu.addEventListener("click", abrirMenuLateral);
-  overlay.addEventListener("click", fecharMenuLateral);
+  abrirMenu?.addEventListener("click", abrirMenuLateral);
+  overlay?.addEventListener("click", fecharMenuLateral);
 
-  btnVerQuestoes.addEventListener("click", () => {
+  btnVerQuestoes?.addEventListener("click", () => {
     fecharMenuLateral();
     alert(`Questão ${indiceAtual + 1} de ${treino.length}`);
   });
 
-  btnSairDesafio.addEventListener("click", voltarPaginaSegura);
-  btnVoltarHome.addEventListener("click", voltarPaginaSegura);
+  btnSairDesafio?.addEventListener("click", voltarPaginaSegura);
+  btnVoltarHome?.addEventListener("click", voltarPaginaSegura);
 
-  btnRefazer.addEventListener("click", () => {
+  btnRefazer?.addEventListener("click", () => {
     window.location.reload();
   });
 
-  btnAcao.addEventListener("click", () => {
+  btnAcao?.addEventListener("click", () => {
     if (quizFinalizado) return;
 
     if (!respostaConfirmada) {
