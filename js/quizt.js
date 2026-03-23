@@ -13,12 +13,15 @@
   const btnAcao = document.getElementById("btnAcao");
   const statusCarregamento = document.getElementById("statusCarregamento");
   const conteudoQuiz = document.getElementById("conteudoQuiz");
+  const textoApoio = document.getElementById("textoApoio");
+  const feedbackResposta = document.getElementById("feedbackResposta");
+  const footerBox = document.querySelector(".footer-box");
 
   const splash = document.getElementById("splash");
 
   const telaFinal = document.getElementById("telaFinal");
   const tituloFinal = document.getElementById("tituloFinal");
-  const subtituloFinal = document.getElementById("subtituloFinal"); // opcional no HTML
+  const subtituloFinal = document.getElementById("subtituloFinal");
   const porcentagemFinal = document.getElementById("porcentagemFinal");
   const acertosFinal = document.getElementById("acertosFinal");
   const tempoNumero = document.getElementById("tempoNumero");
@@ -31,66 +34,34 @@
   const tituloMenuMateria = document.getElementById("tituloMenuMateria");
   const tituloTopo = document.getElementById("tituloTopo");
   const modoMenu = document.getElementById("modoMenu");
+  const modoBadge = document.getElementById("modoBadge");
+  const tempoTopo = document.getElementById("tempoTopo");
 
   const params = new URLSearchParams(window.location.search);
   const materia = (params.get("materia") || "").toLowerCase();
   const modo = (params.get("modo") || "").toLowerCase();
 
   const CONFIG_MODO = {
-    rapido: {
-      nome: "Teste Rápido",
-      quantidade: 5,
-      tempoMinutos: 5,
-      tipo: "materia"
-    },
-    mini: {
-      nome: "Mini Simulado",
-      quantidade: 10,
-      tempoMinutos: 15,
-      tipo: "materia"
-    },
-    completo: {
-      nome: "Simulado Completo",
-      quantidade: 20,
-      tempoMinutos: 30,
-      tipo: "materia"
-    },
-    desafio: {
-      nome: "Desafio",
-      quantidade: 8,
-      tempoMinutos: 10,
-      tipo: "materia"
-    },
-
-    geral_rapido: {
-      nome: "Teste Rápido Geral",
-      quantidade: 5,
-      tempoMinutos: 5,
-      tipo: "geral"
-    },
-    geral_mini: {
-      nome: "Mini Simulado Geral",
-      quantidade: 10,
-      tempoMinutos: 12,
-      tipo: "geral"
-    },
-    simulado_geral: {
-      nome: "Simulado Geral",
-      quantidade: 20,
-      tempoMinutos: 25,
-      tipo: "geral"
-    },
-    tudao: {
-      nome: "Tudão SAEB",
-      quantidade: 30,
-      tempoMinutos: 40,
-      tipo: "geral"
-    }
+    rapido: { nome: "Teste Rápido", quantidade: 5, tempoMinutos: 5, tipo: "materia" },
+    mini: { nome: "Mini Simulado", quantidade: 10, tempoMinutos: 15, tipo: "materia" },
+    completo: { nome: "Simulado Completo", quantidade: 20, tempoMinutos: 30, tipo: "materia" },
+    desafio: { nome: "Desafio", quantidade: 8, tempoMinutos: 10, tipo: "materia" },
+    geral_rapido: { nome: "Teste rápido geral", quantidade: 5, tempoMinutos: 5, tipo: "geral" },
+    geral_mini: { nome: "Mini simulado geral", quantidade: 10, tempoMinutos: 12, tipo: "geral" },
+    simulado_geral: { nome: "Simulado geral", quantidade: 20, tempoMinutos: 25, tipo: "geral" },
+    tudao: { nome: "Tudão SAEB", quantidade: 30, tempoMinutos: 40, tipo: "geral" }
   };
 
   const NOMES_MATERIAS = {
     portugues: "Língua Portuguesa",
     matematica: "Matemática"
+  };
+
+  const CORES_ALTERNATIVAS = {
+    A: "A",
+    B: "B",
+    C: "C",
+    D: "D"
   };
 
   let bancoQuestoes = [];
@@ -106,15 +77,12 @@
 
   function obterConfiguracao() {
     const configuracaoModo = CONFIG_MODO[modo];
-
-    if (!configuracaoModo) {
-      return null;
-    }
+    if (!configuracaoModo) return null;
 
     if (configuracaoModo.tipo === "geral") {
       return {
         materia: "geral",
-        nomeMateria: "Simulado SAEB",
+        nomeMateria: "Desafio do Dia!",
         modo,
         nomeModo: configuracaoModo.nome,
         quantidade: configuracaoModo.quantidade,
@@ -124,10 +92,7 @@
     }
 
     const nomeMateria = NOMES_MATERIAS[materia];
-
-    if (!nomeMateria) {
-      return null;
-    }
+    if (!nomeMateria) return null;
 
     return {
       materia,
@@ -146,7 +111,7 @@
     window.addEventListener("load", () => {
       setTimeout(() => {
         splash?.classList.add("hide");
-      }, 1800);
+      }, 1600);
     });
   }
 
@@ -186,6 +151,14 @@
     modoMenu.textContent = config.nomeModo;
     quantidadeQuestoesMenu.textContent = String(config.quantidade);
     tempoLimiteMenu.textContent = formatarTempoMenu(config.tempoLimiteSegundos);
+
+    if (modoBadge) {
+      modoBadge.textContent = config.nomeModo;
+    }
+
+    if (tempoTopo) {
+      tempoTopo.textContent = formatarTempoMenu(config.tempoLimiteSegundos);
+    }
   }
 
   function iniciarTimerLimite() {
@@ -199,8 +172,13 @@
 
       const tempoPassado = Math.floor((Date.now() - tempoInicio) / 1000);
       const tempoRestante = Math.max(config.tempoLimiteSegundos - tempoPassado, 0);
+      const tempoFormatado = formatarTempoMenu(tempoRestante);
 
-      tempoLimiteMenu.textContent = formatarTempoMenu(tempoRestante);
+      tempoLimiteMenu.textContent = tempoFormatado;
+
+      if (tempoTopo) {
+        tempoTopo.textContent = tempoFormatado;
+      }
 
       if (tempoRestante <= 0) {
         clearInterval(timerLimite);
@@ -222,12 +200,10 @@
 
   function embaralharCopia(lista) {
     const copia = [...lista];
-
     for (let i = copia.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [copia[i], copia[j]] = [copia[j], copia[i]];
     }
-
     return copia;
   }
 
@@ -263,12 +239,64 @@
 
     if (filtradas.length < quantidade) {
       throw new Error(
-        `Não há questões suficientes de ${NOMES_MATERIAS[materiaSelecionada]}. ` +
-        `Disponíveis: ${filtradas.length}. Necessárias: ${quantidade}.`
+        `Não há questões suficientes de ${NOMES_MATERIAS[materiaSelecionada]}. Disponíveis: ${filtradas.length}. Necessárias: ${quantidade}.`
       );
     }
 
     return embaralharCopia(filtradas).slice(0, quantidade);
+  }
+
+  function obterMensagemResposta(acertou) {
+    const mensagensCorretas = [
+      "Mandou bem!",
+      "Boa!",
+      "Resposta certa!",
+      "Você acertou!",
+      "Excelente!"
+    ];
+
+    const mensagensErradas = [
+      "Quase lá!",
+      "Não foi dessa vez!",
+      "Errou, mas segue o jogo!",
+      "Vamos para a próxima!",
+      "Foco na próxima!"
+    ];
+
+    const lista = acertou ? mensagensCorretas : mensagensErradas;
+    return lista[Math.floor(Math.random() * lista.length)];
+  }
+
+  function mostrarFeedback(acertou) {
+    if (!feedbackResposta || !footerBox) return;
+
+    feedbackResposta.textContent = obterMensagemResposta(acertou);
+    feedbackResposta.classList.remove("oculto", "correto", "errado", "mostrar");
+    feedbackResposta.classList.add(acertou ? "correto" : "errado");
+
+    void feedbackResposta.offsetWidth;
+    feedbackResposta.classList.add("mostrar");
+
+    btnAcao.classList.remove("subindo");
+   feedbackResposta.classList.remove("subindo");
+
+   void btnAcao.offsetWidth;
+   void feedbackResposta.offsetWidth;
+
+   btnAcao.classList.add("subindo");
+   feedbackResposta.classList.add("subindo");
+
+setTimeout(() => {
+  btnAcao.classList.remove("subindo");
+  feedbackResposta.classList.remove("subindo");
+}, 300);
+  }
+
+  function esconderFeedback() {
+    if (!feedbackResposta) return;
+    feedbackResposta.classList.add("oculto");
+    feedbackResposta.classList.remove("mostrar", "correto", "errado");
+    feedbackResposta.textContent = "";
   }
 
   function criarAlternativa(letra, texto) {
@@ -277,8 +305,10 @@
     card.className = "alternativa";
 
     card.innerHTML = `
-      <div class="letra ${letra}">${letra}</div>
-      <div class="texto">${texto}</div>
+      <div class="conteudo-alternativa">
+        <div class="letra ${CORES_ALTERNATIVAS[letra] || ""}">${letra}</div>
+        <div class="texto">${texto}</div>
+      </div>
     `;
 
     card.addEventListener("click", () => selecionarAlternativa(card, letra));
@@ -290,6 +320,20 @@
     progresso.style.width = `${((indiceAtual + 1) / treino.length) * 100}%`;
   }
 
+  function mostrarTextoApoio(questao) {
+    const texto = questao.textoApoio || questao.apoio || "";
+
+    if (!textoApoio) return;
+
+    if (texto) {
+      textoApoio.textContent = texto;
+      textoApoio.classList.remove("oculto");
+    } else {
+      textoApoio.textContent = "";
+      textoApoio.classList.add("oculto");
+    }
+  }
+
   function mostrarQuestao() {
     const questao = treino[indiceAtual];
     if (!questao || quizFinalizado) return;
@@ -297,7 +341,10 @@
     alternativaSelecionada = null;
     respostaConfirmada = false;
 
+    esconderFeedback();
     atualizarCabecalho();
+    mostrarTextoApoio(questao);
+
     enunciado.textContent = questao.enunciado || "";
 
     if (questao.imagem) {
@@ -348,6 +395,8 @@
       if (letra === alternativaSelecionada && letra !== questao.correta) {
         card.classList.add("errada");
       }
+
+      card.disabled = true;
     });
 
     if (acertou) {
@@ -358,6 +407,8 @@
       materia: questao.materia,
       correta: acertou
     });
+
+    mostrarFeedback(acertou);
 
     respostaConfirmada = true;
     btnAcao.textContent = indiceAtual === treino.length - 1 ? "finalizar" : "próxima";
@@ -395,7 +446,7 @@
     if (porcentagem >= 30) {
       return {
         titulo: "Pode melhorar!",
-        subtitulo: "Você já começou. Agora é revisar os erros e continuar treinando.",
+        subtitulo: "Você já começou. Agora é continuar treinando.",
         nivel: "atencao",
         classe: "resultado-atencao"
       };
@@ -403,7 +454,7 @@
 
     return {
       titulo: "Vamos praticar mais!",
-      subtitulo: "Não desanime. Cada tentativa ajuda você a aprender e melhorar.",
+      subtitulo: "Não desanime. Cada tentativa ajuda você a melhorar.",
       nivel: "baixo",
       classe: "resultado-baixo"
     };
@@ -534,6 +585,7 @@
   }
 
   function finalizarQuiz() {
+    esconderFeedback();
     mostrarTelaFinal();
   }
 
@@ -607,9 +659,7 @@
     } catch (erro) {
       console.error("Erro ao carregar quiz:", erro);
       mostrarCarregamento(
-        `Não foi possível iniciar este treino.\n` +
-        `${erro.message}\n\n` +
-        `Verifique se o JSON tem questões suficientes e se você está usando o Live Server.`
+        `Não foi possível iniciar este treino.\n${erro.message}\n\nVerifique se o JSON tem questões suficientes e se você está usando o Live Server.`
       );
       return;
     }

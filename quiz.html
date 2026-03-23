@@ -56,14 +56,25 @@
     <!-- APP -->
     <div id="app">
       <header class="topo">
-        <span id="contador">1/5</span>
-        <h1 id="tituloTopo">Língua Portuguesa</h1>
-        <button id="abrirMenu" class="menu-btn" type="button">☰</button>
-      </header>
+        <div class="topo-linha">
+          <span id="contador" class="contador-pill">1/5</span>
+          <h1 id="tituloTopo">Desafio do Dia!</h1>
+          <button id="abrirMenu" class="menu-btn" type="button" aria-label="Abrir menu">☰</button>
+        </div>
 
-      <div class="barra">
-        <div id="progresso"></div>
-      </div>
+        <div class="barra progresso-externa">
+          <div id="progresso"></div>
+        </div>
+
+        <div class="topo-info">
+          <span id="modoBadge" class="modo-badge">Teste rápido geral</span>
+
+          <div class="tempo-badge">
+            <img src="imagens/relogio.svg" alt="Tempo" class="tempo-icone">
+            <span id="tempoTopo">05:00</span>
+          </div>
+        </div>
+      </header>
 
       <main class="quiz">
         <div id="statusCarregamento" class="status-carregamento">
@@ -71,7 +82,7 @@
         </div>
 
         <div id="conteudoQuiz" class="conteudo-quiz oculto">
-          <p id="enunciado" class="enunciado"></p>
+          <p id="textoApoio" class="texto-apoio oculto"></p>
 
           <img
             id="imagemQuestao"
@@ -79,24 +90,26 @@
             alt="Imagem da questão"
           />
 
+          <p id="enunciado" class="enunciado"></p>
+
           <div id="alternativas" class="alternativas"></div>
         </div>
       </main>
 
-      <footer class="footer">
+      <footer class="footer-box">
+        <div id="feedbackResposta" class="feedback oculto"></div>
         <button id="btnAcao" disabled type="button">confirmar</button>
+        <div class="home-indicator"></div>
       </footer>
     </div>
 
     <!-- TELA FINAL -->
     <div id="telaFinal" class="tela-final oculto">
       <div class="final-conteudo">
-
-       <h2 id="tituloFinal" class="titulo-final">Parabéns!</h2>
+        <h2 id="tituloFinal" class="titulo-final">Parabéns!</h2>
         <p id="subtituloFinal"></p>
 
         <div class="cards-resultado">
-
           <div class="coluna-esquerda">
             <div class="card-final card-acertos">
               <div id="acertosFinal" class="numero-acertos">0/5</div>
@@ -113,14 +126,12 @@
             <div class="grafico-pizza" id="graficoPizza"></div>
             <div id="porcentagemFinal" class="numero-porcentagem">0%</div>
           </div>
-
         </div>
 
         <div class="botoes-finais">
           <button id="btnRefazer" class="btn-final btn-refazer" type="button">Refazer</button>
           <button id="btnVoltarHome" class="btn-final btn-sair" type="button">sair</button>
         </div>
-
       </div>
     </div>
 
