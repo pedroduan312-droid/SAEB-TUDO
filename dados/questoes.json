@@ -71,78 +71,6 @@
     },
     "correta": "A"
   },
-  {
-    "id": 7,
-    "materia": "matematica",
-    "enunciado": "Quanto é 8 × 7?",
-    "alternativas": {
-      "A": "54",
-      "B": "56",
-      "C": "64",
-      "D": "48"
-    },
-    "correta": "B"
-  },
-  {
-    "id": 8,
-    "materia": "matematica",
-    "enunciado": "Quanto é 36 ÷ 6?",
-    "alternativas": {
-      "A": "5",
-      "B": "6",
-      "C": "7",
-      "D": "8"
-    },
-    "correta": "B"
-  },
-  {
-    "id": 9,
-    "materia": "matematica",
-    "enunciado": "Quanto é 15 + 27?",
-    "alternativas": {
-      "A": "40",
-      "B": "41",
-      "C": "42",
-      "D": "43"
-    },
-    "correta": "C"
-  },
-  {
-    "id": 10,
-    "materia": "matematica",
-    "enunciado": "Um triângulo possui quantos lados?",
-    "alternativas": {
-      "A": "2",
-      "B": "3",
-      "C": "4",
-      "D": "5"
-    },
-    "correta": "B"
-  },
-  {
-    "id": 11,
-    "materia": "matematica",
-    "enunciado": "Quanto é 50 − 18?",
-    "alternativas": {
-      "A": "30",
-      "B": "31",
-      "C": "32",
-      "D": "33"
-    },
-    "correta": "C"
-  },
-  {
-    "id": 12,
-    "materia": "matematica",
-    "enunciado": "Quanto é 9 × 6?",
-    "alternativas": {
-      "A": "54",
-      "B": "56",
-      "C": "48",
-      "D": "64"
-    },
-    "correta": "A"
-  },
 {
   "id": 13,
   "materia": "portugues",
@@ -263,127 +191,6 @@
   },
   "correta": "C"
 },
-
-{
-  "id": 23,
-  "materia": "matematica",
-  "enunciado": "Quanto é 12 × 8?",
-  "alternativas": {
-    "A": "96",
-    "B": "88",
-    "C": "104",
-    "D": "92"
-  },
-  "correta": "A"
-},
-{
-  "id": 24,
-  "materia": "matematica",
-  "enunciado": "Quanto é 81 ÷ 9?",
-  "alternativas": {
-    "A": "7",
-    "B": "8",
-    "C": "9",
-    "D": "10"
-  },
-  "correta": "C"
-},
-{
-  "id": 25,
-  "materia": "matematica",
-  "enunciado": "Quanto é 45 + 37?",
-  "alternativas": {
-    "A": "80",
-    "B": "81",
-    "C": "82",
-    "D": "83"
-  },
-  "correta": "C"
-},
-{
-  "id": 26,
-  "materia": "matematica",
-  "enunciado": "Quanto é 100 − 64?",
-  "alternativas": {
-    "A": "34",
-    "B": "35",
-    "C": "36",
-    "D": "37"
-  },
-  "correta": "C"
-},
-{
-  "id": 27,
-  "materia": "matematica",
-  "enunciado": "Quanto é 7 × 9?",
-  "alternativas": {
-    "A": "63",
-    "B": "56",
-    "C": "72",
-    "D": "49"
-  },
-  "correta": "A"
-},
-{
-  "id": 28,
-  "materia": "matematica",
-  "enunciado": "Quanto é 64 ÷ 8?",
-  "alternativas": {
-    "A": "6",
-    "B": "7",
-    "C": "8",
-    "D": "9"
-  },
-  "correta": "C"
-},
-{
-  "id": 29,
-  "materia": "matematica",
-  "enunciado": "Quanto é 25 + 19?",
-  "alternativas": {
-    "A": "43",
-    "B": "44",
-    "C": "45",
-    "D": "46"
-  },
-  "correta": "B"
-},
-{
-  "id": 30,
-  "materia": "matematica",
-  "enunciado": "Quanto é 72 − 38?",
-  "alternativas": {
-    "A": "32",
-    "B": "33",
-    "C": "34",
-    "D": "35"
-  },
-  "correta": "C"
-},
-{
-  "id": 31,
-  "materia": "matematica",
-  "enunciado": "Quanto é 6 × 6?",
-  "alternativas": {
-    "A": "30",
-    "B": "36",
-    "C": "42",
-    "D": "48"
-  },
-  "correta": "B"
-},
-{
-  "id": 32,
-  "materia": "matematica",
-  "enunciado": "Quanto é 90 ÷ 10?",
-  "alternativas": {
-    "A": "8",
-    "B": "9",
-    "C": "10",
-    "D": "7"
-  },
-  "correta": "B"
-},
 {
   "id": 33,
   "materia": "portugues",
@@ -456,100 +263,438 @@
   },
   "correta": "B"
 },
-{
-  "id": 39,
-  "materia": "matematica",
-  "enunciado": "Quanto é 14 × 3?",
-  "alternativas": {
-    "A": "42",
-    "B": "36",
-    "C": "48",
-    "D": "40"
+  {
+    "id": 47,
+    "materia": "matematica",
+    "descritor": "D5",
+    "imagem": "imagens/questoes/q47d5mat.PNG",
+    "enunciado": "(PAEBES). Um telhado será instalado entre dois prédios de um condomínio, de forma que sua inclinação em relação ao prédio maior será de 53°, conforme representado no desenho abaixo. Qual será o comprimento x desse telhado?",
+    "alternativas": {
+      "A": "5,4",
+      "B": "6,9",
+      "C": "9,0",
+      "D": "15,0"
+    },
+    "correta": "D"
   },
-  "correta": "A"
-},
-{
-  "id": 40,
-  "materia": "matematica",
-  "enunciado": "Quanto é 100 ÷ 5?",
-  "alternativas": {
-    "A": "10",
-    "B": "20",
-    "C": "25",
-    "D": "15"
+    {
+    "id": 48,
+    "materia": "matematica",
+    "descritor": "D5",
+    "enunciado": "(SAEGO). Com um binóculo, um observador avista um pássaro no topo de uma árvore sob um ângulo de 60°, conforme representado na figura abaixo. Qual é a altura aproximada desse pássaro em relação ao solo, em metros?",
+   "imagem": "imagens/questoes/q48d5mat.PNG",
+    "alternativas": {
+      "A": "13,81",
+      "B": "12,11",
+      "C": "10,41",
+      "D": "7,79"
+    },
+    "correta": "A"
   },
-  "correta": "B"
-},
-{
-  "id": 41,
-  "materia": "matematica",
-  "enunciado": "Quanto é 23 + 19?",
-  "alternativas": {
-    "A": "40",
-    "B": "41",
-    "C": "42",
-    "D": "43"
+      {
+    "id": 49,
+    "materia": "matematica",
+    "descritor": "D5",
+    "enunciado": "(SAEPE). Observe o triângulo retângulo desenhado abaixo. Nesse desenho, estão representadas as medidas de um escorregador de comprimento x do parquinho de um condomínio. Quanto mede, aproximadamente, o comprimento x desse escorregador?",
+   "imagem": "imagens/questoes/q49d5mat.PNG",
+    "alternativas": {
+      "A": "0,84 m",
+      "B": "1,25 m",
+      "C": "2,68 m",
+      "D": "2,24 m"
+    },
+    "correta": "C"
   },
-  "correta": "C"
-},
-{
-  "id": 42,
-  "materia": "matematica",
-  "enunciado": "Quanto é 80 − 27?",
-  "alternativas": {
-    "A": "52",
-    "B": "53",
-    "C": "54",
-    "D": "55"
+   {
+    "id": 50,
+    "materia": "matematica",
+    "descritor": "D5",
+    "enunciado": "(SPAECE). Um avião decola do ponto x de uma pista e sobe formando um ângulo de 30° em relação ao solo. Em determinado instante o avião alcança uma distância horizontal, perpendicular ao solo, de 1500 metros em relação ao ponto x da decolagem, conforme mostra a figura. Qual das medidas abaixo melhor representaria a altura h do avião em relação ao solo?",
+   "imagem": "imagens/questoes/q50d5mat.PNG",
+    "alternativas": {
+      "A": "855 m",
+      "B": "867 m",
+      "C": "900 m",
+      "D": "2595 m"
+    },
+    "correta": "C"
   },
-  "correta": "B"
-},
-{
-  "id": 43,
-  "materia": "matematica",
-  "enunciado": "Quanto é 5 × 11?",
-  "alternativas": {
-    "A": "50",
-    "B": "55",
-    "C": "60",
-    "D": "65"
+   {
+    "id": 51,
+    "materia": "matematica",
+    "descritor": "D16",
+    "enunciado": "(PAEBES). O preço da passagem de ônibus em uma cidade era de R$ 1,80. Esse preço sofreu um aumento de 25%.Qual é o preço dessa passagem após o aumento?",
+    "alternativas": {
+      "A": "R$ 2,25",
+      "B": "R$ 1,80",
+      "C": "R$ 1,35",
+      "D": "R$ 0,45"
+    },
+    "correta": "A"
   },
-  "correta": "B"
-},
-{
-  "id": 44,
-  "materia": "matematica",
-  "enunciado": "Quanto é 72 ÷ 9?",
-  "alternativas": {
-    "A": "6",
-    "B": "7",
-    "C": "8",
-    "D": "9"
+   {
+    "id": 52,
+    "materia": "matematica",
+    "descritor": "D16",
+    "enunciado": "(SAERJ). A concentração de etanol na gasolina brasileira, segundo a ANP – Agência Nacional do Petróleo – deve estar entre 18% e 24%. No laboratório de química de uma escola, os estudantes verificaram que em uma amostra de 50 mL de gasolina 19% era de etanol.A quantidade de etanol presente nessa amostra de gasolina corresponde a ",
+    "alternativas": {
+      "A": "19 mL",
+      "B": "31 mL",
+      "C": "9,5 mL",
+      "D": "40,5 mL"
+    },
+    "correta": "C"
   },
-  "correta": "C"
-},
-{
-  "id": 45,
-  "materia": "matematica",
-  "enunciado": "Quanto é 34 + 28?",
-  "alternativas": {
-    "A": "60",
-    "B": "61",
-    "C": "62",
-    "D": "63"
+   {
+    "id": 53,
+    "materia": "matematica",
+    "descritor": "D16",
+    "enunciado": "(SAEPE). Um clube promoveu uma grande festa de reinauguração. Nessa festa, 60% das pessoaspresentes eram do sexo feminino e 580 do sexo masculino.Quantas mulheres estavam presentes nessa festa?",
+    "alternativas": {
+      "A": "348",
+      "B": "522",
+      "C": "870",
+      "D": "1 450"
+    },
+    "correta": "C"
   },
-  "correta": "C"
-},
-{
-  "id": 46,
-  "materia": "matematica",
-  "enunciado": "Quanto é 90 − 45?",
-  "alternativas": {
-    "A": "40",
-    "B": "45",
-    "C": "50",
-    "D": "55"
+   {
+    "id": 54,
+    "materia": "matematica",
+    "descritor": "D16",
+    "enunciado": "(SAEPE). Um concurso teve a participação de 800 candidatos. Desses candidatos, 320 eram mulheres. A porcentagem de mulheres que participou desse concurso foi",
+    "alternativas": {
+      "A": "80%",
+      "B": "40%",
+      "C": "48%",
+      "D": "32%"
+    },
+    "correta": "B"
   },
-  "correta": "B"
-}
+  {
+    "id": 55,
+    "materia": "matematica",
+    "descritor": "D16",
+    "enunciado": "(SAEB). Este mês, Paulo atrasou o pagamento do condomínio. Com isso, além do valor mensal, de R$ 400,00, ele ainda pagou 5,5% de juros. Qual o total que Paulo pagou de condomínio? ",
+    "alternativas": {
+      "A": "R$ 455,00",
+      "B": "R$ 424,00",
+      "C": "R$ 422,00",
+      "D": "R$ 420,00"
+    },
+    "correta": "C"
+  },
+    {
+    "id": 56,
+    "materia": "matematica",
+    "descritor": "D16",
+    "enunciado": "(SPAECE). Um salário de R$ 1.200,00 sofre um desconto de 30% referente à retenção de pensão alimentícia. Quantos reais serão descontados desse salário para o pagamento dessa obrigação? ",
+    "alternativas": {
+      "A": "30,00",
+      "B": "36,00",
+      "C": "300,00",
+      "D": "360,00"
+    },
+    "correta": "D"
+  },
+    {
+    "id": 57,
+    "materia": "matematica",
+    "descritor": "D17",
+    "enunciado": "(SAEPE). Em uma competição, um atleta arremessa um dardo, que percorre uma boa distância até atingir o solo. A distância d percorrida pelo dardo, em metros, é a solução da equação – 4d2 + 600d – 22 500 = 0.Qual é a distância percorrida por esse dardo?",
+    "alternativas": {
+      "A": "150",
+      "B": "75",
+      "C": "149",
+      "D": "100"
+    },
+    "correta": "B"
+  },
+    {
+    "id": 58,
+    "materia": "matematica",
+    "descritor": "D17",
+    "enunciado": "(Supletivo 2011 – MG). Em um torneio de futebol, a quantidade de partidas (p) varia de acordo com a quantidade de equipes (n) que participam do torneio, conforme mostra o quadro abaixo. Em um torneio com 240 partidas, a quantidade n de equipes participantes é igual a",
+   "imagem": "imagens/questoes/q58d17mat.PNG",
+    "alternativas": {
+      "A": "15",
+      "B": "16",
+      "C": "30",
+      "D": "56"
+    },
+    "correta": "B"
+  },
+    {
+    "id": 59,
+    "materia": "matematica",
+    "descritor": "D17",
+    "enunciado": "(SAEPI). Para garantir o sigilo da senha de seu cofre, Jairo, que adora Matemática, escreveu essa senha na sua agenda, usando o seguinte código: “O quadrado de um número menos 6 000 é igual a 70 vezes esse número”. A raiz positiva da equação que traduz esse código dá a senha do cofre. Qual é a senha do cofre de Jairo?",
+    "alternativas": {
+      "A": "120",
+      "B": "170",
+      "C": "1 100",
+      "D": "2 300"
+    },
+    "correta": "A"
+  },
+    {
+    "id": 60,
+    "materia": "matematica",
+    "descritor": "D17",
+    "enunciado": "(SAERJ). José planta alface em um canteiro quadrado. Ele verificou que, se aumentasse 3 m nas duas dimensões, como mostra a figura abaixo, a área plantada passaria a ter 64 m2. Quanto mede cada lado do canteiro de José?",
+   "imagem": "imagens/questoes/q60d17mat.PNG",
+    "alternativas": {
+      "A": "11 m",
+      "B": "9 m",
+      "C": "8 m",
+      "D": "5 m"
+    },
+    "correta": "D"
+  },  {
+    "id": 61,
+    "materia": "matematica",
+    "descritor": "D17",
+    "enunciado": "(SAEMS).  Para cumprir uma tarefa de uma gincana cultural, foi solicitado aos componentes de uma equipe que resolvessem o seguinte desafio matemático: “O produto de dois números é igual a 308 e a soma deles é igual a 36. Qual é a diferença entre o maior e o menor desses números?” Considerando que a equipe faturou os pontos referentes a esse desafio, qual foi a diferença encontrada por eles?",
+    "alternativas": {
+      "A": "4",
+      "B": "8",
+      "C": "11",
+      "D": "14"
+    },
+    "correta": "B"
+  },
+    {
+    "id": 62,
+    "materia": "matematica",
+    "descritor": "D17",
+    "enunciado": "(APA – Crede-CE). Numa fabrica de brinquedos, a quantidade Q de brinquedos produzidos diariamente é dado pela expressão Q = x² + 10, sendo x a quantidade de pessoas trabalhando. Para que a fabrica produza 46 brinquedos por dia, quantas pessoas devem trabalhar na fabrica? ",
+    "alternativas": {
+      "A": "6",
+      "B": "5",
+      "C": "56",
+      "D": "18"
+    },
+    "correta": "A"
+  },
+     {
+    "id": 63,
+    "materia": "matematica",
+    "descritor": "D32",
+    "enunciado": "(SAEPE). Os membros de uma banca examinadora escolheram 7 questões de Matemática, 5 questões de Português e 4 questões de Ciências. Desse grupo de questões, eles irão sortear 2 questões de Matemática, 2 de Português e 1 de Ciências para compor uma prova de um concurso. Quantas provas diferentes poderão ser elaboradas para esse concurso?",
+    "alternativas": {
+      "A": "140",
+      "B": "280",
+      "C": "560",
+      "D": "840"
+    },
+    "correta": "D"
+  },
+   {
+    "id": 64,
+    "materia": "matematica",
+    "descritor": "D32",
+    "enunciado": "(SAEMS). Uma pizzaria recém inaugurada possibilita a seus clientes a montagem da pizza de sua preferência. Todas as pizzas têm os ingredientes básicos: massa, molho e mussarela. Além disso, têm os seguintes ingredientes opcionais: presunto, calabresa, frango, lombo, atum, bacon e palmito. O cliente tem direito aos ingredientes básicos e mais 3 opcionais entre os 7 oferecidos. Quantas pizzas diferentes o cliente pode montar nessa pizzaria com todos os ingredientes básicos e escolhendo 3 ingredientes opcionais diferentes?",
+    "alternativas": {
+      "A": "21",
+      "B": "35",
+      "C": "126",
+      "D": "210"
+    },
+    "correta": "B"
+  },
+   {
+    "id": 65,
+    "materia": "matematica",
+    "descritor": "D32",
+    "enunciado": "(Supletivo 2010). O quadro, abaixo, mostra as opções de salgados e sucos vendidos na cantina de uma escola. Tatiane vai escolher um salgado e um suco. De quantas maneiras diferentes ela pode fazer essa escolha?",
+   "imagem": "imagens/questoes/q65d32mat.PNG",
+    "alternativas": {
+      "A": "5",
+      "B": "8",
+      "C": "15",
+      "D": "25"
+    },
+    "correta": "C"
+  },
+   {
+    "id": 66,
+    "materia": "matematica",
+    "descritor": "D32",
+    "enunciado": "(SEDUC-GO) Mateus saiu de Petrolina com destino a Quatambí e passará por Maraí, como mostra a figura a seguir. De quantas maneiras distintas Mateus poderá realizar essa viagem?",
+   "imagem": "imagens/questoes/q66d32mat.PNG",
+    "alternativas": {
+      "A": "8",
+      "B": "12",
+      "C": "20",
+      "D": "30"
+    },
+    "correta": "B"
+  },
+   {
+    "id": 67,
+    "materia": "matematica",
+    "descritor": "D32",
+    "enunciado": "(SAEPE). Uma professora dividiu os alunos de uma turma em 6 equipes para apresentação de seminários. Os seminários serão apresentados de segunda a sábado. Para escolher a equipe e o dia em que o seminário será apresentado, ela utilizou dois dados de seis faces. Um dado identificado com as letras de “m” a “r”, correspondente ao nome das equipes, e outro identificado com numerais de 1 a 6, correspondendo aos dias da semana, aos quais o número 1 representa a segunda-feira, o número 2 representa a terça-feira e assim sucessivamente. Qual é o total de possibilidades para esse sorteio?",
+    "alternativas": {
+      "A": "12",
+      "B": "16",
+      "C": "24",
+      "D": "36"
+    },
+    "correta": "D"
+  }, 
+  {
+    "id": 68,
+    "materia": "matematica",
+    "descritor": "D34",
+    "enunciado": "(SAERJ). Em um dia de fiscalização numa rodovia, a polícia parou 20 carros. Os carros trafegavam com quantidades diferentes de passageiros, conforme é mostrado no gráfico abaixo. Quantos desses carros tinham mais de dois passageiros?",
+    "imagem": "imagens/questoes/q68d34mat.PNG",
+    "alternativas": {
+      "A": "8",
+      "B": "9",
+      "C": "11",
+      "D": "14"
+    },
+    "correta": "B"
+  },
+   {
+    "id": 69,
+    "materia": "matematica",
+    "descritor": "D34",
+    "enunciado": "(SAEMS). Uma academia de ginástica fez um levantamento do peso e da altura dos seus dez clientes mais gordos, para veriﬁcar o IMC (índice de massa corporal) e melhor atendê-los. Esses dados foram organizados em uma tabela de acordo com a ordem de matrícula conforme representado abaixo. Qual é a massa total dos dois alunos mais altos listados nessa tabela?",
+    "imagem": "imagens/questoes/q69d34mat.PNG",
+    "alternativas": {
+      "A": "142,5",
+      "B": "163,4",
+      "C": "195,9",
+      "D": "202,3"
+    },
+    "correta": "A"
+  },
+   {
+    "id": 70,
+    "materia": "matematica",
+    "descritor": "D34",
+    "enunciado": "(3ª P.D - 2013 – SEDUC-GO). Observe o gráfico a seguir, apresenta os dez primeiros Clubes brasileiros no Ranking Mundial de Clubes. De acordo com os dados é correto afirmar que:",
+    "imagem": "imagens/questoes/q70d34mat.PNG",
+    "alternativas": {
+      "A": "São Paulo ocupa a quinta posição no Ranking Mundial de Clubes.",
+      "B": "Considerando que o Brasil só classifica para próxima fase os dois clubes mais bem pontuados, esses clubes são Corinthians e Santos.",
+      "C": "Curitiba esta na décima posição com 124 (cento e vinte e quatro) pontos.",
+      "D": "Vasco da Gama está na sétima posição com 166 pontos"
+    },
+    "correta": "B"
+  },
+  {
+    "id": 71,
+    "materia": "matematica",
+    "descritor": "D34",
+    "enunciado": "(SPAECE). Ao fazer anotações sobre o seu orçamento mensal o Sr. Pereira montou a tabela abaixo. Quanto o Sr. Pereira gasta com aluguel e transporte?",
+    "imagem": "imagens/questoes/q71d34mat.PNG",
+    "alternativas": {
+      "A": "R$ 160,00",
+      "B": "R$ 320,00",
+      "C": "R$ 480,00",
+      "D": "R$ 800,00"
+    },
+    "correta": "D"
+  },
+  {
+    "id": 72,
+    "materia": "matematica",
+    "descritor": "D34",
+    "enunciado": "(SAEB 2013). O gráfico abaixo mostra o número de medalhas conquistadas pelo Brasil nas olimpíadas de 1964 a 1988. Em média, por olimpíada, nesse período, o Brasil ganhou, aproximadamente:",
+    "imagem": "imagens/questoes/q72d34mat.PNG",
+    "alternativas": {
+      "A": "4 medalhas",
+      "B": "6 medalhas",
+      "C": "7 medalhas",
+      "D": "8 medalhas"
+    },
+    "correta": "A"
+  },
+  {
+    "id": 73,
+    "materia": "matematica",
+    "descritor": "D34",
+    "enunciado": "(Saresp). A presença do computador e da internet continua crescendo nos domicílios brasileiros: a proporção de domicílios com computador no país passou de 35% para 45%, enquanto a presença de internet passou de 27%, em 2010, para 38%, em 2011. Abaixo segue o gráfico que representa as atividades realizadas na internet pelos usuários brasileiros. Com base nos dados apresentados no gráfico, assinale a alternativa correta.",
+    "imagem": "imagens/questoes/q73d34mat.PNG",
+    "alternativas": {
+      "A": "Nem todas as atividades realizadas pelos brasileiros na internet aumentaram de 2010 para 2011.",
+      "B": "A moda das atividades realizadas na internet pelos brasileiros em 2011 foi o Twitter.",
+      "C": "A média aritmética de atividades realizadas pelos brasileiros pela internet em 2011 foi de 60%",
+      "D": "A média aritmética das atividades realizadas com programa de voz, no período 2010-2011, foi de 20%."
+    },
+    "correta": "D"
+  },
+  {
+    "id": 74,
+    "materia": "matematica",
+    "descritor": "D20",
+    "enunciado": "(SABE). O gráfico abaixo representa uma função g(x) definida de [–3, 4] em IR. As raízes dessa função são",
+    "imagem": "imagens/questoes/q74d20mat.PNG",
+    "alternativas": {
+      "A": "– 2, – 1 e 2",
+      "B": "– 1, 0 e 1",
+      "C": "0, 1 e 2",
+      "D": "– 2, 1 e 3"
+    },
+    "correta": "D"
+  },
+  {
+    "id": 75,
+    "materia": "matematica",
+    "descritor": "D20",
+    "enunciado": "(SAEPE). O gráfico abaixo representa a variação da temperatura (°C) em função da hora h, ao longo de um dia. Em qual período desse dia a temperatura foi decrescente?",
+    "imagem": "imagens/questoes/q75d20mat.PNG",
+    "alternativas": {
+      "A": "De 0 até às 12 horas",
+      "B": "De 16 até às 24 horas",
+      "C": "De 12 até às 16 horas",
+      "D": "De 10 até às 20 horas"
+    },
+    "correta": ""
+  },
+  {
+    "id": 76,
+    "materia": "matematica",
+    "descritor": "D20",
+    "enunciado": "(Enem 2011). O terno agronegócio não se refere apenas à agricultura e à pecuária, pois as atividades ligadas a essa produção incluem fornecedores de equipamentos, serviços para a zona rural, industrialização e comercialização dos produtos. Esse gráfico foi usado em um palestra na qual o orador ressaltou uma queda da participação do agronegócio no PIB brasileiro e a posterior recuperação dessa participação, em termos percentuais. Segundo o gráfico, o período de queda ocorreu entre os anos de O gráfico seguinte mostra a participação percentual do agronegócio no PIB brasileiro:",
+    "imagem": "imagens/questoes/q76d20mat.PNG",
+    "alternativas": {
+      "A": "1998 e 2001",
+      "B": "2001 e 2003",
+      "C": "2003 e 2006",
+      "D": "2003 e 2007"
+    },
+    "correta": "C"
+  },
+  {
+    "id": 77,
+    "materia": "matematica",
+    "descritor": "D20",
+    "enunciado": "(SAEPI). Observe abaixo o gráfico de uma função y = f(x) definida no intervalo [– 8, 8]. Essa função é decrescente no intervalo",
+    "imagem": "imagens/questoes/q77d20mat.PNG",
+    "alternativas": {
+      "A": "]2, 5[",
+      "B": "]– 2, 1[",
+      "C": "]– 4, 1[",
+      "D": "]– 6, 2["
+    },
+    "correta": "A"
+  },
+  {
+    "id": 70,
+    "materia": "",
+    "descritor": "D",
+    "enunciado": "",
+    "imagem": "imagens/questoes/qdmat.PNG",
+    "alternativas": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": ""
+    },
+    "correta": ""
+  }
 ]

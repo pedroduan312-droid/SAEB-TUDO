@@ -43,6 +43,10 @@
           Ver questões
         </button>
 
+        <button class="menu-item menu-item-secundario" id="btnSom" type="button">
+          🔊 Som ligado
+        </button>
+
         <button class="menu-item sair" id="btnSairDesafio" type="button">
           Sair do treino
         </button>
@@ -84,14 +88,14 @@
         <div id="conteudoQuiz" class="conteudo-quiz oculto">
           <p id="textoApoio" class="texto-apoio oculto"></p>
 
+          <p id="enunciado" class="enunciado"></p>
+
           <img
             id="imagemQuestao"
             class="imagem-questao oculto"
             alt="Imagem da questão"
           />
-
-          <p id="enunciado" class="enunciado"></p>
-
+          
           <div id="alternativas" class="alternativas"></div>
         </div>
       </main>
@@ -101,6 +105,27 @@
         <button id="btnAcao" disabled type="button">confirmar</button>
         <div class="home-indicator"></div>
       </footer>
+    </div>
+
+    <!-- TRANSIÇÃO FINAL -->
+    <div id="transicaoFinal" class="transicao-final oculto">
+      <div class="transicao-bg-shape shape-1"></div>
+      <div class="transicao-bg-shape shape-2"></div>
+
+      <div class="transicao-conteudo">
+        <div class="check-wrap">
+          <div class="check-circulo">
+            <span class="check-icone">✓</span>
+          </div>
+        </div>
+
+        <h2 class="transicao-titulo">Quiz concluído!</h2>
+        <p class="transicao-subtitulo">Preparando seu desempenho...</p>
+
+        <div class="transicao-barra-externa">
+          <div id="transicaoBarraInterna" class="transicao-barra-interna"></div>
+        </div>
+      </div>
     </div>
 
     <!-- TELA FINAL -->

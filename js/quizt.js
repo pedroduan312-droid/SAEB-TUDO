@@ -4,6 +4,7 @@
   const abrirMenu = document.getElementById("abrirMenu");
   const btnVerQuestoes = document.getElementById("btnVerQuestoes");
   const btnSairDesafio = document.getElementById("btnSairDesafio");
+  const btnSom = document.getElementById("btnSom");
 
   const contador = document.getElementById("contador");
   const progresso = document.getElementById("progresso");
@@ -18,6 +19,9 @@
   const footerBox = document.querySelector(".footer-box");
 
   const splash = document.getElementById("splash");
+
+  const transicaoFinal = document.getElementById("transicaoFinal");
+  const transicaoBarraInterna = document.getElementById("transicaoBarraInterna");
 
   const telaFinal = document.getElementById("telaFinal");
   const tituloFinal = document.getElementById("tituloFinal");
@@ -40,6 +44,7 @@
   const params = new URLSearchParams(window.location.search);
   const materia = (params.get("materia") || "").toLowerCase();
   const modo = (params.get("modo") || "").toLowerCase();
+  const descritor = (params.get("descritor") || "").toUpperCase().trim();
 
   const CONFIG_MODO = {
     rapido: { nome: "Teste Rápido", quantidade: 5, tempoMinutos: 5, tipo: "materia" },
@@ -74,6 +79,18 @@
   let timerLimite = null;
   let quizFinalizado = false;
   let respostasRegistradas = [];
+  let sonsAtivados = true;
+  let marcosConquistaMostrados = [];
+
+  const somAcerto = new Audio("sons/acerto.mp3");
+  const somErro = new Audio("sons/erro.mp3");
+  const somFinal = new Audio("sons/final.mp3");
+  const somConquista = new Audio("sons/conquista.mp3");
+
+  somAcerto.volume = 0.5;
+  somErro.volume = 0.5;
+  somFinal.volume = 0.6;
+  somConquista.volume = 0.65;
 
   function obterConfiguracao() {
     const configuracaoModo = CONFIG_MODO[modo];
@@ -87,7 +104,8 @@
         nomeModo: configuracaoModo.nome,
         quantidade: configuracaoModo.quantidade,
         tempoLimiteSegundos: configuracaoModo.tempoMinutos * 60,
-        tipo: "geral"
+        tipo: "geral",
+        descritor: ""
       };
     }
 
@@ -101,7 +119,8 @@
       nomeModo: configuracaoModo.nome,
       quantidade: configuracaoModo.quantidade,
       tempoLimiteSegundos: configuracaoModo.tempoMinutos * 60,
-      tipo: "materia"
+      tipo: "materia",
+      descritor
     };
   }
 
@@ -113,6 +132,17 @@
         splash?.classList.add("hide");
       }, 1600);
     });
+  }
+
+  function atualizarTextoBotaoSom() {
+    if (!btnSom) return;
+    btnSom.textContent = sonsAtivados ? "🔊 Som ligado" : "🔇 Som desligado";
+  }
+
+  function tocarSom(audio) {
+    if (!sonsAtivados || !audio) return;
+    audio.currentTime = 0;
+    audio.play().catch(() => {});
   }
 
   function abrirMenuLateral() {
@@ -146,8 +176,14 @@
   function atualizarMenuInfo() {
     if (!config) return;
 
-    tituloMenuMateria.textContent = config.nomeMateria;
-    tituloTopo.textContent = config.nomeMateria;
+    let tituloMateria = config.nomeMateria;
+
+    if (config.tipo === "materia" && config.descritor) {
+      tituloMateria += ` - ${config.descritor}`;
+    }
+
+    tituloMenuMateria.textContent = tituloMateria;
+    tituloTopo.textContent = tituloMateria;
     modoMenu.textContent = config.nomeModo;
     quantidadeQuestoesMenu.textContent = String(config.quantidade);
     tempoLimiteMenu.textContent = formatarTempoMenu(config.tempoLimiteSegundos);
@@ -200,14 +236,28 @@
 
   function embaralharCopia(lista) {
     const copia = [...lista];
+
     for (let i = copia.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [copia[i], copia[j]] = [copia[j], copia[i]];
     }
+
     return copia;
   }
 
-  function gerarTreino(questoes, materiaSelecionada, quantidade, modoSelecionado) {
+  function normalizarDescritor(valor) {
+    return String(valor || "").toUpperCase().trim();
+  }
+
+  function filtrarPorDescritor(lista, descritorSelecionado) {
+    const descritorNormalizado = normalizarDescritor(descritorSelecionado);
+
+    if (!descritorNormalizado) return lista;
+
+    return lista.filter((q) => normalizarDescritor(q.descritor) === descritorNormalizado);
+  }
+
+  function gerarTreino(questoes, materiaSelecionada, quantidade, modoSelecionado, descritorSelecionado = "") {
     const configuracaoModo = CONFIG_MODO[modoSelecionado];
 
     if (!configuracaoModo) {
@@ -235,11 +285,17 @@
       return embaralharCopia([...partePortugues, ...parteMatematica]);
     }
 
-    const filtradas = questoes.filter((q) => q.materia === materiaSelecionada);
+    let filtradas = questoes.filter((q) => q.materia === materiaSelecionada);
+    filtradas = filtrarPorDescritor(filtradas, descritorSelecionado);
+
+    const nomeBaseMateria = NOMES_MATERIAS[materiaSelecionada] || "matéria";
+    const nomeExibicao = descritorSelecionado
+      ? `${nomeBaseMateria} (${normalizarDescritor(descritorSelecionado)})`
+      : nomeBaseMateria;
 
     if (filtradas.length < quantidade) {
       throw new Error(
-        `Não há questões suficientes de ${NOMES_MATERIAS[materiaSelecionada]}. Disponíveis: ${filtradas.length}. Necessárias: ${quantidade}.`
+        `Não há questões suficientes de ${nomeExibicao}. Disponíveis: ${filtradas.length}. Necessárias: ${quantidade}.`
       );
     }
 
@@ -278,18 +334,18 @@
     feedbackResposta.classList.add("mostrar");
 
     btnAcao.classList.remove("subindo");
-   feedbackResposta.classList.remove("subindo");
+    feedbackResposta.classList.remove("subindo");
 
-   void btnAcao.offsetWidth;
-   void feedbackResposta.offsetWidth;
+    void btnAcao.offsetWidth;
+    void feedbackResposta.offsetWidth;
 
-   btnAcao.classList.add("subindo");
-   feedbackResposta.classList.add("subindo");
+    btnAcao.classList.add("subindo");
+    feedbackResposta.classList.add("subindo");
 
-setTimeout(() => {
-  btnAcao.classList.remove("subindo");
-  feedbackResposta.classList.remove("subindo");
-}, 300);
+    setTimeout(() => {
+      btnAcao.classList.remove("subindo");
+      feedbackResposta.classList.remove("subindo");
+    }, 300);
   }
 
   function esconderFeedback() {
@@ -297,6 +353,36 @@ setTimeout(() => {
     feedbackResposta.classList.add("oculto");
     feedbackResposta.classList.remove("mostrar", "correto", "errado");
     feedbackResposta.textContent = "";
+  }
+
+  function mostrarMensagemConquista(texto) {
+    const div = document.createElement("div");
+    div.className = "mensagem-conquista";
+    div.textContent = texto;
+
+    document.body.appendChild(div);
+
+    requestAnimationFrame(() => {
+      div.classList.add("mostrar");
+    });
+
+    setTimeout(() => {
+      div.remove();
+    }, 2200);
+  }
+
+  function verificarMarcosDeConquista() {
+    if (treino.length < 10) return;
+
+    const marcos = [5, 10, 15, 20, 25, 30];
+
+    marcos.forEach((marco) => {
+      if (acertos === marco && !marcosConquistaMostrados.includes(marco)) {
+        marcosConquistaMostrados.push(marco);
+        mostrarMensagemConquista(`${marco} acertos! Continue assim!`);
+        tocarSom(somConquista);
+      }
+    });
   }
 
   function criarAlternativa(letra, texto) {
@@ -401,13 +487,18 @@ setTimeout(() => {
 
     if (acertou) {
       acertos++;
+      tocarSom(somAcerto);
+    } else {
+      tocarSom(somErro);
     }
 
     respostasRegistradas.push({
       materia: questao.materia,
+      descritor: normalizarDescritor(questao.descritor),
       correta: acertou
     });
 
+    verificarMarcosDeConquista();
     mostrarFeedback(acertou);
 
     respostaConfirmada = true;
@@ -509,24 +600,46 @@ setTimeout(() => {
     });
   }
 
-  function salvarEstatisticasQuiz() {
-    const chaveStats = "saebTudoEstatisticas";
-
-    let stats = {
+  function obterStatsPadrao() {
+    return {
       quizzes: 0,
       questoes: 0,
       acertos: 0,
       portugues: 0,
-      matematica: 0
+      matematica: 0,
+      descritores: {}
     };
+  }
 
+  function garantirEstruturaStats(stats) {
+    if (!stats || typeof stats !== "object") {
+      return obterStatsPadrao();
+    }
+
+    if (typeof stats.quizzes !== "number") stats.quizzes = 0;
+    if (typeof stats.questoes !== "number") stats.questoes = 0;
+    if (typeof stats.acertos !== "number") stats.acertos = 0;
+    if (typeof stats.portugues !== "number") stats.portugues = 0;
+    if (typeof stats.matematica !== "number") stats.matematica = 0;
+    if (!stats.descritores || typeof stats.descritores !== "object") {
+      stats.descritores = {};
+    }
+
+    return stats;
+  }
+
+  function salvarEstatisticasQuiz() {
+    const chaveStats = "saebTudoEstatisticas";
+
+    let stats = obterStatsPadrao();
     const statsSalvas = localStorage.getItem(chaveStats);
 
     if (statsSalvas) {
       try {
-        stats = JSON.parse(statsSalvas);
+        stats = garantirEstruturaStats(JSON.parse(statsSalvas));
       } catch (erro) {
         console.warn("Erro ao ler estatísticas salvas. Reiniciando.", erro);
+        stats = obterStatsPadrao();
       }
     }
 
@@ -535,18 +648,46 @@ setTimeout(() => {
     stats.acertos += acertos;
 
     respostasRegistradas.forEach((resposta) => {
-      if (!resposta.correta) return;
-
-      if (resposta.materia === "portugues") {
+      if (resposta.materia === "portugues" && resposta.correta) {
         stats.portugues += 1;
       }
 
-      if (resposta.materia === "matematica") {
+      if (resposta.materia === "matematica" && resposta.correta) {
         stats.matematica += 1;
+      }
+
+      const descritorResposta = normalizarDescritor(resposta.descritor);
+
+      if (descritorResposta) {
+        if (!stats.descritores[descritorResposta]) {
+          stats.descritores[descritorResposta] = {
+            total: 0,
+            acertos: 0,
+            erros: 0
+          };
+        }
+
+        stats.descritores[descritorResposta].total += 1;
+
+        if (resposta.correta) {
+          stats.descritores[descritorResposta].acertos += 1;
+        } else {
+          stats.descritores[descritorResposta].erros += 1;
+        }
       }
     });
 
     localStorage.setItem(chaveStats, JSON.stringify(stats));
+  }
+
+  function validarQuestoesMatematica(questoes) {
+    const semDescritor = questoes.filter(
+      (q) => q.materia === "matematica" && !normalizarDescritor(q.descritor)
+    );
+
+    if (semDescritor.length > 0) {
+      console.warn("Há questões de matemática sem descritor:", semDescritor);
+    }
   }
 
   function mostrarTelaFinal() {
@@ -584,9 +725,35 @@ setTimeout(() => {
     animarResultados(acertos, totalQuestoes, tempoTotal, porcentagem);
   }
 
+  function mostrarTransicaoFinal(callback) {
+    if (!transicaoFinal || !transicaoBarraInterna) {
+      if (typeof callback === "function") callback();
+      return;
+    }
+
+    transicaoFinal.classList.remove("oculto");
+    transicaoBarraInterna.style.width = "0%";
+
+    void transicaoBarraInterna.offsetWidth;
+
+    setTimeout(() => {
+      transicaoBarraInterna.style.width = "100%";
+    }, 120);
+
+    tocarSom(somFinal);
+
+    setTimeout(() => {
+      transicaoFinal.classList.add("oculto");
+      if (typeof callback === "function") callback();
+    }, 1900);
+  }
+
   function finalizarQuiz() {
     esconderFeedback();
-    mostrarTelaFinal();
+
+    mostrarTransicaoFinal(() => {
+      mostrarTelaFinal();
+    });
   }
 
   function avancar() {
@@ -607,6 +774,11 @@ setTimeout(() => {
   btnVerQuestoes?.addEventListener("click", () => {
     fecharMenuLateral();
     alert(`Questão ${indiceAtual + 1} de ${treino.length}`);
+  });
+
+  btnSom?.addEventListener("click", () => {
+    sonsAtivados = !sonsAtivados;
+    atualizarTextoBotaoSom();
   });
 
   btnSairDesafio?.addEventListener("click", voltarPaginaSegura);
@@ -650,12 +822,21 @@ setTimeout(() => {
       }
 
       bancoQuestoes = data;
-      treino = gerarTreino(bancoQuestoes, config.materia, config.quantidade, config.modo);
+      validarQuestoesMatematica(bancoQuestoes);
+
+      treino = gerarTreino(
+        bancoQuestoes,
+        config.materia,
+        config.quantidade,
+        config.modo,
+        config.descritor
+      );
 
       respostasRegistradas = [];
       indiceAtual = 0;
       acertos = 0;
       quizFinalizado = false;
+      marcosConquistaMostrados = [];
     } catch (erro) {
       console.error("Erro ao carregar quiz:", erro);
       mostrarCarregamento(
@@ -671,5 +852,6 @@ setTimeout(() => {
   }
 
   iniciarSplash();
+  atualizarTextoBotaoSom();
   carregarQuestoes();
 })();
