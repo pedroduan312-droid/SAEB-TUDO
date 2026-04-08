@@ -628,6 +628,68 @@
     return stats;
   }
 
+  function obterInicioDaSemana(data = new Date()) {
+    const copia = new Date(data);
+    const dia = copia.getDay();
+    const ajuste = dia === 0 ? -6 : 1 - dia;
+    copia.setDate(copia.getDate() + ajuste);
+    copia.setHours(0, 0, 0, 0);
+    return copia;
+  }
+
+  function formatarDataISO(data) {
+    const ano = data.getFullYear();
+    const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const dia = String(data.getDate()).padStart(2, "0");
+    return `${ano}-${mes}-${dia}`;
+  }
+
+  function obterHistoricoPadrao() {
+    return {
+      ultimaAtualizacaoSemana: formatarDataISO(obterInicioDaSemana()),
+      questoesSemana: 0,
+      quizzes: []
+    };
+  }
+
+  function garantirEstruturaHistorico(historico) {
+    if (!historico || typeof historico !== "object") {
+      return obterHistoricoPadrao();
+    }
+
+    if (!historico.ultimaAtualizacaoSemana) {
+      historico.ultimaAtualizacaoSemana = formatarDataISO(obterInicioDaSemana());
+    }
+
+    if (typeof historico.questoesSemana !== "number") {
+      historico.questoesSemana = 0;
+    }
+
+    if (!Array.isArray(historico.quizzes)) {
+      historico.quizzes = [];
+    }
+
+    return historico;
+  }
+
+  function obterConquistasPadrao() {
+    return {
+      desbloqueadas: []
+    };
+  }
+
+  function garantirEstruturaConquistas(conquistas) {
+    if (!conquistas || typeof conquistas !== "object") {
+      return obterConquistasPadrao();
+    }
+
+    if (!Array.isArray(conquistas.desbloqueadas)) {
+      conquistas.desbloqueadas = [];
+    }
+
+    return conquistas;
+  }
+
   function salvarEstatisticasQuiz() {
     const chaveStats = "saebTudoEstatisticas";
 
@@ -659,25 +721,107 @@
       const descritorResposta = normalizarDescritor(resposta.descritor);
 
       if (descritorResposta) {
-        if (!stats.descritores[descritorResposta]) {
-          stats.descritores[descritorResposta] = {
+        const chaveDescritor = `${resposta.materia}_${descritorResposta}`;
+
+        if (!stats.descritores[chaveDescritor]) {
+          stats.descritores[chaveDescritor] = {
             total: 0,
             acertos: 0,
             erros: 0
           };
         }
 
-        stats.descritores[descritorResposta].total += 1;
+        stats.descritores[chaveDescritor].total += 1;
 
         if (resposta.correta) {
-          stats.descritores[descritorResposta].acertos += 1;
+          stats.descritores[chaveDescritor].acertos += 1;
         } else {
-          stats.descritores[descritorResposta].erros += 1;
+          stats.descritores[chaveDescritor].erros += 1;
         }
       }
     });
 
     localStorage.setItem(chaveStats, JSON.stringify(stats));
+  }
+
+  function salvarHistoricoQuiz(porcentagem, tempoTotal) {
+    const chaveHistorico = "saebTudoHistorico";
+
+    let historico = obterHistoricoPadrao();
+    const historicoSalvo = localStorage.getItem(chaveHistorico);
+
+    if (historicoSalvo) {
+      try {
+        historico = garantirEstruturaHistorico(JSON.parse(historicoSalvo));
+      } catch (erro) {
+        console.warn("Erro ao ler histórico salvo. Reiniciando.", erro);
+        historico = obterHistoricoPadrao();
+      }
+    }
+
+    const semanaAtual = formatarDataISO(obterInicioDaSemana());
+
+    if (historico.ultimaAtualizacaoSemana !== semanaAtual) {
+      historico.ultimaAtualizacaoSemana = semanaAtual;
+      historico.questoesSemana = 0;
+    }
+
+    historico.questoesSemana += treino.length;
+
+    historico.quizzes.push({
+      data: new Date().toISOString(),
+      porcentagem,
+      acertos,
+      total: treino.length,
+      tempo: tempoTotal,
+      materia: config?.materia || "geral",
+      modo: config?.modo || "",
+      label: `quiz ${historico.quizzes.length + 1}`
+    });
+
+    if (historico.quizzes.length > 20) {
+      historico.quizzes = historico.quizzes.slice(-20);
+    }
+
+    localStorage.setItem(chaveHistorico, JSON.stringify(historico));
+  }
+
+  function salvarConquistasQuiz(porcentagem) {
+    const chaveConquistas = "saebTudoConquistas";
+
+    let conquistas = obterConquistasPadrao();
+    const conquistasSalvas = localStorage.getItem(chaveConquistas);
+
+    if (conquistasSalvas) {
+      try {
+        conquistas = garantirEstruturaConquistas(JSON.parse(conquistasSalvas));
+      } catch (erro) {
+        console.warn("Erro ao ler conquistas salvas. Reiniciando.", erro);
+        conquistas = obterConquistasPadrao();
+      }
+    }
+
+    const desbloqueadas = new Set(conquistas.desbloqueadas);
+
+    if (treino.length > 0) desbloqueadas.add("primeiro_quiz");
+    if (acertos >= 5) desbloqueadas.add("cinco_acertos_quiz");
+    if (acertos >= 10) desbloqueadas.add("dez_acertos_quiz");
+    if (porcentagem >= 70) desbloqueadas.add("acertou_70");
+
+    const materiasRespondidas = new Set(respostasRegistradas.map((r) => r.materia));
+    if (materiasRespondidas.has("matematica")) desbloqueadas.add("primeiro_quiz_matematica");
+    if (materiasRespondidas.has("portugues")) desbloqueadas.add("primeiro_quiz_portugues");
+
+    if ((config?.materia === "portugues" || materiasRespondidas.has("portugues")) && treino.length > 0) {
+      desbloqueadas.add("primeiro_quiz_portugues");
+    }
+
+    if ((config?.materia === "matematica" || materiasRespondidas.has("matematica")) && treino.length > 0) {
+      desbloqueadas.add("primeiro_quiz_matematica");
+    }
+
+    conquistas.desbloqueadas = [...desbloqueadas];
+    localStorage.setItem(chaveConquistas, JSON.stringify(conquistas));
   }
 
   function validarQuestoesMatematica(questoes) {
@@ -709,6 +853,8 @@
     const resultadoFinal = obterResultadoFinal(porcentagem);
 
     salvarEstatisticasQuiz();
+    salvarHistoricoQuiz(porcentagem, tempoTotal);
+    salvarConquistasQuiz(porcentagem);
 
     tituloFinal.textContent = resultadoFinal.titulo;
 

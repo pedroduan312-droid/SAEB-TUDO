@@ -33,15 +33,19 @@ document.querySelectorAll(".nav-item").forEach(btn => {
   btn.onclick = () => {
     const page = btn.dataset.page;
 
-    if(page === "home"){
+    if (page === "home") {
       window.location.href = "home.html";
     }
 
-    if(page === "simulados"){
+    if (page === "simulados") {
       window.location.href = "simulados.html";
     }
 
-    if(page === "perfil"){
+     if (page === "desempenho") {
+      window.location.href = "desempenho.html";
+    }
+
+    if (page === "perfil") {
       window.location.href = "perfil.html";
     }
   };

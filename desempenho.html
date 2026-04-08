@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desempenho</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/desempenho.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="topo-desempenho">
+      <div class="topo-imagem">
+      </div>
+    </header>
+
+    <main class="conteudo">
+
+      <!-- META SEMANAL -->
+      <section class="card meta-card animar">
+        <h2>Meta Semanal</h2>
+
+        <div class="meta-barra-externa">
+          <div id="metaBarraInterna" class="meta-barra-interna"></div>
+          <span id="metaTexto" class="meta-texto">0/30</span>
+        </div>
+      </section>
+
+      <!-- RESUMO + GRÁFICOS -->
+      <section class="card resumo-card animar">
+        <div class="resumo-topo">
+          <div class="resumo-item">
+            <span id="totalQuizzes" class="resumo-numero">0</span>
+            <span class="resumo-label">quizzes</span>
+          </div>
+
+          <div class="resumo-divisor"></div>
+
+          <div class="resumo-item">
+            <span id="totalQuestoes" class="resumo-numero">0</span>
+            <span class="resumo-label">questões</span>
+          </div>
+
+          <div class="resumo-divisor"></div>
+
+          <div class="resumo-item">
+            <span id="totalAcertos" class="resumo-numero">0</span>
+            <span class="resumo-label">acertos</span>
+          </div>
+        </div>
+
+        <div class="graficos-area">
+          <div class="grafico-circular-box">
+            <div id="graficoCircular" class="grafico-circular">
+              <div class="grafico-circular-centro">
+                <span id="aproveitamentoMedio" class="aproveitamento-numero">0%</span>
+                <span class="aproveitamento-label">aproveitamento<br>médio</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grafico-linha-box">
+            <div class="linhas-grade">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <svg id="graficoLinhaSvg" class="grafico-linha-svg" viewBox="0 0 260 150" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#c8f1ef" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#c8f1ef" stop-opacity="0.15"/>
+                </linearGradient>
+              </defs>
+
+              <path id="graficoArea" fill="url(#areaGradient)" stroke="none"></path>
+              <path id="graficoLinha" fill="none" stroke="#f4a321" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+
+              <g id="graficoPontos"></g>
+              <g id="graficoGuias"></g>
+            </svg>
+
+            <div class="labels-quizzes">
+              <span id="labelQuiz1">quiz 1</span>
+              <span id="labelQuiz2">quiz 2</span>
+              <span id="labelQuiz3">quiz 3</span>
+              <span id="labelQuiz4">quiz 4</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MATÉRIAS E CONTEÚDOS -->
+      <section class="dupla-cards">
+        <section class="card materia-card animar">
+          <h3>Desempenho por matéria</h3>
+
+          <div class="materia-conteudo">
+            <div class="materia-livro"></div>
+
+            <div class="materia-textos">
+              <p><strong id="pctPortugues">0%</strong> Português</p>
+              <p><strong id="pctMatematica">0%</strong> Matemática</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card revisar-card animar">
+          <h3>Conteúdos para revisar</h3>
+
+          <div class="revisar-lista">
+            <div class="revisar-item">
+              <span id="conteudoRevisar1">Faça mais quizzes para gerar recomendações</span>
+            </div>
+            <div class="revisar-item">
+              <span id="conteudoRevisar2">-</span>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- CONQUISTAS -->
+     <section class="card conquistas-card animar">
+
+  <div class="conquistas-topo">
+    <h2>Suas Conquistas</h2>
+    <button id="btnMaisConquistas">mais</button>
+  </div>
+
+  <div id="gridConquistas" class="grid-conquistas"></div>
+
+</section>
+
+    </main>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <button class="nav-item" data-page="home">
+        <img src="imagens/home.svg" alt="Home">
+      </button>
+
+      <button class="nav-item" data-page="simulados">
+        <img src="imagens/simulados.svg" alt="Simulados">
+      </button>
+
+      <button class="nav-item ativo" data-page="desempenho">
+        <img src="imagens/desempenho-active.svg" alt="Desempenho">
+      </button>
+
+      <button class="nav-item" data-page="perfil">
+        <img src="imagens/perfil.svg" alt="Perfil">
+      </button>
+    </nav>
+
+  </div>
+
+  <script src="js/desempenho.js"></script>
+</body>
+</html>

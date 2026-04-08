@@ -72,6 +72,10 @@ document.querySelectorAll(".nav-item").forEach(btn => {
       window.location.href = "simulados.html";
     }
 
+     if (page === "desempenho") {
+      window.location.href = "desempenho.html";
+    }
+
     if (page === "perfil") {
       window.location.href = "perfil.html";
     }
