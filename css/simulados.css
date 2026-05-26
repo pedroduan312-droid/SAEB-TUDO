@@ -24,43 +24,38 @@ body{
   border-radius:0;
 }
 
-/* TOPO ROSA */
-
-.topo-rosa{
-  position:absolute;
-  
-  top:0;
-  left:0;
-
-  width:100%;
-  height:52px;
-
-  background:#f83c72;
-
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-
-  overflow:hidden;
-
-  z-index:5;
+/* TOPO */
+.topo-desempenho {
+  width: 100%;
+  background: #1438a6;
 }
 
-.topo-rosa span{
-  width:66px;
-  height:34px;
-  background:#ffffff;
-  border-top-left-radius:34px;
-  border-top-right-radius:34px;
-  flex-shrink:0;
+.topo-imagem {
+  width: 100%;
+  min-height: 180px;
+  position: relative; 
+  background-color:#ffffff; 
+  overflow: hidden;
 }
+
+.topo-imagem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../imagens/topo-simulados.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 
 /* CONTEÚDO */
 
 .conteudo{
   flex:1;
   overflow-y:auto;
-  padding:70px 20px 95px 20px;
+  padding:20px 20px 95px 20px;
   background:#ffffff;
 }
 
@@ -153,10 +148,6 @@ scrollbar-width:none;
 
 .matematica{
   background-image:url("../imagens/simulados-matematica.png");
-}
-
-.rapido{
-  background-image:url("../imagens/rapido-card.png");
 }
 
 .saeb{

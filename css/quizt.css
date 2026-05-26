@@ -209,6 +209,7 @@ body {
   font-weight: 700;
   line-height: 1.45;
   color: #1b1b1d;
+  white-space: pre-line;
 }
 
 .imagem-questao {
@@ -228,6 +229,7 @@ body {
   font-weight: 700;
   line-height: 1.45;
   color: #1a1a1c;
+  white-space: pre-line;
 }
 
 /* ALTERNATIVAS */
@@ -282,6 +284,7 @@ body {
   font-size: 0.82rem;
   line-height: 1.25rem;
   font-weight: 700;
+  white-space: pre-line;
 }
 
 .alternativa .letra.A { background: var(--orange); }
@@ -292,23 +295,24 @@ body {
 .alternativa.selecionada .conteudo-alternativa {
   transform: translateY(-1px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.10);
-  border-color: rgba(0, 0, 0, 0.05);
+  background-color: #b546ff67;
+  border-color: #B546FF
 }
 
 .alternativa.correta .conteudo-alternativa {
-  background: #e7edd5;
+  background: #e0f3a5;
   border-color: #b7d14c;
   box-shadow: 0 8px 16px rgba(183, 209, 76, 0.15);
 }
 
 .alternativa.errada .conteudo-alternativa {
-  background: #f5dbe3;
+  background: #f7c8d6;
   border-color: #ef3a72;
 }
 
 .alternativa.correta .texto,
 .alternativa.errada .texto {
-  color: #ffffff;
+  color: #363636;
 }
 
 /* FOOTER */

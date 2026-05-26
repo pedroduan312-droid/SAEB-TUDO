@@ -207,7 +207,7 @@ function animarNumero(elemento, fim, duracao = 1000, sufixo = "") {
   function passo(agora) {
     const progresso = Math.min((agora - tempoInicial) / duracao, 1);
     const valorAtual = Math.round(inicio + (fim - inicio) * progresso);
-    element.textContent = `${valorAtual}${sufixo}`;
+    elemento.textContent = `${valorAtual}${sufixo}`;
 
     if (progresso < 1) {
       requestAnimationFrame(passo);
@@ -236,14 +236,17 @@ function animarGraficoCircular(percentual) {
     atual = Math.round(percentual * progresso);
 
     aproveitamentoMedioEl.textContent = `${atual}%`;
-    graficoCircular.style.background = `
-      conic-gradient(
-        #214be5 0 ${atual * 1}%,
-        #1695d4 ${atual * 1}%,
-        #1695d4 ${atual * 1}%,
-        #f78b26 0 100%
-      )
-    `;
+ graficoCircular.style.background = `
+  conic-gradient(
+    #009BCD 0%,
+    #0F76E0 ${atual / 2}%,
+    #1E50F3 ${atual}%,
+
+    #FD7228 ${atual}%,
+    #FE912E ${(atual + (100 - atual)/2)}%,
+    #FFB133 100%
+  )
+`;
 
     if (progresso < 1) {
       requestAnimationFrame(passo);
@@ -303,12 +306,14 @@ function desenharGraficoLinha(ultimosQuizzes) {
     circulo.setAttribute("cy", p.y);
     circulo.setAttribute("r", "6");
     circulo.setAttribute("fill", "#fff");
-    circulo.setAttribute("stroke", "#f4a321");
+    circulo.setAttribute("stroke", "#FFB133");
     circulo.setAttribute("stroke-width", "4");
     graficoPontos.appendChild(circulo);
   });
 
-  labelQuiz1.textContent = "quiz 1";
+ [labelQuiz1, labelQuiz2, labelQuiz3, labelQuiz4].forEach((el, i) => {
+  el.textContent = dados[i]?.label || `quiz ${i+1}`;
+});
   labelQuiz2.textContent = "quiz 2";
   labelQuiz3.textContent = "quiz 3";
   labelQuiz4.textContent = "quiz 4";

@@ -13,7 +13,7 @@ align-items:center;
 
 font-family:'Montserrat',sans-serif;
 
-background-color:#1438a6
+background-color:#01091B
 
 }
 
@@ -43,6 +43,8 @@ color:white;
 
 }
 
+
+
 .perfil img{
 
 width:45px;
@@ -66,16 +68,25 @@ font-weight:600;
 
 }
 
+.logo-app {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50x; /* ajusta conforme quiser */
+  height: 50px;
+  object-fit: contain;
+}
+
 .conteudo{
 
 background:white;
 
-margin-top:10px;
+margin-top:100px;
 
 flex:1;
 
-border-top-left-radius:15px;
-border-top-right-radius:15px;
+border-top-left-radius:0px;
+border-top-right-radius:0px;
 
 padding:15px 0 90px 0; /* espaço para navbar */
 
@@ -83,19 +94,34 @@ box-shadow:0 -10px 30px rgba(0,0,0,0.15);
 
 position:relative;
 
+.icone-seta{
+width:14px;
+height:14px;
+margin-left:6px;
+
+transition:.2s;
+}
+
+button{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:6px;
+}
+
 }
 
 /* DESAFIO */
 
 .desafio-card{
 
-margin:10px 20px;
+margin:-110px 20px;
 
-height:140px;
+height:200px;
 
-border-radius:18px;
+border-radius:14px;
 
-background-image:url("../imagens/desafio-card.png");
+background-image:url("../imagens/card\ dsdiario.png");
 background-size:cover;
 background-position:center;
 
@@ -111,16 +137,21 @@ animation:subir .6s ease;
 
 .desafio-card button{
 
-padding:10px 18px;
+font-family: 'Montserrat', sans-serif;
+
+margin-left:14px;
+
+padding:8px 14px;
 
 border:none;
 
 border-radius:22px;
 
-background:#1438a6;
+background:#06102C;
 
-color:#D8F459;
+color:#ffffff;
 
+font-size: 12px;
 font-weight:600;
 
 cursor:pointer;
@@ -139,7 +170,7 @@ transform:scale(.95);
 
 .materias{
 
-padding:0 20px;
+padding:110px 20px;
 
 }
 
@@ -147,7 +178,7 @@ padding:0 20px;
 
 margin:15px 0;
 
-font-size:17px;
+font-size:16px;
 
 font-weight:600;
 
@@ -165,9 +196,9 @@ gap:12px;
 
 flex:1;
 
-height:175px;
+height:210px;
 
-border-radius:18px;
+border-radius:14px;
 
 padding:15px;
 
@@ -219,13 +250,18 @@ color:white;
 
 .btnMateria{
 
+  font-family: 'Montserrat', sans-serif;
+
+color:#ffffff ;
+
+margin-bottom:25px ;
 border:none;
 
 padding:6px 14px;
 
 border-radius:20px;
 
-background:#c7e432;
+background:#01091B;
 
 font-weight:600;
 
@@ -243,6 +279,8 @@ transform:scale(.92);
 
 .rapido{
 
+margin-top: -100px;
+
 padding:0 20px;
 
 }
@@ -251,7 +289,7 @@ padding:0 20px;
 
 height:140px;
 
-border-radius:18px;
+border-radius:14px;
 
 padding:15px;
 

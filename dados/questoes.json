@@ -1,109 +1,186 @@
 [
   {
-    "id": 1,
+  "id": 1,
+  "materia": "portugues",
+  "descritor": "",
+  "textoApoio": "Professor infantil viraliza ao mostrar interações inusitadas com alunos em Fortaleza\n\nTio Paulo mostra rotina com interações engraçadas de alunos em escola de Fortaleza.\n\n“Você vai ser o que quando crescer?”, “Você não ganha dinheiro?”, “Você trabalha ou fica só na escola?”. As perguntas seriam até comuns, mas ganham um tom de humor quando feitas por crianças a um professor. Assim são os roteiros improvisados dos vídeos de Paulo Maia, também conhecido como “Tio Paulo”. As interações inusitadas viralizam nas redes sociais, ultrapassando os milhões de visualizações, e mostram a rotina dele como professor da educação infantil em Fortaleza.\n\n“A gente vive situações engraçadas todos os dias quando trabalha com crianças porque elas são muito espontâneas, não têm ‘papas na língua’. Tudo é muito genuíno”, comentou o professor. “Até que em um dia, uma aluna perguntou umas coisas muito engraçadas e pensei ‘vou gravar e vou pedir para ela repetir’”, explicou Tio Paulo sobre a decisão de filmar os momentos engraçados que vive em sala de aula.\n\nEle disse que nunca imaginou que os vídeos pudessem viralizar. “Eu postei antes de ir para a escola. Vim trabalhar, passei o dia. Quando foi à noite, que cheguei em casa, o vídeo já tinha centenas de milhares de visualizações”, lembrou o professor. Esse primeiro vídeo chegou a 1 milhão de visualizações. [...]\n\nPINUSA, Samuel. Professor infantil viraliza ao mostrar interações inusitadas com alunos em Fortaleza. G1, 2024.",
+  "enunciado": "Entende-se desse texto que",
+  "alternativas": {
+    "A": "o professor gostaria de trabalhar como ator.",
+    "B": "o professor inicia seu dia com atividades físicas.",
+    "C": "o professor posta sua rotina com os alunos.",
+    "D": "os alunos adoram as redes sociais."
+  },
+  "correta": "C"
+},
+  {
+    "id": 2,
     "materia": "portugues",
-    "enunciado": "Qual é o plural de 'pão'?",
+    "textoApoio": "A Menina e o Dragão – Uma aventura mágica e encantadora para todas as idades\n\nNuma produção conjunta entre China e Espanha, A Menina e o Dragão aterrissa nos cinemas com a ousada missão de adaptar a saga de livros da autora Carole Wilkinson. Ofilme é uma verdadeira ponte entre culturas, trazendo uma animação vibrante que mesclao melhor do Ocidente e do Oriente. [...]\nNo Brasil, a protagonista Ping ganha vida na voz da atriz Bella Chiang, já conhecida pela garotada por suas atuações em As Aventuras de Poliana e Escola de Gênios.\nVisualmente estonteante, A Menina e o Dragão nos transporta diretamente para a China milenar com cenários deslumbrantes e uma animação de tirar o fôlego. A Espanha, que já tem um histórico respeitável em animações, coloca todo o seu primor na produção, garantindo uma qualidade que não fica atrás dos grandes estúdios americanos.\nOs dragões aqui possuem uma construção fascinante. Danzi, por exemplo, segue aestética dos dragões orientais [...]. Embora a amizade entre humanos e dragões já tenha sido explorada em outras obras, o frescor cultural desta produção traz uma profundidade inédita à relação. [...]\n Carismático e com um sabor de continuação, A Menina e o Dragão aborda a forçainterior e o poder da amizade. É um filme para todas as idades, que acerta tanto nas cenas de ação quanto em sua trama, deixando o público ansioso por uma possível sequência no futuro.\n\nPECCILLI, Giuliano. Crítica | A Menina e o Dragão – Uma aventura mágica e encantadora para todas as idades. JWave, 2024.",
+    "enunciado": "Nesse texto, na palavra “garotada” (2º parágrafo), o sufixo “-ada” foi usado para",
     "alternativas": {
-      "A": "pãos",
-      "B": "pões",
-      "C": "pães",
-      "D": "paes"
+      "A": "apontar duplicidade.",
+      "B": "demonstrar oposição.",
+      "C": "indicar grupo.",
+      "D": "marcar repetição."
     },
     "correta": "C"
   },
   {
-    "id": 2,
+    "id": 3,
     "materia": "portugues",
-    "enunciado": "Qual dessas palavras é um verbo?",
+    "textoApoio": "A Menina e o Dragão – Uma aventura mágica e encantadora para todas as idades\n\nNuma produção conjunta entre China e Espanha, A Menina e o Dragão aterrissa nos cinemas com a ousada missão de adaptar a saga de livros da autora Carole Wilkinson. Ofilme é uma verdadeira ponte entre culturas, trazendo uma animação vibrante que mesclao melhor do Ocidente e do Oriente. [...]\nNo Brasil, a protagonista Ping ganha vida na voz da atriz Bella Chiang, já conhecida pela garotada por suas atuações em As Aventuras de Poliana e Escola de Gênios.\nVisualmente estonteante, A Menina e o Dragão nos transporta diretamente para a China milenar com cenários deslumbrantes e uma animação de tirar o fôlego. A Espanha, que já tem um histórico respeitável em animações, coloca todo o seu primor na produção, garantindo uma qualidade que não fica atrás dos grandes estúdios americanos.\nOs dragões aqui possuem uma construção fascinante. Danzi, por exemplo, segue aestética dos dragões orientais [...]. Embora a amizade entre humanos e dragões já tenha sido explorada em outras obras, o frescor cultural desta produção traz uma profundidade inédita à relação. [...]\n Carismático e com um sabor de continuação, A Menina e o Dragão aborda a forçainterior e o poder da amizade. É um filme para todas as idades, que acerta tanto nas cenas de ação quanto em sua trama, deixando o público ansioso por uma possível sequência no futuro.\n\nPECCILLI, Giuliano. Crítica | A Menina e o Dragão – Uma aventura mágica e encantadora para todas as idades. JWave, 2024.",
+    "enunciado": "Nesse texto, no trecho “... uma animação de tirar o fôlego.” (3º parágrafo), a expressão em destaque foi usada para",
     "alternativas": {
-      "A": "andar",
-      "B": "mesa",
-      "C": "janela",
-      "D": "porta"
+      "A": "demonstrar a alta qualidade da produção do filme.",
+      "B": "indicar a coragem dos personagens do filme.",
+      "C": "mostrar a emoção da escritora ao publicar livros.",
+      "D": "reforçar a potência da voz da protagonista do filme."
     },
     "correta": "A"
   },
   {
-    "id": 3,
-    "materia": "portugues",
-    "enunciado": "Qual palavra está escrita corretamente?",
-    "alternativas": {
-      "A": "Excessão",
-      "B": "Exceção",
-      "C": "Exceçao",
-      "D": "Exessão"
-    },
-    "correta": "B"
-  },
-  {
     "id": 4,
     "materia": "portugues",
-    "enunciado": "Qual dessas palavras tem acento?",
+    "textoApoio": "A Menina e o Dragão – Uma aventura mágica e encantadora para todas as idades\n\nNuma produção conjunta entre China e Espanha, A Menina e o Dragão aterrissa nos cinemas com a ousada missão de adaptar a saga de livros da autora Carole Wilkinson. Ofilme é uma verdadeira ponte entre culturas, trazendo uma animação vibrante que mesclao melhor do Ocidente e do Oriente. [...]\nNo Brasil, a protagonista Ping ganha vida na voz da atriz Bella Chiang, já conhecida pela garotada por suas atuações em As Aventuras de Poliana e Escola de Gênios.\nVisualmente estonteante, A Menina e o Dragão nos transporta diretamente para a China milenar com cenários deslumbrantes e uma animação de tirar o fôlego. A Espanha, que já tem um histórico respeitável em animações, coloca todo o seu primor na produção, garantindo uma qualidade que não fica atrás dos grandes estúdios americanos.\nOs dragões aqui possuem uma construção fascinante. Danzi, por exemplo, segue aestética dos dragões orientais [...]. Embora a amizade entre humanos e dragões já tenha sido explorada em outras obras, o frescor cultural desta produção traz uma profundidade inédita à relação. [...]\n Carismático e com um sabor de continuação, A Menina e o Dragão aborda a forçainterior e o poder da amizade. É um filme para todas as idades, que acerta tanto nas cenas de ação quanto em sua trama, deixando o público ansioso por uma possível sequência no futuro.\n\nPECCILLI, Giuliano. Crítica | A Menina e o Dragão – Uma aventura mágica e encantadora para todas as idades. JWave, 2024.",
+    "enunciado": "Nesse texto, o trecho que apresenta uma opinião é:",
     "alternativas": {
-      "A": "cafe",
-      "B": "sofa",
-      "C": "lápis",
-      "D": "mesa"
+      "A": "“No Brasil, a protagonista Ping ganha vida na voz da atriz Bella Chiang,...”. (2ºparágrafo)",
+      "B": "“A Espanha, que já tem um histórico respeitável em animações,...”. (3º parágrafo)",
+      "C": "“Os dragões aqui possuem uma construção fascinante.”. (4º parágrafo)",
+      "D": "“Danzi, por exemplo, segue a estética dos dragões orientais...”. (4º parágrafo)"
     },
     "correta": "C"
   },
   {
     "id": 5,
     "materia": "portugues",
-    "enunciado": "Qual dessas palavras é um substantivo?",
+    "textoApoio": "Leia o texto abaixo\n\nCaminho\n\nTenho sonhos cruéis; n’alma doente\nSinto um vago receio prematuro.\nVou a medo na aresta do futuro,\nEmbebido em saudades do presente...\n\nSaudades desta dor que em vão procuro\nDo peito afugentar bem rudemente,\nDevendo, ao desmaiar sobre o poente,\nCobrir-me o coração dum véu escuro!...\n\nPorque a dor, esta falta d’harmonia,\nToda a luz desgrenhada que alumia\nAs almas doidamente, o céu d’agora,\n\nSem ela o coração é quase nada:\nUm sol onde expirasse a madrugada,\nPorque é só madrugada quando chora.\n\nPESSANHA, Camilo. Caminho. Escrita. Org.\n\nNesse texto, no trecho “... ao desmaiar sobre o poente,...” (2º parágrafo), a figura delinguagem foi usada para", 
     "alternativas": {
-      "A": "correr",
-      "B": "feliz",
-      "C": "cidade",
-      "D": "rápido"
+      "A": "apontar que o eu lírico estava perdido.",
+      "B": "demonstrar que o eu lírico estava emocionado.",
+      "C": "enfatizar que o eu lírico desejava fugir.",
+      "D": "indicar que o eu lírico adormeceu ao anoitecer."
     },
-    "correta": "C"
+    "correta": "D"
   },
   {
     "id": 6,
     "materia": "portugues",
-    "enunciado": "Qual dessas palavras é um adjetivo?",
+    "enunciado": "Leia o texto abaixo.\n\nPelé não cabe na lista de maiores jogadores da história\n\nAntes da Copa do Mundo do Catar, a revista FourFourTwo publicou uma lista dos 100 maiores jogadores de futebol da história. Lionel Messi já liderava, mesmo sem ainda ter conduzido seu país ao título mundial. Era seguido por Diego Armando Maradona e Cristiano Ronaldo. Pelé aparece apenas em quarto lugar. O tempo passou. Os feitos milimetricamente gravados, transmitidos e repetidos de Messi e Cristiano se impuseram sobre as imagens desbotadas do Rei do futebol. Maradona chegou a ser assistido ao vivo por quem hoje elabora esse tipo de ranking e sua espantosa habilidade com a bola está fresca na memória.\nA lista da FourFourTwo é discutível. Cristiano não liderou seu time na conquista de uma Copa do Mundo. Pelé comandou o Brasil em duas e ganhou três, Maradona e, agora, Messi protagonizaram apenas um mundial cada. Em número de gols, o brasileiro também ainda está por ser superado – fez mais de mil, enquanto o argentino mais novo se aproxima dos 800, pouco menos que os mais de 810 do português. Maradona passa longe dos três, com 345 gols.\nContando apenas os jogos oficiais, Messi e Cristiano já ultrapassaram os 757 gols de Pelé, mas perdem na média: o Rei chegou à espantosa marca de 0,92 (quase um) por jogo, enquanto os rivais giram em torno de 0,70 e 0,80 por partida – também muito impressionante. Maradona tem meio gol por jogo no currículo. Diante dos números, é possível argumentar que o futebol de hoje é muito mais competitivo, exige mais preparo atlético e disciplina tática, o que desfavoreceria o brasileiro. [...]\nPelé é o mito fundador do craque. Seus feitos são a referência. Pelos gols que fez, os dribles que desenhou pelo meio das defesas adversárias, a potência inabalável das arrancadas, pela longevidade de sua carreira e a firmeza de seu corpo diante de pancadas inclementes [...]. Compará‑lo aos craques que vieram depois [...] não faz sentido. Maradona, Messi, Cristiano Ronaldo, Zico, Cruyff, Beckenbauer, Puskas, Garrincha, Ronaldo, Ronaldinho Gaúcho, Romário e Zidane estão entre os melhores jogadores da história. E talvez Messi se estabeleça como o melhor deles. Mas Pelé é o melhor jogador para além da história, fora do tempo e do espaço. Pelé é o futebol.\n\nBORGES, Rodolfo. Pelé não cabe na lista de maiores jogadores da história. 2022\n\nNesse texto, o autor defende a ideia de que ",
     "alternativas": {
-      "A": "bonito",
-      "B": "escola",
-      "C": "andar",
-      "D": "cidade"
+      "A": "o futebol contemporâneo é mais competitivo.",
+      "B": "Pelé não deve ser comparado a nenhum jogador.",
+      "C": "Pelé fez os melhores dribles contra os adversários",
+      "D": "Pelé foi o jogador que mais marcou gols."
     },
-    "correta": "A"
+    "correta": "B"
   },
+{
+  "id": 7,
+  "materia": "portugues",
+  "enunciado": "Leia os textos abaixo e responda a questão.\n\n  Texto 1\n  Água, o ouro do século XXI\n\nA água, também chamada de ouro azul, é um recurso natural fundamental para todos os seres vivos. O uso sustentável deve ser incorporado pela população, como forma de garantir sua disponibilidade. Apesar de ser recurso renovável, está cada vez mais escasso. A escassez compromete o abastecimento de milhões de pessoas.\nNo Brasil, país de dimensões continentais, com muitas bacias hidrográficas, berço de rios extensos e perenes, sempre se manteve o pensamento de que a água é abundante e inesgotável, com exceção para a região semiárida do Nordeste que amarga com as secas há décadas. [...]\nA água no mundo é abundante, mas 97% dela é água do mar e apenas 3% são água doce ou própria para o consumo humano e industrial. De acordo com o Serviço Geológico do Brasil, dos 3% de água doce, mais da metade (1,75% do total) é congelada, localizada nos polos, e outra parte (1,243% do total) é água subterrânea, cujo aproveitamento demanda mais recursos financeiros. [...]\n\nTexto 2\nSegundo Unesco, mundo precisará mudar consumo de água\n\n Relatório da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (Unesco) mostra que há no mundo água suficiente para suprir as necessidades de crescimento do consumo, “mas não sem uma mudança dramática no uso, gerenciamento e compartilhamento.” [...]\n De acordo com a organização, nas últimas décadas, o consumo de água cresceu duas vezes mais do que a população, e a estimativa é que a demanda cresça ainda 55% até 2050. Mantendo os atuais padrões de consumo, em 2030, o mundo enfrentará um déficit no abastecimento de água de 40%. [...]\n\nCom relação à disponibilidade de água, os autores desses textos apresentam opiniões",
+  "alternativas": {
+    "A": "complementares.",
+    "B": "equivocadas.",
+    "C": "incoerentes.",
+    "D": "infundadas."
+  },
+  "correta": "A"
+},
+{
+  "id": 8,
+  "materia": "portugues",
+  "enunciado": "Leia os textos abaixo e responda a questão.\n\n  Texto 1\n  Água, o ouro do século XXI\n\nA água, também chamada de ouro azul, é um recurso natural fundamental para todos os seres vivos. O uso sustentável deve ser incorporado pela população, como forma de garantir sua disponibilidade. Apesar de ser recurso renovável, está cada vez mais escasso. A escassez compromete o abastecimento de milhões de pessoas.\nNo Brasil, país de dimensões continentais, com muitas bacias hidrográficas, berço de rios extensos e perenes, sempre se manteve o pensamento de que a água é abundante e inesgotável, com exceção para a região semiárida do Nordeste que amarga com as secas há décadas. [...]\nA água no mundo é abundante, mas 97% dela é água do mar e apenas 3% são água doce ou própria para o consumo humano e industrial. De acordo com o Serviço Geológico do Brasil, dos 3% de água doce, mais da metade (1,75% do total) é congelada, localizada nos polos, e outra parte (1,243% do total) é água subterrânea, cujo aproveitamento demanda mais recursos financeiros. [...]\n\nTexto 2\nSegundo Unesco, mundo precisará mudar consumo de água\n\n Relatório da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (Unesco) mostra que há no mundo água suficiente para suprir as necessidades de crescimento do consumo, “mas não sem uma mudança dramática no uso, gerenciamento e compartilhamento.” [...]\n De acordo com a organização, nas últimas décadas, o consumo de água cresceu duas vezes mais do que a população, e a estimativa é que a demanda cresça ainda 55% até 2050. Mantendo os atuais padrões de consumo, em 2030, o mundo enfrentará um déficit no abastecimento de água de 40%. [...]\n\nNo primeiro parágrafo do Texto 2, qual estratégia argumentativa o autor utiliza para defender sua ideia?  ",
+  "alternativas": {
+    "A": "Acontecimento do cotidiano",
+    "B": "Argumento de autoridade",
+    "C": "Fatos históricos",
+    "D": "Ideias de senso comum"
+  },
+  "correta": "B"
+},
+{
+  "id": 9,
+  "materia": "portugues",
+  "enunciado": "Leia o texto abaixo.\n\nO sétimo gato\n\nO menino ganhou um gato.\nEra um gato muito engraçado.\nE o mais engraçado do gato era que ele pensava que fosse francês.\nO menino botou o nome de “Bolinha” no gato, mas o gato não atendia quando o chamavam de “Bolinha”. Só atendia quando o chamavam de “Pierre” [...]. E o gato não dizia “Miau”. Dizia “Miu”.\nO menino ganhou outro gato, mais engraçado ainda. Este pensava que fosse Alemão. E fez cara feia quando o menino o chamou de “Chuchu”. Podiam chamá-lo de tudo. De “Hans”. De “Rudolf”. [...] Tudo menos “Chuchu”. E o gato não dizia “Miau”. Dizia “Acht”. [...]\nO menino ganhou um terceiro gato, ainda mais engraçado. Este pensava que era inglês. Muito elegante, tomava chá em vez de leitinho. [...]\nO menino ganhou outro gato, o mais engraçado de todos. Um gato chinês muito carinhoso que vivia se enroscando no pescoço do menino e gostava de se deitar com a barriga para cima, esperando o cafuné.\nO gato chinês gostou do nome que o menino lhe deu — “Mimoso”. Mas o gato chinês também não dizia “Miau”, dizia “mmm”.\nA quinta gata que o menino ganhou pensava que era Russa. [...]\nA sexta gata que o menino ganhou não pensava que era outra coisa, não se incomodou com o nome que recebeu (Kaká) — mas também não dizia “Miau”, dizia algo incompreensível.\nO sétimo gato que o menino ganhou, a primeira coisa que fez ao entrar na casa foi dizer “Miau”. O menino pensou que estivesse sonhando. Um gato que dizia “Miau”.\nO sétimo gato só teve um trabalhão pra ensinar aos outros que gato falava Miau.\nFinalmente os gatos poderiam se entender. Afinal, eram todos gatos.\n\nVERÍSSIMO, Luis Fernando. O sétimo gato.\n\nEntende-se desse texto que o menino",
+  "alternativas": {
+    "A": "ganhou gatos com personalidades diferentes.",
+    "B": "não queria ganhar gatos de presentes.",
+    "C": "não sabia escolher os nomes de seus gatos.",
+    "D": "preferia ter em casa gatos engraçados."
+  },
+  "correta": "A"
+},
+{
+  "id": 10,
+  "materia": "portugues",
+  "enunciado": "Leia o texto abaixo.\n\nCanaã\nCapítulo III\n\n[...] Milkau e Lentz admiravam a robustez daqueles homens com pulsos de ferro, torso hercúleo, barbas avermelhadas, olhos de um azul de abismo, muito parecidos como um grupo de irmãos. [...] No meio da massa indistinta dos companheiros louros e pesados, o cabra brasileiro tinha um ar vitorioso, um ar espiritualizado. Não havia, na verdade, entre ele e a terra um remoto convívio, perpetuado no sangue e transmitido de geração em geração?...\nPouco a pouco os homens foram se aproximando dos recém‑chegados, ouvindo‑lhes silenciosos a conversa. Como o sol se punha e as águas do rio se faziam cor de sangue, Felicíssimo apontou para o céu, mostrando a Milkau e a Lentz os bandos de aves que passavam na iluminação do crepúsculo, em longas teorias harmônicas. [...]\nE Felicíssimo observou a propósito: – [...] Há gente na colônia, entrada há mais de trinta anos, que não fala uma palavra de brasileiro. [...] O que acontece é que os nossos tropeiros e trabalhadores todos falam o alemão. [...]\n\nARANHA, Graça. Canaã. Biblioteca Básica Brasileira. Fragmento.\n\nO contexto histórico e social a que esse texto faz referência é  ",
+  "alternativas": {
+    "A": "a chegada da tripulação portuguesa ao Brasil.",
+    "B": "a mecanização da mão de obra presente no campo.",
+    "C": "o desenvolvimento da agricultura brasileira.",
+    "D": "o período de imigração alemã para o Brasil."
+  },
+  "correta": "D"
+},
+{
+  "id": 11,
+  "materia": "portugues",
+  "enunciado": "Leia o texto abaixo.\n\nInteligência submarina\n\nNo caso dos humanos, a conexão entre mentes é feita sobretudo através da linguagem. Ela permite que o conteúdo mental de uma pessoa seja codificado em sons e imagens, saia de um corpo e atravesse em direção a outro. São essa troca e decodificação que nos permitem viver em sociedade e acumular conhecimento. Só na ficção científica é possível vivenciarmos a mente de outra pessoa [...].\nPara investigar animais que não compartilham nossa linguagem, usamos uma infinidade de métodos indiretos que vão dos eletroencefalogramas até experimentos comportamentais. Acumulamos uma enorme quantidade de informação sobre inúmeras mentes. O problema é que praticamente toda ela provém de mamíferos, com uma contribuição menor de outros vertebrados, como aves e peixes. [...]\nOs polvos são a forma de vida mais distante dos mamíferos que manifesta sinais claros de inteligência. É provável que, dentro daquele corpo sem esqueleto, exista alguma espécie de mente – e quem sabe até de consciência. Caminhando em direção ao passado, o ancestral comum mais recente entre mamíferos e polvos habitou a Terra 400 milhões de anos atrás. Para se ter uma ideia de quão longe isso está no passado, basta lembrar que o ancestral comum que deu origem aos pássaros e mamíferos viveu há 320 milhões de anos [...]. A mente de macacos ou ratos tem estruturas muito semelhantes à nossa, que se originaram de um ancestral comum que habitou a Terra há apenas dezenas de milhões de anos.\nQuando a linhagem que deu origem aos polvos se separou dos vertebrados, os animais que habitavam o planeta ainda não tinham nada parecido com um cérebro. Como conclui Godfrey‑Smith, a mente de um polvo é tão diferente de uma mente humana quanto seria da mente de um et1. [...]\n\n*Vocabulário: 1et: extraterrestre.\n\nREINACH, Fernando. Inteligência submarina. In:Folha de São Paulo. 2019.\n\nA informação principal desse texto está no trecho:  ",
+  "alternativas": {
+    "A": "“No caso dos humanos, a conexão entre mentes é feita sobretudo através da linguagem.”. (1º parágrafo)",
+    "B": "“São essa troca e decodificação que nos permitem viver em sociedade e acumular conhecimento.”. (1º parágrafo)",
+    "C": "“Só na ficção científica é possível vivenciarmos a mente de outra pessoa...”. (1º parágrafo)",
+    "D": "“Os polvos são a forma de vida mais distante dos mamíferos que manifesta sinais claros de inteligência.”. (3º parágrafo) "
+  },
+  "correta": "D"
+},
+{
+  "id": 12,
+  "materia": "portugues",
+  "enunciado": "Qual dessas palavras é um substantivo?",
+  "alternativas": {
+    "A": "feliz",
+    "B": "correr",
+    "C": "amizade",
+    "D": "rápido"
+  },
+  "correta": "C"
+},
 {
   "id": 13,
   "materia": "portugues",
-  "enunciado": "Qual dessas palavras é um advérbio?",
+  "enunciado": "Qual dessas palavras é um substantivo?",
   "alternativas": {
-    "A": "rapidamente",
+    "A": "feliz",
     "B": "correr",
-    "C": "bonito",
-    "D": "cidade"
+    "C": "amizade",
+    "D": "rápido"
   },
-  "correta": "A"
+  "correta": "C"
 },
 {
   "id": 14,
   "materia": "portugues",
-  "enunciado": "Qual dessas palavras é um pronome?",
+  "enunciado": "Qual dessas palavras é um substantivo?",
   "alternativas": {
-    "A": "ele",
-    "B": "casa",
-    "C": "andar",
-    "D": "livro"
+    "A": "feliz",
+    "B": "correr",
+    "C": "amizade",
+    "D": "rápido"
   },
-  "correta": "A"
+  "correta": "C"
 },
 {
   "id": 15,
   "materia": "portugues",
-  "enunciado": "Qual dessas palavras está escrita corretamente?",
+  "enunciado": "Qual dessas palavras é um substantivo?",
   "alternativas": {
-    "A": "concerteza",
-    "B": "comcerteza",
-    "C": "com certeza",
-    "D": "concertesa"
+    "A": "feliz",
+    "B": "correr",
+    "C": "amizade",
+    "D": "rápido"
   },
   "correta": "C"
 },
@@ -119,54 +196,64 @@
   },
   "correta": "C"
 },
-{
-  "id": 17,
-  "materia": "portugues",
-  "enunciado": "Qual dessas palavras é um verbo?",
-  "alternativas": {
-    "A": "bonito",
-    "B": "andar",
-    "C": "cidade",
-    "D": "mesa"
+ {
+    "id": 17,
+    "materia": "portugues",
+    "descritor": "",
+    "enunciado": "Nesse texto, no trecho “...fará com que lágrimas brotem dos seus olhos...” (1º parágrafo), a expressão em destaque foi utilizada para",
+    "textoApoio": "Resenha #35 Apaixonada Por Palavras\n\n[...] Este é o tipo de livro que vai te deixar com um sorriso bobo nos lábios e fará\ncom que lágrimas brotem dos seus olhos da primeira palavra até a última. Confesso\nnunca ter lido um livro da Paula Pimenta antes e posso afirmar que não faço a mínima\nideia do motivo, mas hoje me pergunto: “POR QUE NÃO LI ISSO ANTES?”. Acredito que\nesta foi a melhor escolha para começar a ler os livros desta autora maravilhosa. Pude\nme encontrar em quase todas as palavras contidas neste livro, foi incrível!\n\nO modo como Paula escreve é tão humano! [...] Suas crônicas me fizeram rir alto\n[...], me fizeram chorar. [...]\n\nEste livro me cativou desde a capa! É um dos mais lindos que eu tenho na minha\nestante [...] e É TÃO FOFINHO!! *-* … Enfim, a editora está de parabéns e a escritora,\nbem, o que mais posso falar? Entrou para a lista dos meus favoritos. [...]\n\nNão há como se decepcionar com esta leitura. É IMPOSSÍVEL NÃO SE APAIXONAR\nPELAS PALAVRAS. [...]\n\nDisponível em: https://acesse.dev/R6OiG. Acesso em: 5 out. 2022. Fragmento.",
+    "alternativas": {
+      "A": "apontar que a autora presenciou uma cena romântica.",
+      "B": "indicar que o livro fez a autora recordar de um amor passado.",
+      "C": "mostrar que a autora gostaria de ter lido o livro antes.",
+      "D": "mostrar que o livro pode causar emoção nos leitores."
+    },
+    "correta": "D"
   },
-  "correta": "B"
-},
-{
-  "id": 18,
-  "materia": "portugues",
-  "enunciado": "Qual dessas palavras tem acento?",
-  "alternativas": {
-    "A": "aviao",
-    "B": "lapis",
-    "C": "papeis",
-    "D": "médico"
+ {
+    "id": 18,
+    "materia": "portugues",
+    "descritor": "",
+    "enunciado": "A ironia desse texto está no fato de",
+    "imagem": "imagens/questoes/q18pt.png",
+    "textoApoio": "Leia o texto.",
+    "alternativas": {
+      "A": "a menina estar com um papel nas mãos.",
+      "B": "a menina ouvir atentamente a proposta do menino.",
+      "C": "o menino ter planos para o primeiro jogo do ano.",
+      "D": "o menino ter usado as mesmas palavras do ano anterior."
+    },
+    "correta": "D"
   },
-  "correta": "D"
-},
-{
-  "id": 19,
-  "materia": "portugues",
-  "enunciado": "Qual é o plural de 'cão'?",
-  "alternativas": {
-    "A": "cãos",
-    "B": "cães",
-    "C": "caes",
-    "D": "cãis"
+ {
+    "id": 19,
+    "materia": "portugues",
+    "descritor": "",
+    "enunciado": "Entende-se desse texto que o personagem principal",
+    "textoApoio": "A Chave\n\nAgora era tarde para dizer que não ia, agora era tarde. Deixara que as coisas se adiantassem muito, se adiantassem demais. E então? Então teria que trocar a paz do pijama pelo colarinho apertado, o calor das cobertas pela noite gelada, como nos últimos tempos as noites andavam geladas! País tropical... Tropical, onde? “Foi-se o tempo”, resmungou em meio de um bocejo. [...] Homens e mulheres com roupa de festa, andando de um lado para outro, falando, andando, falando, exaustos e sem poder descansar numa cadeira, [...] sem poder dormir, os olhos abertos, a boca aberta, sorrindo, sorrindo, sorrindo... O círculo dos superficiais, [...] condenados a ouvir e a dizer besteiras por toda a eternidade. [...] Cerrou os olhos. Cerrou a boca. Mas por que essa festa? “Estou exausto, compreende? Exausto!” [...]. Voltou para a mulher o olhar suplicante, “Então não compreende? Exausto...”. [...]\n\nClaro que não compreendia nada [...]. Festa, festa, festa! O dia inteiro e a noite inteira era só festa, era vestir e desvestir para se vestir em seguida, “Depressa que estamos atrasados!”. Atrasados... Ter que se barbear, escolher a gravata [...]. E armar a expressão cordial e ficar sorrindo até às cinco da manhã, os olhos escancarados, aqueles olhos mortos de sono!... Mas por quê?\n\nTELLES, Lygia Fagundes. Antes do Baile Verde. Rio de Janeiro: Companhia das Letras, 2009. Fragmento.",
+    "alternativas": {
+      "A": "conduziu as conversas do grupo de amigos.",
+      "B": "desejava ter escolhido melhor suas roupas.",
+      "C": "foi pressionado pela mulher a ir em uma festa.",
+      "D": "prefere os dias quentes para se divertir."
+    },
+    "correta": "C"
   },
-  "correta": "B"
-},
 {
-  "id": 20,
-  "materia": "portugues",
-  "enunciado": "Qual dessas palavras é um adjetivo?",
-  "alternativas": {
-    "A": "rápido",
-    "B": "mesa",
-    "C": "cidade",
-    "D": "andar"
+    "id": 20,
+    "materia": "portugues",
+    "descritor": "",
+    "enunciado": "Nesse texto, no trecho “Corre pro faturamento que eles não tão...” (2º quadrinho), a linguagem utilizada é",
+    "imagem": "imagens/questoes/q20pt.png",
+    "textoApoio": "Leia o texto.",
+    "alternativas": {
+      "A": "científica.",
+      "B": "coloquial.",
+      "C": "padrão.",
+      "D": "regional."
+    },
+    "correta": "B"
   },
-  "correta": "A"
-},
 {
   "id": 21,
   "materia": "portugues",
