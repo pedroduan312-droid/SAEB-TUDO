@@ -1,61 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("loginForm");
-  const btnGoogle = document.getElementById("btnGoogle");
+const form = document.getElementById("loginForm");
 
-  const CHAVE_USUARIO = "saebTudoUsuario";
-  const CHAVE_SESSAO = "saebTudoSessao";
+const senhaInput = document.getElementById("senha");
 
-  const usuarioSalvo = localStorage.getItem(CHAVE_SESSAO);
+const toggleSenha = document.getElementById("toggleSenha");
 
-  if (usuarioSalvo === "true") {
-    window.location.href = "home.html";
-    return;
-  }
+toggleSenha.addEventListener("click", () => {
 
-  form.addEventListener("submit", function(e){
+    if(senhaInput.type === "password"){
+
+        senhaInput.type = "text";
+
+        toggleSenha.src = "imagens/olho.svg";
+
+    }else{
+
+        senhaInput.type = "password";
+
+        toggleSenha.src = "imagens/olho-fechado.svg";
+
+    }
+
+});
+
+form.addEventListener("submit", (e)=>{
+
     e.preventDefault();
 
-    const email = document.getElementById("email").value.trim();
-    const senha = document.getElementById("senha").value.trim();
+    const usuario = document.getElementById("usuario").value.trim();
 
-    if(email === "" || senha === ""){
-      alert("Preencha todos os campos!");
-      return;
+    const senha = senhaInput.value.trim();
+
+    if(usuario === "" || senha === ""){
+
+        alert("Preencha todos os campos.");
+
+        return;
+
     }
 
-    if(!email.includes("@") || !email.includes(".")){
-      alert("Digite um email válido!");
-      return;
-    }
+    // Futuramente:
+    // autenticação real
 
-    const usuarioBruto = localStorage.getItem(CHAVE_USUARIO);
+    localStorage.setItem("usuarioLogado","true");
 
-    if (!usuarioBruto) {
-      alert("Nenhuma conta encontrada. Crie uma conta primeiro.");
-      return;
-    }
-
-    let usuario;
-
-    try {
-      usuario = JSON.parse(usuarioBruto);
-    } catch {
-      alert("Erro ao carregar os dados da conta.");
-      return;
-    }
-
-    if (email !== usuario.email || senha !== usuario.senha) {
-      alert("Email ou senha incorretos!");
-      return;
-    }
-
-    localStorage.setItem(CHAVE_SESSAO, "true");
-
-    alert("Login realizado com sucesso! 🚀");
     window.location.href = "home.html";
-  });
 
-  btnGoogle.addEventListener("click", () => {
-    alert("A opção de entrar com Google ainda não está disponível nesta versão.");
-  });
 });

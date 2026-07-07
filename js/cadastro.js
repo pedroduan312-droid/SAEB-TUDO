@@ -1,75 +1,93 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("cadastroForm");
+const form = document.getElementById("cadastroForm");
 
-  const CHAVE_USUARIO = "saebTudoUsuario";
-  const CHAVE_SESSAO = "saebTudoSessao";
+const senha = document.getElementById("senha");
+const confirmarSenha = document.getElementById("confirmarSenha");
 
-  form.addEventListener("submit", function (e) {
+const toggleSenha = document.getElementById("toggleSenha");
+const toggleConfirmar = document.getElementById("toggleConfirmar");
+
+/* MOSTRAR SENHA */
+
+toggleSenha.addEventListener("click",()=>{
+
+    senha.type =
+        senha.type === "password"
+        ? "text"
+        : "password";
+
+    toggleSenha.src =
+        senha.type === "password"
+        ? "imagens/olho-fechado.svg"
+        : "imagens/olho.svg";
+
+});
+
+toggleConfirmar.addEventListener("click",()=>{
+
+    confirmarSenha.type =
+        confirmarSenha.type === "password"
+        ? "text"
+        : "password";
+
+    toggleConfirmar.src =
+        confirmarSenha.type === "password"
+        ? "imagens/olho-fechado.svg"
+        : "imagens/olho.svg";
+
+});
+
+/* CADASTRO */
+
+form.addEventListener("submit",(e)=>{
+
     e.preventDefault();
 
-    const nome = document.getElementById("nome").value.trim();
-    const email = document.getElementById("email").value.trim().toLowerCase();
-    const senha = document.getElementById("senha").value.trim();
-    const confirmar = document.getElementById("confirmar").value.trim();
+    const usuario =
+        document.getElementById("usuario").value.trim();
 
-    if (nome === "" || email === "" || senha === "" || confirmar === "") {
-      alert("Preencha todos os campos!");
-      return;
+    const email =
+        document.getElementById("email").value.trim();
+
+    const termos =
+        document.getElementById("termos").checked;
+
+    if(!usuario){
+
+        alert("Informe um usuário.");
+        return;
+
     }
 
-    if (nome.length < 3) {
-      alert("Digite um nome válido!");
-      return;
+    if(!email.includes("@")){
+
+        alert("Informe um e-mail válido.");
+        return;
+
     }
 
-    if (!email.includes("@") || !email.includes(".")) {
-      alert("Digite um email válido!");
-      return;
+    if(senha.value.length < 6){
+
+        alert("A senha deve possuir pelo menos 6 caracteres.");
+        return;
+
     }
 
-    if (senha.length < 6) {
-      alert("A senha precisa ter no mínimo 6 caracteres!");
-      return;
+    if(senha.value !== confirmarSenha.value){
+
+        alert("As senhas não coincidem.");
+        return;
+
     }
 
-    if (senha !== confirmar) {
-      alert("As senhas não coincidem!");
-      return;
+    if(!termos){
+
+        alert("Aceite os termos para continuar.");
+        return;
+
     }
 
-    const usuarioExistente = localStorage.getItem(CHAVE_USUARIO);
+    localStorage.setItem("usuarioLogado","true");
 
-    if (usuarioExistente) {
-      try {
-        const usuarioSalvo = JSON.parse(usuarioExistente);
-
-        if (usuarioSalvo.email === email) {
-          alert("Já existe uma conta com esse email!");
-          return;
-        }
-      } catch (erro) {
-        console.warn("Erro ao ler usuário salvo.", erro);
-      }
-    }
-
-    const novoUsuario = {
-      nome,
-      email,
-      senha,
-      foto: "imagens/user.png"
-    };
-
-    localStorage.setItem(CHAVE_USUARIO, JSON.stringify(novoUsuario));
-
-    localStorage.setItem(
-      CHAVE_SESSAO,
-      JSON.stringify({
-        logado: true,
-        email
-      })
-    );
-
-    alert("Conta criada com sucesso!");
     window.location.href = "home.html";
-  });
+
 });

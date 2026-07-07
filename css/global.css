@@ -1,0 +1,74 @@
+:root{
+
+/* Cores */
+
+--azul-escuro:#031E61;
+--azul:#1E50F3;
+--azul-claro:#1A8FFC;
+
+--verde:#37E460;
+
+--rosa:#F93C6F;
+--rosa-forte:#F93C97;
+
+--amarelo:#FEC929;
+
+--roxo:#8A38F5;
+
+--branco:#FFFFFF;
+--cinza-claro:#F4F7FB;
+
+--texto:#1A1A1A;
+--texto-sec:#6B7280;
+
+/* Bordas */
+
+--radius-p:16px;
+--radius-g:20px;
+--radius-xl:24px;
+
+/* Sombras */
+
+--shadow-card: 0 4px 20px rgba(0,0,0,.08);
+
+--shadow-btn: 0 8px 24px rgba(30,80,243,.25);
+
+/* Transições */
+
+--transition:.25s ease;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh; /* melhoria */
+    font-family:'Montserrat',sans-serif;
+    background:#01091B;
+    color:var(--texto);
+}
+
+a{
+    text-decoration:none; /* melhoria */
+    color:inherit;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit; /* melhoria */
+}
+
+img{
+    max-width:100%;
+    display:block;
+}

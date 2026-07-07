@@ -1,0 +1,764 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+
+
+--azul:#041B73;
+--azul-escuro:#031454;
+
+--roxo1:#6F2BFF;
+--roxo2:#A93BFF;
+
+--amarelo1:#FFD451;
+--amarelo2:#FFBE26;
+
+--cinza:#ECECEC;
+--branco:#FFFFFF;
+
+
+}
+
+body{
+
+
+font-family:'Nunito',sans-serif;
+
+background:var(--azul);
+
+display:flex;
+justify-content:center;
+
+min-height:100vh;
+
+
+}
+
+.app{
+
+
+width:100%;
+max-width:430px;
+
+min-height:100vh;
+
+position:relative;
+
+overflow:hidden;
+
+
+}
+
+/* HEADER */
+
+.header{
+
+    background:var(--azul);
+
+    padding:28px 18px 150px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.curva-header{
+
+    position:absolute;
+
+    bottom:-80px;
+    left:-15%;
+
+    width:130%;
+    height:170px;
+
+    background:#f3f3f3;
+
+    border-radius:50%;
+
+}
+
+.header-info{
+
+
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+
+
+}
+
+.saudacao-box h1{
+
+
+color:white;
+
+font-size:22px;
+font-weight:800;
+
+margin-bottom:4px;
+
+
+}
+
+.saudacao-box p{
+
+
+color:rgba(255,255,255,.9);
+
+font-size:13px;
+
+max-width:180px;
+
+line-height:1.2;
+
+border-left:3px solid rgba(255,255,255,.3);
+
+padding-left:6px;
+
+
+}
+
+.logo{
+
+
+width:62px;
+height:62px;
+
+object-fit:contain;
+
+
+}
+
+/* CONTEUDO */
+
+.conteudo{
+
+
+background:#f3f3f3;
+
+border-top-left-radius:28px;
+border-top-right-radius:28px;
+
+margin-top:-65px;
+
+min-height:100vh;
+
+padding:14px;
+
+overflow-y:auto;
+
+scrollbar-width:none;
+
+
+}
+
+.conteudo::-webkit-scrollbar{
+
+
+display:none;
+
+
+}
+
+/* META */
+
+.meta-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    135deg,
+    #7028FF,
+    #B13EFF
+    );
+
+    border-radius:18px;
+
+    padding:18px;
+
+    min-height:130px;
+
+    box-shadow:
+    0 6px 18px rgba(0,0,0,.18);
+
+    margin-top:-105px;
+
+    z-index:20;
+
+}
+
+.meta-corpo{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.meta-bg{
+
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:180px;
+
+    opacity:.18;
+
+    pointer-events:none;
+
+}
+
+.meta-alvo{
+
+    position:absolute;
+
+    right:8px;
+    top:10px;
+
+    width:120px;
+
+    opacity:.95;
+
+    pointer-events:none;
+
+}
+
+.meta-tag{
+
+
+color:white;
+
+font-size:12px;
+font-weight:700;
+
+
+}
+
+.meta-numeros{
+
+    margin-top:10px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    color:white;
+
+    width:72%;
+
+}
+
+.meta-numeros span{
+
+
+font-weight:700;
+font-size:18px;
+
+
+}
+
+.meta-numeros strong{
+
+
+font-size:22px;
+
+
+}
+
+.barra-progresso{
+
+
+width:100%;
+
+height:8px;
+
+border-radius:999px;
+
+overflow:hidden;
+
+background:rgba(255,255,255,.2);
+
+margin-top:10px;
+
+
+}
+
+.barra-preenchida{
+
+
+width:80%;
+
+height:100%;
+
+background:#52E55A;
+
+
+}
+
+.btn-meta{
+
+    margin-top:14px;
+
+    border:none;
+
+    background:white;
+
+    color:#6730ff;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    font-family:'Nunito',sans-serif;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,.15);
+
+}
+
+/* MATERIAS */
+
+.materias{
+
+
+margin-top:12px;
+
+
+}
+
+.cards-materias{
+
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:10px;
+
+
+}
+
+.materia-card{
+
+    height:145px;
+
+    border-radius:14px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,.15);
+
+}
+
+.materia-ilustracao{
+
+    position:absolute;
+
+    right:5px;
+    bottom:22px;
+
+    width:95px;
+
+    pointer-events:none;
+
+}
+
+.materia-card:hover{
+
+
+transform:translateY(-2px);
+
+
+}
+
+.portugues{
+
+    background:
+    linear-gradient(
+    135deg,
+    #2894FF,
+    #005DDB
+    );
+
+}
+
+.matematica{
+
+    background:
+    linear-gradient(
+    135deg,
+    #FF4C79,
+    #FFB125
+    );
+
+}
+
+.materia-conteudo{
+
+
+position:absolute;
+
+inset:0;
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+
+padding:12px;
+
+
+}
+
+.materia-conteudo h3{
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    max-width:95px;
+
+    line-height:1.1;
+
+}
+
+.btn-materia{
+
+    width:100%;
+
+    height:32px;
+
+    border:none;
+
+    background:rgba(255,255,255,.18);
+
+    color:white;
+
+    border-radius:999px;
+
+    padding:8px;
+
+    font-family:'Nunito',sans-serif;
+
+    font-weight:700;
+
+    font-size:13px;
+
+    backdrop-filter:blur(4px);
+
+    cursor:pointer;
+
+}
+
+/* DESAFIO */
+
+.desafio{
+
+
+margin-top:18px;
+
+
+}
+
+.section-title{
+
+    font-size:16px;
+    font-weight:800;
+
+    color:#111;
+
+    margin-bottom:10px;
+
+}
+
+.desafio-card{
+
+    background:
+    linear-gradient(
+    135deg,
+    #FFD44E,
+    #FFB52A
+    );
+
+    border-radius:18px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,.15);
+
+}
+
+.icone-fogo{
+
+    width:55px;
+
+    margin-right:12px;
+
+}
+
+.desafio-info{
+
+    flex:1;
+
+}
+
+.desafio-tag{
+
+
+font-size:12px;
+color:#8d6500;
+
+font-weight:700;
+
+
+}
+
+.desafio-info h3{
+
+
+margin-top:4px;
+
+font-size:20px;
+
+
+}
+
+#btnDesafio{
+
+    border:none;
+
+    background:white;
+
+    color:#f49d00;
+
+    padding:11px 22px;
+
+    border-radius:999px;
+
+    font-family:'Nunito',sans-serif;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,.12);
+
+}
+
+/* CONQUISTAS */
+
+.conquistas{
+
+
+margin-top:20px;
+
+
+}
+
+.section-header{
+
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:12px;
+
+
+}
+
+.section-header h2{
+
+
+font-size:22px;
+font-weight:800;
+
+
+}
+
+.ver-mais{
+
+
+border:none;
+
+background:none;
+
+color:#2D6CFF;
+
+font-weight:700;
+
+cursor:pointer;
+
+
+}
+
+.conquistas-scroll{
+
+
+display:flex;
+
+gap:12px;
+
+overflow-x:auto;
+
+scrollbar-width:none;
+
+
+}
+
+.conquistas-scroll::-webkit-scrollbar{
+
+
+display:none;
+
+
+}
+
+.conquista-card{
+
+    min-width:90px;
+
+    height:90px;
+
+    background:white;
+
+    border-radius:16px;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,.10);
+
+}
+
+/* NAVBAR ILHA */
+
+.navbar{
+
+    position:fixed;
+
+    left:50%;
+    bottom:25px;
+
+    transform:translateX(-50%);
+
+    width:280px;
+
+    height:68px;
+
+    background:white;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.18);
+
+    z-index:999;
+
+}
+
+.nav-item{
+
+
+border:none;
+background:none;
+
+cursor:pointer;
+
+
+}
+
+.nav-item img{
+
+    width:24px;
+    height:24px;
+
+    opacity:.45;
+
+    transition:.2s;
+
+}
+
+.nav-item.ativo img{
+
+    opacity:1;
+
+    transform:scale(1.1);
+
+}
+
+.nav-item.ativo{
+
+
+transform:scale(1.08);
+
+
+}
+
+.espaco-final{
+
+
+height:120px;
+
+
+}
+
+/* TABLET */
+
+@media (min-width:768px){
+
+
+.app{
+
+    max-width:768px;
+
+}
+
+.cards-materias{
+
+    max-width:600px;
+
+    margin:auto;
+
+}
+
+
+}

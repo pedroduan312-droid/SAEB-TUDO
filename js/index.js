@@ -1,26 +1,22 @@
-const splash = document.querySelector(".splash");
+// FUTURAMENTE
 
-window.addEventListener("load", function(){
+/*
+const usuarioLogado = localStorage.getItem("usuarioLogado");
+
+if(usuarioLogado){
+    window.location.href = "home.html";
+}
+*/
+
+const content = document.querySelector(".content");
+const livro = document.querySelector(".livro");
 
 setTimeout(() => {
 
-splash.classList.add("hide");
+    document.body.classList.add("loaded");
 
-}, 2500); // tempo da splash
+    content.classList.add("show");
 
-});
+    livro.classList.add("show");
 
-const entrar = document.getElementById("entrar");
-const criar = document.getElementById("criar");
-
-entrar.addEventListener("click", function(){
-
-window.location.href = "login.html";
-
-});
-
-criar.addEventListener("click", function(){
-
-window.location.href = "cadastro.html";
-
-});
+}, 2500);

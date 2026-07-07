@@ -1,66 +1,144 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Criar Conta</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="css/cadastro.css">
+    <title>Cadastro - Saeb Tudo</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-<div class="container">
-    <div class="card">
+    <div class="container auth-container">
 
-        <h1 class="titulo">Criar Conta</h1>
+        <div class="blur blur-1"></div>
+        <div class="blur blur-2"></div>
+        <div class="blur blur-3"></div>
+        <div class="blur blur-4"></div>
+        <div class="blur blur-5"></div>
 
-        <form id="cadastroForm">
+        <button class="btn-voltar" onclick="window.location.href='login.html'">
+
+            <img src="imagens/seta.svg" alt="Voltar">
+
+        </button>
+
+        <img
+            src="imagens/logo saeb tudo.svg"
+            alt="Saeb Tudo"
+            class="logo-auth">
+
+        <div class="textos">
+
+            <h1>Crie sua conta</h1>
+
+            <p>Preencha os dados abaixo</p>
+
+        </div>
+
+        <form id="cadastroForm" class="form-auth">
 
             <div class="input-group">
-                <label>Nome</label>
-                <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+                <img src="imagens/usuario.svg" alt="Usuário">
+
+                <input
+                    type="text"
+                    id="usuario"
+                    placeholder="Usuário">
+
             </div>
 
             <div class="input-group">
-                <label>Email</label>
-                <input type="email" id="email" placeholder="Digite seu email" required>
+
+                <img src="imagens/email.svg" alt="Email">
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="E-mail">
+
             </div>
 
             <div class="input-group">
-                <label>Senha</label>
-                <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+                <img src="imagens/cadeado.svg" alt="Senha">
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Senha">
+
+                <img
+                    src="imagens/olho-fechado.svg"
+                    alt="Mostrar senha"
+                    class="toggle-senha"
+                    id="toggleSenha">
+
             </div>
 
             <div class="input-group">
-                <label>Confirmar Senha</label>
-                <input type="password" id="confirmar" placeholder="Confirme sua senha" required>
+
+                <img src="imagens/cadeado.svg" alt="Confirmar senha">
+
+                <input
+                    type="password"
+                    id="confirmarSenha"
+                    placeholder="Confirmar senha">
+
+                <img
+                    src="imagens/olho-fechado.svg"
+                    alt="Mostrar senha"
+                    class="toggle-senha"
+                    id="toggleConfirmar">
+
             </div>
 
-            <div class="linha-acoes">
-                <button type="submit" class="btn-login">
-                    Criar Conta
-                </button>
-            </div>
+            <label class="checkbox">
+
+                <input type="checkbox" id="termos">
+
+                <span>
+                    Eu aceito os Termos de Uso e a Política de Privacidade
+                </span>
+
+            </label>
+
+            <button
+                type="submit"
+                class="btn-primary">
+
+                Criar conta
+
+            </button>
 
         </form>
 
-        <div class="divisor"><span>ou</span></div>
+        <p class="troca-tela">
 
-        <button class="btn-google" type="button" id="btnGoogleCadastro">
-            <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google">
-            Cadastrar com Google
-        </button>
+            Já possui uma conta?
 
-        <p class="criar-conta">
-            Já tem uma conta?
-            <a href="login.html">Entrar</a>
+            <a href="login.html">
+
+                Entrar
+
+            </a>
+
         </p>
 
     </div>
-</div>
 
-<script src="js/cadastro.js"></script>
+    <script src="js/cadastro.js"></script>
+
 </body>
+
 </html>

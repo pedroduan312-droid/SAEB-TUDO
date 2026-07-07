@@ -1,53 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saeb Tudo</title>
 
-<title>SAEB TUDO</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/index.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/index.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="splash">
-    <img src="imagens/logo saeb tudo.svg" class="logo">
-</div>
+    <div class="container screen-auth">
 
-<div class="container">
+        <!-- BLURS -->
+        <div class="blur blur-1"></div>
+        <div class="blur blur-2"></div>
+        <div class="blur blur-3"></div>
+        <div class="blur blur-4"></div>
 
-    <div class="card">
+        <!-- LOGO -->
+        <div class="logo-container">
+            <img src="imagens/logo saeb tudo.svg" alt="Saeb Tudo" class="logo">
+        </div>
 
-        <h2 class="titulo">
-        Treine para o SAEB<br>
-        sem complicação
-        </h2>
+        <!-- CONTEÚDO -->
+        <div class="content">
 
-        <p class="descricao">
-        Questões e simulados de Português e Matemática
-        no ritmo da prova.
-        </p>
+            <h1 class="titulo">
+                Seu futuro começa<br>
+                com o que você aprende hoje.
+            </h1>
 
-        <div class="botoes">
+            <p class="subtitulo">
+                Simulados, exercícios e desafios<br>
+                para você ir mais longe.
+            </p>
 
-            <button class="btn-entrar" id="entrar">
-                Entrar
-            </button>
+            <img src="imagens/livro inicio.png" alt="Livro" class="livro">
 
-            <button class="btn-criar" id="criar">
-                Criar Conta
-            </button>
+            <div class="botoes">
+
+                <button
+                    class="btn-primary"
+                    onclick="window.location.href='login.html'">
+                    Entrar
+                </button>
+
+                <button
+                    class="btn-outline"
+                    onclick="window.location.href='cadastro.html'">
+                    Criar conta
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
-
-<script src="js/index.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
 </html>
