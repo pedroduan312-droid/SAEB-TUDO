@@ -4,9 +4,11 @@
 
 .btn-primary{
 
-    width:100%;
+    width:90%;
 
     height:54px;
+
+    align-self:center;
 
     border:none;
 
@@ -45,10 +47,12 @@
 
 .btn-outline{
 
-    width:100%;
+    width:90%;
 
     height:54px;
 
+    align-self:center;
+    
     border:2px solid rgba(255,255,255,.35);
 
     border-radius:var(--radius-p);
