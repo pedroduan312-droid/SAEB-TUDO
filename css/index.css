@@ -24,58 +24,6 @@ body{
 
 }
 
-/* ==========================
-   BLURS EXTERNOS TABLET
-========================== */
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    width:450px;
-    height:450px;
-
-    top:-150px;
-    left:-150px;
-
-    background:var(--roxo);
-
-    filter:blur(180px);
-
-    opacity:.35;
-
-    pointer-events:none;
-
-    z-index:-1;
-
-}
-
-body::after{
-
-    content:"";
-
-    position:fixed;
-
-    width:500px;
-    height:500px;
-
-    bottom:-180px;
-    right:-180px;
-
-    background:var(--rosa-forte);
-
-    filter:blur(180px);
-
-    opacity:.35;
-
-    pointer-events:none;
-
-    z-index:-1;
-
-}
-
 .screen-auth{
 
     background:var(--azul-escuro);

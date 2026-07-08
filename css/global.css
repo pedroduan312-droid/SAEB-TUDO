@@ -33,6 +33,17 @@
 
 --shadow-btn: 0 8px 24px rgba(30,80,243,.25);
 
+/* Quiz */
+
+--quiz-correta:#37E460;
+--quiz-errada:#FF5C7A;
+--quiz-selecionada:#1E50F3;
+
+--quiz-footer:rgba(255,255,255,.88);
+
+--blur-roxo:rgba(138,56,245,.65);
+--blur-rosa:rgba(249,60,151,.35);
+
 /* Transições */
 
 --transition:.25s ease;
@@ -51,7 +62,7 @@ html{
 
 body{
     min-height:100vh; /* melhoria */
-    font-family:'Montserrat',sans-serif;
+    font-family:'Nunito',sans-serif;
     background:#01091B;
     color:var(--texto);
 }

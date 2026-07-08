@@ -1,0 +1,440 @@
+/* =========================
+   APP
+========================= */
+
+body{
+    display:flex;
+    justify-content:center;
+    background:#01091B;
+}
+
+.container{
+    width:100%;
+    max-width:390px;
+    min-height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:var(--azul-escuro);
+}
+
+#app{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.topo{
+    position:relative;
+
+    padding:28px 22px 22px;
+
+    background:var(--azul-escuro);
+
+    overflow:hidden;
+
+    z-index:2;
+}
+
+.topo::before{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    right:-100px;
+    top:-100px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(138,56,245,.9),
+        transparent 70%
+    );
+
+    filter:blur(20px);
+
+    pointer-events:none;
+}
+
+.topo-linha{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:16px;
+
+    position:relative;
+    z-index:2;
+}
+
+.contador-pill{
+    color:var(--branco);
+
+    font-size:2rem;
+    font-weight:800;
+
+    min-width:60px;
+}
+
+#tituloTopo{
+    color:var(--branco);
+
+    font-size:1.5rem;
+    font-weight:700;
+
+    text-align:center;
+
+    flex:1;
+}
+
+.menu-btn{
+    border:none;
+    background:none;
+
+    color:white;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    width:50px;
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progresso-externa{
+    display:flex;
+    gap:6px;
+
+    background:none;
+
+    height:auto;
+}
+
+#progresso{
+    width:100%;
+
+    display:flex;
+    gap:6px;
+}
+
+.segmento{
+    flex:1;
+
+    height:8px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.35);
+}
+
+.segmento.ativo{
+    background:var(--verde);
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.quiz{
+    flex:1;
+
+    background:var(--branco);
+
+    border-radius:28px 28px 0 0;
+
+    padding:28px 22px 160px;
+
+    position:relative;
+
+    z-index:3;
+}
+
+.status-carregamento{
+    text-align:center;
+
+    color:var(--texto-sec);
+
+    margin-top:80px;
+}
+
+.conteudo-quiz{
+    display:flex;
+    flex-direction:column;
+}
+
+.texto-apoio{
+    font-size:1rem;
+    font-weight:700;
+
+    color:var(--texto);
+
+    line-height:1.6;
+
+    margin-bottom:22px;
+}
+
+.imagem-questao{
+    max-width:100%;
+
+    max-height:280px;
+
+    object-fit:contain;
+
+    margin:0 auto 18px;
+}
+
+.referencia-questao{
+    font-size:.82rem;
+
+    color:var(--texto-sec);
+
+    text-align:center;
+
+    line-height:1.5;
+
+    margin-bottom:28px;
+}
+
+.enunciado{
+    font-size:1.15rem;
+    font-weight:700;
+
+    color:var(--texto);
+
+    line-height:1.6;
+
+    margin-bottom:24px;
+}
+
+/* =========================
+   ALTERNATIVAS
+========================= */
+
+.alternativas{
+    display:flex;
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.alternativa{
+    width:100%;
+}
+
+.alternativa button,
+.alternativa-card{
+    width:100%;
+
+    background:white;
+
+    border:2px solid #E8EAF3;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    display:flex;
+    align-items:flex-start;
+
+    gap:16px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+}
+
+.alternativa-letra{
+    font-size:2rem;
+    font-weight:800;
+
+    color:#111;
+
+    min-width:30px;
+}
+
+.alternativa-texto{
+    flex:1;
+
+    text-align:left;
+
+    color:#3F465B;
+
+    font-size:.95rem;
+    font-weight:700;
+
+    line-height:1.5;
+}
+
+.alternativa.selecionada .alternativa-card{
+    border-color:var(--azul);
+
+    box-shadow:
+        0 0 0 4px rgba(30,80,243,.12);
+}
+
+.alternativa.correta .alternativa-card{
+    border-color:var(--verde);
+
+    background:#F2FFF5;
+
+    animation:pulse .4s;
+}
+
+.alternativa.errada .alternativa-card{
+    border-color:var(--rosa);
+
+    background:#FFF2F6;
+
+    animation:shake .35s;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.02);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes shake{
+    0%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-5px);
+    }
+
+    50%{
+        transform:translateX(5px);
+    }
+
+    75%{
+        transform:translateX(-3px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-box{
+    position:fixed;
+
+    bottom:0;
+
+    width:100%;
+    max-width:390px;
+
+    padding:16px 20px 24px;
+
+    display:flex;
+    gap:12px;
+
+    background:white;
+
+    border-top:1px solid rgba(0,0,0,.05);
+
+    z-index:30;
+}
+
+.btn-footer{
+    flex:1;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:999px;
+
+    font-size:1rem;
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.btn-anterior{
+    background:#EFEFEF;
+
+    color:#24304A;
+}
+
+.btn-acao{
+    background:var(--azul);
+
+    color:white;
+
+    box-shadow:var(--shadow-btn);
+}
+
+.btn-acao:disabled{
+    opacity:.5;
+}
+
+/* =========================
+   HOME INDICATOR
+========================= */
+
+.home-indicator{
+    position:absolute;
+
+    bottom:6px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:120px;
+    height:5px;
+
+    border-radius:999px;
+
+    background:#D9D9D9;
+}
+
+/* =========================
+   UTILIDADES
+========================= */
+
+.oculto{
+    display:none !important;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width:600px){
+
+    .container{
+        max-width:600px;
+    }
+
+    .footer-box{
+        max-width:600px;
+    }
+
+}

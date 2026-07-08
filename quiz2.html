@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quiz SAEB Tudo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="css/quiz2.css">
+</head>
+
+<body>
+
+<div class="container" id="container">
+
+    <!-- SPLASH -->
+    <div id="splash" class="splash">
+        <img
+            src="imagens/logo saeb tudo.svg"
+            alt="SAEB Tudo"
+            class="splash-logo">
+    </div>
+
+
+    <!-- OVERLAY MENU -->
+    <div id="overlay"></div>
+
+
+    <!-- MENU LATERAL -->
+    <aside id="menuLateral">
+
+        <div class="menu-topo">
+
+            <h3 id="tituloMenuMateria">
+                Matemática
+            </h3>
+
+            <div class="menu-info-box">
+                <p class="menu-info-label">
+                    Tempo restante
+                </p>
+
+                <p
+                    class="menu-info-valor"
+                    id="tempoLimiteMenu">
+
+                    05:00
+
+                </p>
+            </div>
+
+            <button
+                class="menu-item menu-item-secundario"
+                id="btnSom"
+                type="button">
+
+                🔊 Som ligado
+
+            </button>
+
+            <button
+                class="menu-item sair"
+                id="btnSairDesafio"
+                type="button">
+
+                Sair do quiz
+
+            </button>
+
+        </div>
+
+        <div class="menu-logo">
+            <img
+                src="imagens/logo saeb tudo.svg"
+                alt="SAEB Tudo">
+        </div>
+
+    </aside>
+
+
+
+    <!-- APP -->
+    <div id="app">
+
+        <!-- HEADER -->
+
+        <header class="topo">
+
+            <div class="topo-linha">
+
+                <span
+                    id="contador"
+                    class="contador-pill">
+
+                    1/5
+
+                </span>
+
+                <h1 id="tituloTopo">
+                    Questão 1
+                </h1>
+
+                <button
+                    id="abrirMenu"
+                    class="menu-btn"
+                    type="button"
+                    aria-label="Abrir menu">
+
+                    ☰
+
+                </button>
+
+            </div>
+
+
+            <!-- BARRA SEGMENTADA -->
+            <div class="barra progresso-externa">
+
+                <div id="progresso"></div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- CONTEÚDO -->
+
+        <main class="quiz">
+
+            <div
+                id="statusCarregamento"
+                class="status-carregamento">
+
+                Carregando questões...
+
+            </div>
+
+
+            <div
+                id="conteudoQuiz"
+                class="conteudo-quiz oculto">
+
+                <!-- TEXTO AUXILIAR -->
+
+                <p
+                    id="textoApoio"
+                    class="texto-apoio oculto">
+
+                </p>
+
+
+                <!-- IMAGEM -->
+
+                <img
+                    id="imagemQuestao"
+                    class="imagem-questao oculto"
+                    alt="Imagem da questão">
+
+
+                <!-- REFERÊNCIA -->
+
+                <p
+                    id="referenciaQuestao"
+                    class="referencia-questao oculto">
+
+                </p>
+
+
+                <!-- ENUNCIADO -->
+
+                <p
+                    id="enunciado"
+                    class="enunciado">
+
+                </p>
+
+
+                <!-- ALTERNATIVAS -->
+
+                <div
+                    id="alternativas"
+                    class="alternativas">
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer-box">
+
+            <button
+                id="btnAnterior"
+                class="btn-footer btn-anterior"
+                type="button">
+
+                Anterior
+
+            </button>
+
+
+            <button
+                id="btnAcao"
+                class="btn-footer btn-acao"
+                disabled
+                type="button">
+
+                Confirmar
+
+            </button>
+
+            <div class="home-indicator"></div>
+
+        </footer>
+
+    </div>
+
+
+
+
+    <!-- TELA DE TRANSIÇÃO -->
+
+    <div
+        id="transicaoFinal"
+        class="transicao-final oculto">
+
+        <div class="transicao-bg-shape shape-1"></div>
+        <div class="transicao-bg-shape shape-2"></div>
+
+        <div class="transicao-conteudo">
+
+            <img
+                src="imagens/logo saeb tudo.svg"
+                class="logo-finalizacao"
+                alt="Saeb Tudo">
+
+            <h2 class="transicao-titulo">
+                Quase lá!
+            </h2>
+
+            <p class="transicao-subtitulo">
+                Finalizando seu quiz...
+            </p>
+
+            <p class="transicao-texto">
+                Organizando seus acertos,
+                erros e estatísticas para você.
+            </p>
+
+            <div class="transicao-barra-externa">
+
+                <div
+                    id="transicaoBarraInterna"
+                    class="transicao-barra-interna">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RESULTADO -->
+
+    <div
+        id="telaFinal"
+        class="tela-final oculto">
+
+        <div class="resultado-topo">
+
+            <h2
+                id="tituloFinal"
+                class="titulo-final">
+
+                Pode melhorar!
+
+            </h2>
+
+            <p id="subtituloFinal">
+
+                Você já começou.
+                Agora é continuar treinando.
+
+            </p>
+
+        </div>
+
+
+        <div class="final-conteudo">
+
+            <div class="cards-resultado">
+
+                <div class="card-resumo">
+
+                    <div>
+                        <span>Tempo</span>
+                        <strong id="tempoNumero">
+                            01:14
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Questões acertadas</span>
+                        <strong id="acertosFinal">
+                            2/5
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Acertos</span>
+                        <strong id="porcentagemFinal">
+                            40%
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="card-info">
+
+                    <div class="icone-card sucesso">
+                        ✓
+                    </div>
+
+                    <div class="texto-card">
+                        Maior sequência de acertos
+                    </div>
+
+                    <strong>
+                        8 questões
+                    </strong>
+
+                </div>
+
+
+                <div class="card-info">
+
+                    <div class="icone-card tempo">
+                        ⏱
+                    </div>
+
+                    <div class="texto-card">
+                        Questão mais rápida
+                    </div>
+
+                    <strong>
+                        12 segundos
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="botoes-finais">
+
+                <button
+                    id="btnRefazer"
+                    class="btn-final btn-refazer"
+                    type="button">
+
+                    Refazer
+
+                </button>
+
+                <button
+                    id="btnVoltarHome"
+                    class="btn-final btn-sair"
+                    type="button">
+
+                    Home
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/quiz2.js"></script>
+
+</body>
+</html>
