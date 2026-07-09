@@ -1,83 +1,240 @@
-/* SAUDAÇÃO AUTOMÁTICA */
+/* ==========================
+   USUÁRIO
+========================== */
 
-const saudacao = document.getElementById("saudacao");
+const nomeUsuario =
+    localStorage.getItem("nomeUsuario") || "Aluno";
+
+const fotoUsuario =
+    localStorage.getItem("fotoUsuario") || "imagens/user.png";
+
+document.getElementById("userPhoto").src = fotoUsuario;
+
+
+/* ==========================
+   SAUDAÇÃO
+========================== */
+
+const greetingElement =
+    document.getElementById("greeting");
 
 const hora = new Date().getHours();
 
-let texto = "Bom dia";
+let saudacao = "";
 
-if (hora >= 12 && hora < 18) {
-  texto = "Boa tarde";
-} else if (hora >= 18) {
-  texto = "Boa noite";
+if(hora >= 5 && hora < 12){
+    saudacao = "Bom dia";
+}
+else if(hora >= 12 && hora < 18){
+    saudacao = "Boa tarde";
+}
+else{
+    saudacao = "Boa noite";
 }
 
-/* BUSCAR NOME DO USUÁRIO NO LOCALSTORAGE */
+greetingElement.textContent =
+    `${saudacao}, ${nomeUsuario}!`;
 
-function obterNomeUsuario() {
-  const usuarioSalvo = localStorage.getItem("saebTudoUsuario");
 
-  if (!usuarioSalvo) {
-    return "Aluno";
-  }
+/* ==========================
+   FRASES MOTIVACIONAIS
+========================== */
 
-  try {
-    const usuario = JSON.parse(usuarioSalvo);
-    return usuario.nome && usuario.nome.trim() !== "" ? usuario.nome : "Aluno";
-  } catch (erro) {
-    console.warn("Erro ao ler usuário salvo:", erro);
-    return "Aluno";
-  }
+const frases = [
+
+    "Continue sua jornada e conquiste grandes resultados.",
+
+    "Cada questão respondida aproxima você do objetivo.",
+
+    "Seu futuro está sendo construído agora.",
+
+    "Pequenos avanços geram grandes resultados.",
+
+    "Hoje é um ótimo dia para aprender algo novo.",
+
+    "Consistência supera intensidade.",
+
+    "Mais uma questão, mais perto da aprovação.",
+
+    "O conhecimento de hoje é a conquista de amanhã.",
+
+    "Você está mais perto da sua meta do que imagina.",
+
+    "Estudar um pouco todos os dias faz diferença."
+];
+
+const fraseAleatoria =
+    frases[Math.floor(Math.random() * frases.length)];
+
+document.getElementById(
+    "motivationText"
+).textContent = fraseAleatoria;
+
+
+/* ==========================
+   CARROSSEL
+========================== */
+
+const slides =
+    document.querySelectorAll(".carousel-slide");
+
+const indicators =
+    document.querySelectorAll(".indicator");
+
+let slideAtual = 0;
+
+function mostrarSlide(index){
+
+    slides.forEach(slide=>{
+        slide.style.display = "none";
+    });
+
+    indicators.forEach(indicator=>{
+        indicator.classList.remove("active");
+    });
+
+    slides[index].style.display = "block";
+
+    indicators[index].classList.add("active");
 }
 
-const nomeUsuario = obterNomeUsuario();
-saudacao.innerText = `${texto}! ${nomeUsuario}`;
+mostrarSlide(slideAtual);
+
+setInterval(()=>{
+
+    slideAtual++;
+
+    if(slideAtual >= slides.length){
+        slideAtual = 0;
+    }
+
+    mostrarSlide(slideAtual);
+
+},8000);
 
 
-/* DESAFIO DO DIA */
+/* ==========================
+   STREAK
+========================== */
 
-document.getElementById("btnDesafio").onclick = () => {
-  window.location.href = "quiz.html?modo=geral_rapido";
-};
+const hoje = new Date();
+
+const hojeFormatado =
+    hoje.toISOString().split("T")[0];
+
+let streak =
+    parseInt(localStorage.getItem("streak")) || 0;
+
+const ultimoDia =
+    localStorage.getItem("ultimoDiaRespondido");
+
+if(!ultimoDia){
+
+    localStorage.setItem(
+        "ultimoDiaRespondido",
+        hojeFormatado
+    );
+}
+
+const diferencaDias = ultimoDia
+? Math.floor(
+    (
+        new Date(hojeFormatado) -
+        new Date(ultimoDia)
+    ) / (1000 * 60 * 60 * 24)
+)
+: 0;
+
+if(diferencaDias > 1){
+
+    streak = 0;
+
+    localStorage.setItem(
+        "streak",
+        streak
+    );
+}
+
+document.getElementById(
+    "streakDays"
+).textContent =
+`${streak} Dias`;
 
 
-/* QUESTÕES RÁPIDAS */
+/* ==========================
+   NAVEGAÇÃO
+========================== */
 
-document.getElementById("btnRapido").onclick = () => {
-  window.location.href = "quiz.html?modo=geral_rapido";
-};
+document.querySelectorAll(".nav-item")
+.forEach(item=>{
 
+    item.addEventListener("click",()=>{
 
-/* MATÉRIAS */
+        document
+            .querySelector(".nav-item.active")
+            ?.classList
+            .remove("active");
 
-document.querySelectorAll(".materia").forEach(card => {
-  card.onclick = () => {
-    const materia = card.dataset.materia;
-    window.location.href = `quiz.html?materia=${materia}&modo=completo`;
-  };
+        item.classList.add("active");
+
+    });
+
 });
 
 
-/* NAVBAR */
+/* ==========================
+   LINKS
+========================== */
 
-document.querySelectorAll(".nav-item").forEach(btn => {
-  btn.onclick = () => {
-    const page = btn.dataset.page;
+document.querySelector(".portugues")
+.addEventListener("click",()=>{
 
-    if (page === "home") {
-      window.location.href = "home.html";
-    }
+    window.location.href =
+        "desafios-portugues.html";
 
-    if (page === "simulados") {
-      window.location.href = "simulados.html";
-    }
+});
 
-     if (page === "desempenho") {
-      window.location.href = "desempenho.html";
-    }
+document.querySelector(".matematica")
+.addEventListener("click",()=>{
 
-    if (page === "perfil") {
-      window.location.href = "perfil.html";
-    }
-  };
+    window.location.href =
+        "desafios-matematica.html";
+
+});
+
+document.querySelector(".simulados")
+.addEventListener("click",()=>{
+
+    window.location.href =
+        "simulados.html";
+
+});
+
+document.querySelector(".desafios")
+.addEventListener("click",()=>{
+
+    window.location.href =
+        "desafios.html";
+
+});
+
+
+/* ==========================
+   TREINOS RÁPIDOS
+========================== */
+
+document.querySelector(".quick-questions")
+.addEventListener("click",()=>{
+
+    window.location.href =
+        "quiz.html";
+
+});
+
+document.querySelector(".quick-challenge")
+.addEventListener("click",()=>{
+
+    window.location.href =
+        "quiz.html";
+
 });

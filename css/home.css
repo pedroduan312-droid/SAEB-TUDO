@@ -1,372 +1,476 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* =========================
+   CONTAINER
+========================= */
+
+.app-container{
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
 }
 
-body{
+/* =========================
+   BACKGROUND
+========================= */
 
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-family:'Montserrat',sans-serif;
-
-background-color:#01091B
-
+.bg-blur{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(100px);
+    pointer-events:none;
+    z-index:0;
 }
 
-.container{
+.blur-1{
+    width:220px;
+    height:220px;
 
-width:390px;
-height:844px;
+    top:-80px;
+    right:-80px;
 
-display:flex;
-flex-direction:column;
-
-position:relative;
-
-overflow:hidden;
-
+    background:rgba(72,122,255,.35);
 }
 
-.header{
+.blur-2{
+    width:180px;
+    height:180px;
 
-display:flex;
-align-items:center;
-gap:12px;
+    top:120px;
+    left:-80px;
 
-padding:20px;
-
-color:white;
-
+    background:rgba(136,82,255,.20);
 }
 
+/* =========================
+   HEADER
+========================= */
 
+.home-header{
+    height:160px;
 
-.perfil img{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
 
-width:45px;
-height:45px;
+    padding:32px 24px 0;
 
-border-radius:50%;
-
+    position:relative;
+    z-index:2;
 }
 
-.saudacao h2{
-
-font-size:18px;
-
+.user-area{
+    display:flex;
+    align-items:center;
+    gap:14px;
 }
 
-.saudacao p{
+.user-avatar{
+    width:58px;
+    height:58px;
 
-font-size:13px;
-opacity:0.8;
-font-weight:600;
+    border-radius:50%;
+    overflow:hidden;
 
+    flex-shrink:0;
+
+    border:3px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.1);
 }
 
-.logo-app {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 50x; /* ajusta conforme quiser */
-  height: 50px;
-  object-fit: contain;
+.user-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-.conteudo{
+.user-info h1{
+    font-family: nunito,sans-serif;
+    font-size:1.55rem;
+    font-weight:700;
 
-background:white;
-
-margin-top:100px;
-
-flex:1;
-
-border-top-left-radius:0px;
-border-top-right-radius:0px;
-
-padding:15px 0 90px 0; /* espaço para navbar */
-
-box-shadow:0 -10px 30px rgba(0,0,0,0.15);
-
-position:relative;
-
-.icone-seta{
-width:14px;
-height:14px;
-margin-left:6px;
-
-transition:.2s;
+    color:white;
 }
 
-button{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:6px;
+.user-info p{
+    margin-top:6px;
+
+    font-family:'Nunito',sans-serif;
+    font-size:.92rem;
+    line-height:1.35;
+
+    color:rgba(255,255,255,.78);
+
+    max-width:180px;
 }
 
+.home-logo{
+    width:72px;
+    object-fit:contain;
 }
 
-/* DESAFIO */
+/* =========================
+   MAIN
+========================= */
 
-.desafio-card{
+.home-content{
+    position:relative;
+    z-index:3;
 
-margin:-110px 20px;
+    background:#F5F7FB;
 
-height:200px;
+    border-radius:32px 32px 0 0;
 
-border-radius:14px;
+    margin-top:-10px;
 
-background-image:url("../imagens/card\ dsdiario.png");
-background-size:cover;
-background-position:center;
-
-padding:15px;
-
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-
-animation:subir .6s ease;
-
+    padding:26px 18px 140px;
 }
 
-.desafio-card button{
+/* =========================
+   CAROUSEL
+========================= */
 
-font-family: 'Montserrat', sans-serif;
-
-margin-left:14px;
-
-padding:8px 14px;
-
-border:none;
-
-border-radius:22px;
-
-background:#06102C;
-
-color:#ffffff;
-
-font-size: 12px;
-font-weight:600;
-
-cursor:pointer;
-
-transition:.2s;
-
+.hero-carousel{
+    margin-top:-60px;
 }
 
-.desafio-card button:active{
+.carousel-container{
+    width:100%;
+    height:160px;
 
-transform:scale(.95);
+    border-radius:24px;
 
+    overflow:hidden;
+
+    background:#ddd;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.10);
 }
 
-/* MATERIAS */
-
-.materias{
-
-padding:110px 20px;
-
+.carousel-slide{
+    width:100%;
+    height:100%;
 }
 
-.titulo{
-
-margin:15px 0;
-
-font-size:16px;
-
-font-weight:600;
-
+.carousel-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-.cards-materias{
+.carousel-indicators{
+    display:flex;
+    justify-content:center;
+    gap:8px;
 
-display:flex;
-
-gap:12px;
-
+    margin-top:14px;
 }
 
-.card{
+.indicator{
+    width:12px;
+    height:6px;
 
-flex:1;
+    border-radius:20px;
 
-height:210px;
+    background:#D7D7D7;
 
-border-radius:14px;
-
-padding:15px;
-
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-
-background-size:cover;
-
-cursor:pointer;
-
-transition:.2s;
-
+    transition:.3s;
 }
 
-.card:active{
-
-transform:scale(.96);
-
+.indicator.active{
+    width:22px;
+    background:#2F63FF;
 }
 
-.portugues{
+/* =========================
+   SECTION TITLE
+========================= */
 
-background-image:url("../imagens/portugues-card.png");
+.section-title{
+    font-family: nunito,sans-serif;
+    font-size:1.1rem;
+    font-weight:700;
 
+    color:#0E1C4F;
+
+    margin-bottom:22px;
 }
 
-.matematica{
+/* =========================
+   STUDY SECTION
+========================= */
 
-background-image:url("../imagens/matematica-card.png");
-
+.study-section{
+    margin-top:28px;
 }
 
-.rodape span{
-
-background:#0000002c;
-
-padding:6px 10px;
-
-border-radius:20px;
-
-font-weight:600;
-
-font-size:13px;
-
-color:white;
-
+.study-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
 }
 
-.btnMateria{
+.study-item{
+    border:none;
+    background:none;
 
-  font-family: 'Montserrat', sans-serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 
-color:#ffffff ;
+    gap:12px;
 
-margin-bottom:25px ;
-border:none;
+    cursor:pointer;
 
-padding:6px 14px;
-
-border-radius:20px;
-
-background:#01091B;
-
-font-weight:600;
-
-cursor:pointer;
-
+    transition:.2s;
 }
 
-.btnMateria:active{
-
-transform:scale(.92);
-
+.study-item:active{
+    transform:scale(.92);
 }
 
-/* TESTE RAPIDO */
+.study-icon{
+    width:82px;
+    height:82px;
 
-.rapido{
+    border-radius:50%;
 
-margin-top: -100px;
-
-padding:0 20px;
-
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.card-rapido{
-
-height:140px;
-
-border-radius:14px;
-
-padding:15px;
-
-background-image:url("../imagens/rapido-card.png");
-background-size:cover;
-
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-
+.study-icon img{
+    width:42px;
 }
 
-.card-rapido button{
-
-padding:8px 14px;
-
-border:none;
-
-border-radius:20px;
-
-background:white;
-
-cursor:pointer;
-
-font-weight:600;
-
-color:#1438a6
-
+.portugues .study-icon{
+    background:#DCE4FF;
 }
 
-.card-rapido button:active{
-
-transform:scale(.95);
-
+.matematica .study-icon{
+    background:#DDF8E8;
 }
 
-/* NAVBAR */
+.simulados .study-icon{
+    background:#E8D9FF;
+}
 
-.navbar{
+.desafios .study-icon{
+    background:#FBE8C8;
+}
 
-position:absolute;
+.study-item span{
+    font-family:'Nunito',sans-serif;
+    font-size:.95rem;
+    font-weight:700;
 
-bottom:0;
-left:0;
+    color:#17214F;
+}
 
-width:100%;
+/* =========================
+   QUICK TRAINING
+========================= */
 
-height:80px;
+.quick-section{
+    margin-top:42px;
+}
 
-background:#eee;
+.quick-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
 
-border-top-left-radius:20px;
-border-top-right-radius:20px;
+.quick-card{
+    height:100px;
 
-display:flex;
-justify-content:space-around;
-align-items:center;
+    border-radius:22px;
 
-z-index:10;
+    padding:18px;
 
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    transition:.2s;
+
+    cursor:pointer;
+}
+
+.quick-card:active{
+    transform:scale(.97);
+}
+
+.quick-icon img{
+    width:42px;
+}
+
+.quick-info h3{
+    font-family:'Nunito',sans-serif;
+    font-size:1rem;
+
+    color:#17214F;
+
+    margin-bottom:4px;
+}
+
+.quick-info p{
+    font-family:'Nunito',sans-serif;
+    font-size:.92rem;
+
+    color:#49506F;
+}
+
+.quick-questions{
+    background:#E8D9FF;
+}
+
+.quick-challenge{
+    background:#FBE8C8;
+}
+
+/* =========================
+   STREAK
+========================= */
+
+.streak-section{
+    margin-top:42px;
+}
+
+.streak-card{
+    background:white;
+
+    border-radius:24px;
+
+    padding:22px;
+
+    box-shadow:
+        0 6px 24px rgba(0,0,0,.08);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.streak-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.streak-fire{
+    width:72px;
+    height:72px;
+
+    border-radius:50%;
+
+    background:#FFF3D4;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:2rem;
+}
+
+.streak-label{
+    font-size:.9rem;
+    color:#49506F;
+}
+
+#streakDays{
+    font-family:'Nunito',sans-serif;
+    font-size:2rem;
+    font-weight:700;
+
+    color:#F4A62A;
+}
+
+.streak-info p{
+    color:#4D5678;
+    font-size:.95rem;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(5,12px);
+    gap:7px;
+}
+
+.day{
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#D9D9D9;
+}
+
+.day.completed{
+    background:#F4A62A;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.bottom-navbar{
+    position:fixed;
+
+    bottom:22px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(340px,90%);
+
+    height:78px;
+
+    border-radius:26px;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(20px);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.12);
+
+    z-index:100;
 }
 
 .nav-item{
+    border:none;
+    background:none;
 
-background:none;
-border:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
 
-display:flex;
-flex-direction:column;
-align-items:center;
+    color:#A6A9B8;
 
-cursor:pointer;
+    font-family:'Nunito',sans-serif;
+    font-size:.72rem;
+    font-weight:700;
 
+    cursor:pointer;
+
+    transition:.2s;
 }
 
 .nav-item img{
+    width:24px;
+}
 
-width:35px;
+.nav-item.active{
+    color:#2F63FF;
+}
 
+.nav-item:active{
+    transform:scale(.92);
 }

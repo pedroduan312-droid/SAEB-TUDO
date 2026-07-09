@@ -1,142 +1,281 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saeb Tudo - Home</title>
 
-<title>Home</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/home.css">
-
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/home.css">
 </head>
 
 <body>
 
-<div class="container">
+    <div class="app-container">
 
-<!-- HEADER -->
+        <!-- BACKGROUND DECORATIVO -->
+        <div class="bg-blur blur-1"></div>
+        <div class="bg-blur blur-2"></div>
 
-<header class="header">
+        <!-- HEADER -->
+        <header class="home-header">
 
-<div class="perfil">
-<img src="imagens/user.png">
-</div>
+            <div class="user-area">
 
-<div class="saudacao">
-<h2 id="saudacao">Bom dia! Aluno</h2>
-<p>Pronto pra praticar?</p>
-</div>
+                <div class="user-avatar">
+                    <img src="../imagens/user.png" alt="Foto do usuário" id="userPhoto">
+                </div>
 
- <img src="imagens/logo saeb tudo.svg" class="logo-app" alt="Logo">
+                <div class="user-info">
+                    <h1 id="greeting">
+                        Bom dia, Duan!
+                    </h1>
 
-</header>
+                    <p id="motivationText">
+                        Continue sua jornada e conquiste grandes resultados.
+                    </p>
+                </div>
 
+            </div>
 
-<main class="conteudo">
+            <img
+                src="../imagens/logo saeb tudo.svg"
+                alt="Saeb Tudo"
+                class="home-logo"
+            >
 
-<!-- DESAFIO DO DIA -->
+        </header>
 
-<section class="desafio-card">
+        <!-- CONTEÚDO -->
+        <main class="home-content">
 
-<div class="rodape">
+            <!-- CARROSSEL -->
+            <section class="hero-carousel">
 
-<button id="btnDesafio">
-  Começar desafio
-  <img src="imagens/seta.svg" class="icone-seta">
-</button>
+                <div class="carousel-container">
 
-</div>
+                    <div class="carousel-slide active">
+                        <img src="../imagens/banner1.png" alt="">
+                    </div>
 
-</section>
+                    <div class="carousel-slide">
+                        <img src="../imagens/banner2.png" alt="">
+                    </div>
 
+                    <div class="carousel-slide">
+                        <img src="../imagens/banner3.png" alt="">
+                    </div>
 
-<!-- TREINE POR MATÉRIAS -->
+                </div>
 
-<section class="materias">
+                <div class="carousel-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
 
-<h3 class="titulo">Treine por Matérias</h3>
+            </section>
 
-<div class="cards-materias">
+            <!-- ESTUDAR -->
+            <section class="study-section">
 
-<div class="card materia portugues" data-materia="portugues">
+                <h2 class="section-title">
+                    Escolha o que estudar
+                </h2>
 
-<div class="rodape">
+                <div class="study-grid">
 
-<button class="btnMateria">
-  Iniciar
-  <img src="imagens/seta.svg" class="icone-seta">
-</button>
+                    <button class="study-item portugues">
 
-</div>
+                        <div class="study-icon">
+                            <img src="../imagens/icon-portugues.svg">
+                        </div>
 
-</div>
+                        <span>Português</span>
 
+                    </button>
 
-<div class="card materia matematica" data-materia="matematica">
+                    <button class="study-item matematica">
 
-<div class="rodape">
+                        <div class="study-icon">
+                            <img src="../imagens/icon-matematica.svg">
+                        </div>
 
-<button class="btnMateria">
-  Iniciar
-  <img src="imagens/seta.svg" class="icone-seta">
-</button>
+                        <span>Matemática</span>
 
-</div>
+                    </button>
 
-</div>
+                    <button class="study-item simulados">
 
-</div>
+                        <div class="study-icon">
+                            <img src="../imagens/icon-simulados.svg">
+                        </div>
 
-</section>
+                        <span>Simulados</span>
 
+                    </button>
 
-<!-- QUESTÕES RÁPIDAS -->
+                    <button class="study-item desafios">
 
-<section class="rapido">
+                        <div class="study-icon">
+                            <img src="../imagens/icon-desafios.svg">
+                        </div>
 
-<h3 class="titulo">Questões Rápidas</h3>
+                        <span>Desafios</span>
 
-<div class="card-rapido">
+                    </button>
 
-<div class="rodape">
+                </div>
 
-<button id="btnRapido">Praticar</button>
+            </section>
 
-</div>
+            <!-- TREINOS RÁPIDOS -->
+            <section class="quick-section">
 
-</div>
+                <h2 class="section-title">
+                    Seus Treinos Rápidos
+                </h2>
 
-</section>
+                <div class="quick-grid">
 
-</main>
+                    <article class="quick-card quick-questions">
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
+                        <div class="quick-icon">
+                            <img src="../imagens/icon-flash.svg">
+                        </div>
 
-      <button class="nav-item ativo" data-page="home">
-        <img src="imagens/home-active.svg" alt="Home">
-      </button>
+                        <div class="quick-info">
+                            <h3>Questões rápidas</h3>
+                            <p>responda em até 10 min</p>
+                        </div>
 
-      <button class="nav-item" data-page="simulados">
-        <img src="imagens/simulados.svg" class="icone-simulados" alt="Simulados">
-      </button>
+                    </article>
 
-     <button class="nav-item" data-page="desempenho">
-        <img src="imagens/desempenho.svg" alt="Desempenho">
-      </button>
+                    <article class="quick-card quick-challenge">
 
-      <button class="nav-item" data-page="perfil">
-        <img src="imagens/perfil.svg" alt="Perfil">
-      </button>
+                        <div class="quick-icon">
+                            <img src="../imagens/icon-fire.svg">
+                        </div>
 
-    </nav>
+                        <div class="quick-info">
+                            <h3>Desafio do dia</h3>
+                            <p>responda 5 questões</p>
+                        </div>
 
-  </div>
+                    </article>
 
-<script src="js/home.js"></script>
+                </div>
+
+            </section>
+
+            <!-- STREAK -->
+            <section class="streak-section">
+
+                <h2 class="section-title">
+                    Sua sequência
+                </h2>
+
+                <div class="streak-card">
+
+                    <div class="streak-left">
+
+                        <div class="streak-fire">
+                            🔥
+                        </div>
+
+                        <div class="streak-info">
+
+                            <span class="streak-label">
+                                Sequência Atual
+                            </span>
+
+                            <h2 id="streakDays">
+                                13 Dias
+                            </h2>
+
+                            <p>
+                                Continue assim!
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="streak-right">
+
+                        <div class="calendar-grid">
+
+                            <div class="day completed"></div>
+                            <div class="day completed"></div>
+                            <div class="day completed"></div>
+                            <div class="day"></div>
+                            <div class="day"></div>
+
+                            <div class="day completed"></div>
+                            <div class="day completed"></div>
+                            <div class="day completed"></div>
+                            <div class="day completed"></div>
+                            <div class="day"></div>
+
+                            <div class="day completed"></div>
+                            <div class="day completed"></div>
+                            <div class="day completed"></div>
+                            <div class="day completed"></div>
+                            <div class="day completed"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- NAVBAR -->
+        <nav class="bottom-navbar">
+
+            <button class="nav-item active">
+
+                <img src="../imagens/home.svg" alt="">
+                <span>Home</span>
+
+            </button>
+
+            <button class="nav-item">
+
+                <img src="../imagens/simulados.svg" alt="">
+                <span>Simulados</span>
+
+            </button>
+
+            <button class="nav-item">
+
+                <img src="../imagens/desempenho.svg" alt="">
+                <span>Desempenho</span>
+
+            </button>
+
+            <button class="nav-item">
+
+                <img src="../imagens/perfil.svg" alt="">
+                <span>Perfil</span>
+
+            </button>
+
+        </nav>
+
+    </div>
+
+    <script src="../js/home.js"></script>
 
 </body>
+
 </html>
