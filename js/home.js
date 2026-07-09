@@ -1,26 +1,16 @@
 /* ==========================
-   USUÁRIO
-========================== */
-
-const nomeUsuario =
-    localStorage.getItem("nomeUsuario") || "Aluno";
-
-const fotoUsuario =
-    localStorage.getItem("fotoUsuario") || "imagens/user.png";
-
-document.getElementById("userPhoto").src = fotoUsuario;
-
-
-/* ==========================
    SAUDAÇÃO
 ========================== */
 
-const greetingElement =
-    document.getElementById("greeting");
+const tituloSaudacao = document.getElementById("tituloSaudacao");
+
+const nomeUsuario =
+    localStorage.getItem("nomeUsuario") ||
+    "Aluno";
 
 const hora = new Date().getHours();
 
-let saudacao = "";
+let saudacao = "Olá";
 
 if(hora >= 5 && hora < 12){
     saudacao = "Bom dia";
@@ -32,209 +22,181 @@ else{
     saudacao = "Boa noite";
 }
 
-greetingElement.textContent =
-    `${saudacao}, ${nomeUsuario}!`;
+tituloSaudacao.textContent =
+`${saudacao}, ${nomeUsuario}!`;
 
 
 /* ==========================
-   FRASES MOTIVACIONAIS
+   FOTO PERFIL
 ========================== */
 
-const frases = [
+const fotoPerfil =
+    document.getElementById("fotoPerfil");
 
-    "Continue sua jornada e conquiste grandes resultados.",
+const fotoSalva =
+    localStorage.getItem("fotoPerfil");
 
-    "Cada questão respondida aproxima você do objetivo.",
-
-    "Seu futuro está sendo construído agora.",
-
-    "Pequenos avanços geram grandes resultados.",
-
-    "Hoje é um ótimo dia para aprender algo novo.",
-
-    "Consistência supera intensidade.",
-
-    "Mais uma questão, mais perto da aprovação.",
-
-    "O conhecimento de hoje é a conquista de amanhã.",
-
-    "Você está mais perto da sua meta do que imagina.",
-
-    "Estudar um pouco todos os dias faz diferença."
-];
-
-const fraseAleatoria =
-    frases[Math.floor(Math.random() * frases.length)];
-
-document.getElementById(
-    "motivationText"
-).textContent = fraseAleatoria;
+if(fotoSalva){
+    fotoPerfil.src = fotoSalva;
+}
 
 
 /* ==========================
    CARROSSEL
 ========================== */
 
-const slides =
-    document.querySelectorAll(".carousel-slide");
+const track =
+    document.querySelector(".carousel-track");
 
-const indicators =
-    document.querySelectorAll(".indicator");
+const dots =
+    document.querySelectorAll(".dot");
+
+const totalSlides =
+    document.querySelectorAll(".banner").length;
 
 let slideAtual = 0;
 
-function mostrarSlide(index){
+function atualizarCarousel(){
 
-    slides.forEach(slide=>{
-        slide.style.display = "none";
+    track.style.transform =
+        `translateX(-${slideAtual * 100}%)`;
+
+    dots.forEach(dot=>{
+        dot.classList.remove("active");
     });
 
-    indicators.forEach(indicator=>{
-        indicator.classList.remove("active");
-    });
-
-    slides[index].style.display = "block";
-
-    indicators[index].classList.add("active");
+    dots[slideAtual]
+        .classList.add("active");
 }
 
-mostrarSlide(slideAtual);
-
-setInterval(()=>{
+function proximoSlide(){
 
     slideAtual++;
 
-    if(slideAtual >= slides.length){
+    if(slideAtual >= totalSlides){
         slideAtual = 0;
     }
 
-    mostrarSlide(slideAtual);
+    atualizarCarousel();
+}
 
-},8000);
+setInterval(proximoSlide,8000);
 
 
 /* ==========================
-   STREAK
+   SWIPE
 ========================== */
 
-const hoje = new Date();
+let startX = 0;
+let endX = 0;
 
-const hojeFormatado =
-    hoje.toISOString().split("T")[0];
+track.addEventListener(
+    "touchstart",
+    e=>{
 
-let streak =
-    parseInt(localStorage.getItem("streak")) || 0;
+        startX =
+            e.touches[0].clientX;
 
-const ultimoDia =
-    localStorage.getItem("ultimoDiaRespondido");
+    }
+);
 
-if(!ultimoDia){
+track.addEventListener(
+    "touchend",
+    e=>{
 
-    localStorage.setItem(
-        "ultimoDiaRespondido",
-        hojeFormatado
+        endX =
+            e.changedTouches[0].clientX;
+
+        if(startX - endX > 50){
+
+            slideAtual++;
+
+            if(slideAtual >= totalSlides){
+                slideAtual = 0;
+            }
+
+            atualizarCarousel();
+        }
+
+        if(endX - startX > 50){
+
+            slideAtual--;
+
+            if(slideAtual < 0){
+                slideAtual =
+                    totalSlides - 1;
+            }
+
+            atualizarCarousel();
+        }
+
+    }
+);
+
+
+/* ==========================
+   SEQUÊNCIA
+========================== */
+
+const calendario =
+    document.getElementById(
+        "calendarioSequencia"
     );
-}
 
-const diferencaDias = ultimoDia
-? Math.floor(
-    (
-        new Date(hojeFormatado) -
-        new Date(ultimoDia)
-    ) / (1000 * 60 * 60 * 24)
-)
-: 0;
-
-if(diferencaDias > 1){
-
-    streak = 0;
-
-    localStorage.setItem(
-        "streak",
-        streak
-    );
-}
+const diasSequencia =
+    Number(
+        localStorage.getItem(
+            "diasSequencia"
+        )
+    ) || 13;
 
 document.getElementById(
-    "streakDays"
+    "diasSequencia"
 ).textContent =
-`${streak} Dias`;
+`${diasSequencia} Dias`;
+
+const diasMes =
+    new Date(
+        new Date().getFullYear(),
+        new Date().getMonth()+1,
+        0
+    ).getDate();
+
+for(let i=1;i<=diasMes;i++){
+
+    const ponto =
+        document.createElement("div");
+
+    if(i <= diasSequencia){
+        ponto.classList.add("ativo");
+    }
+
+    calendario.appendChild(ponto);
+}
 
 
 /* ==========================
-   NAVEGAÇÃO
+   NAVBAR
 ========================== */
 
-document.querySelectorAll(".nav-item")
+const paginaAtual =
+window.location.pathname
+.split("/")
+.pop();
+
+document
+.querySelectorAll(".nav-item")
 .forEach(item=>{
 
-    item.addEventListener("click",()=>{
+    const link =
+        item.getAttribute("href");
 
-        document
-            .querySelector(".nav-item.active")
-            ?.classList
-            .remove("active");
+    if(link === paginaAtual){
 
-        item.classList.add("active");
+        item.classList.add(
+            "active"
+        );
 
-    });
-
-});
-
-
-/* ==========================
-   LINKS
-========================== */
-
-document.querySelector(".portugues")
-.addEventListener("click",()=>{
-
-    window.location.href =
-        "desafios-portugues.html";
-
-});
-
-document.querySelector(".matematica")
-.addEventListener("click",()=>{
-
-    window.location.href =
-        "desafios-matematica.html";
-
-});
-
-document.querySelector(".simulados")
-.addEventListener("click",()=>{
-
-    window.location.href =
-        "simulados.html";
-
-});
-
-document.querySelector(".desafios")
-.addEventListener("click",()=>{
-
-    window.location.href =
-        "desafios.html";
-
-});
-
-
-/* ==========================
-   TREINOS RÁPIDOS
-========================== */
-
-document.querySelector(".quick-questions")
-.addEventListener("click",()=>{
-
-    window.location.href =
-        "quiz.html";
-
-});
-
-document.querySelector(".quick-challenge")
-.addEventListener("click",()=>{
-
-    window.location.href =
-        "quiz.html";
+    }
 
 });

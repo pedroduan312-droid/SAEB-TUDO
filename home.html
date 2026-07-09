@@ -2,280 +2,249 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Saeb Tudo - Home</title>
+    <title>Saeb Tudo</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-    <div class="app-container">
+<div class="container home-container">
 
-        <!-- BACKGROUND DECORATIVO -->
-        <div class="bg-blur blur-1"></div>
-        <div class="bg-blur blur-2"></div>
+    <!-- HEADER -->
 
-        <!-- HEADER -->
-        <header class="home-header">
+    <header class="header">
 
-            <div class="user-area">
+        <div class="usuario">
 
-                <div class="user-avatar">
-                    <img src="../imagens/user.png" alt="Foto do usuário" id="userPhoto">
-                </div>
+            <img
+                src="imagens/perfil-padrao.png"
+                class="foto-perfil"
+                id="fotoPerfil">
 
-                <div class="user-info">
-                    <h1 id="greeting">
-                        Bom dia, Duan!
-                    </h1>
+            <div class="saudacao">
 
-                    <p id="motivationText">
-                        Continue sua jornada e conquiste grandes resultados.
-                    </p>
+                <h2 id="tituloSaudacao">
+                    Bom dia, Aluno!
+                </h2>
+
+                <p>
+                    Continue sua jornada e
+                    conquiste grandes resultados
+                </p>
+
+            </div>
+
+        </div>
+
+        <img
+            src="imagens/logo saeb tudo.svg"
+            class="logo-home">
+
+    </header>
+
+    <!-- CONTEÚDO -->
+
+    <main class="conteudo">
+
+        <!-- =========================
+             CARROSSEL
+        ========================== -->
+
+        <section class="banner-section">
+
+            <div class="carousel">
+
+                <div class="carousel-track">
+
+                    <div class="banner">
+                        <img src="imagens/banner1.png">
+                    </div>
+
+                    <div class="banner">
+                        <img src="imagens/banner2.png">
+                    </div>
+
+                    <div class="banner">
+                        <img src="imagens/banner3.png">
+                    </div>
+
                 </div>
 
             </div>
 
-            <img
-                src="../imagens/logo saeb tudo.svg"
-                alt="Saeb Tudo"
-                class="home-logo"
-            >
+            <div class="indicadores">
 
-        </header>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
 
-        <!-- CONTEÚDO -->
-        <main class="home-content">
+            </div>
 
-            <!-- CARROSSEL -->
-            <section class="hero-carousel">
+        </section>
 
-                <div class="carousel-container">
+        <!-- =========================
+             MATÉRIAS
+        ========================== -->
 
-                    <div class="carousel-slide active">
-                        <img src="../imagens/banner1.png" alt="">
+        <section class="materias">
+
+            <h3>Escolha o que estudar</h3>
+
+            <div class="materias-grid">
+
+                <a href="desafios-portugues.html" class="materia">
+
+                    <div class="icone portugues">
+                        <img src="imagens/portugues.svg">
                     </div>
 
-                    <div class="carousel-slide">
-                        <img src="../imagens/banner2.png" alt="">
+                    <span>Português</span>
+
+                </a>
+
+                <a href="desafios-matematica.html" class="materia">
+
+                    <div class="icone matematica">
+                        <img src="imagens/matematica.svg">
                     </div>
 
-                    <div class="carousel-slide">
-                        <img src="../imagens/banner3.png" alt="">
+                    <span>Matemática</span>
+
+                </a>
+
+                <a href="simulados.html" class="materia">
+
+                    <div class="icone simulados">
+                        <img src="imagens/simulados.svg">
                     </div>
 
-                </div>
+                    <span>Simulados</span>
 
-                <div class="carousel-indicators">
-                    <span class="indicator active"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                </div>
+                </a>
 
-            </section>
+                <a href="desafios.html" class="materia">
 
-            <!-- ESTUDAR -->
-            <section class="study-section">
+                    <div class="icone desafios">
+                        <img src="imagens/desafios.svg">
+                    </div>
 
-                <h2 class="section-title">
-                    Escolha o que estudar
-                </h2>
+                    <span>Desafios</span>
 
-                <div class="study-grid">
+                </a>
 
-                    <button class="study-item portugues">
+            </div>
 
-                        <div class="study-icon">
-                            <img src="../imagens/icon-portugues.svg">
-                        </div>
+        </section>
 
-                        <span>Português</span>
+        <!-- =========================
+             TREINOS RÁPIDOS
+        ========================== -->
 
-                    </button>
+        <section class="treinos">
 
-                    <button class="study-item matematica">
+            <h3>Seus Treinos Rápidos</h3>
 
-                        <div class="study-icon">
-                            <img src="../imagens/icon-matematica.svg">
-                        </div>
+            <div class="treinos-grid">
 
-                        <span>Matemática</span>
+                <a href="quiz.html" class="treino-card rapido">
 
-                    </button>
+                    <img src="imagens/raio.svg">
 
-                    <button class="study-item simulados">
+                    <div>
 
-                        <div class="study-icon">
-                            <img src="../imagens/icon-simulados.svg">
-                        </div>
+                        <h4>Questões rápidas</h4>
 
-                        <span>Simulados</span>
-
-                    </button>
-
-                    <button class="study-item desafios">
-
-                        <div class="study-icon">
-                            <img src="../imagens/icon-desafios.svg">
-                        </div>
-
-                        <span>Desafios</span>
-
-                    </button>
-
-                </div>
-
-            </section>
-
-            <!-- TREINOS RÁPIDOS -->
-            <section class="quick-section">
-
-                <h2 class="section-title">
-                    Seus Treinos Rápidos
-                </h2>
-
-                <div class="quick-grid">
-
-                    <article class="quick-card quick-questions">
-
-                        <div class="quick-icon">
-                            <img src="../imagens/icon-flash.svg">
-                        </div>
-
-                        <div class="quick-info">
-                            <h3>Questões rápidas</h3>
-                            <p>responda em até 10 min</p>
-                        </div>
-
-                    </article>
-
-                    <article class="quick-card quick-challenge">
-
-                        <div class="quick-icon">
-                            <img src="../imagens/icon-fire.svg">
-                        </div>
-
-                        <div class="quick-info">
-                            <h3>Desafio do dia</h3>
-                            <p>responda 5 questões</p>
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </section>
-
-            <!-- STREAK -->
-            <section class="streak-section">
-
-                <h2 class="section-title">
-                    Sua sequência
-                </h2>
-
-                <div class="streak-card">
-
-                    <div class="streak-left">
-
-                        <div class="streak-fire">
-                            🔥
-                        </div>
-
-                        <div class="streak-info">
-
-                            <span class="streak-label">
-                                Sequência Atual
-                            </span>
-
-                            <h2 id="streakDays">
-                                13 Dias
-                            </h2>
-
-                            <p>
-                                Continue assim!
-                            </p>
-
-                        </div>
+                        <p>Responda em até 10 minutos</p>
 
                     </div>
 
-                    <div class="streak-right">
+                </a>
 
-                        <div class="calendar-grid">
+                <a href="quiz.html" class="treino-card desafio-dia">
 
-                            <div class="day completed"></div>
-                            <div class="day completed"></div>
-                            <div class="day completed"></div>
-                            <div class="day"></div>
-                            <div class="day"></div>
+                    <img src="imagens/fogo.svg">
 
-                            <div class="day completed"></div>
-                            <div class="day completed"></div>
-                            <div class="day completed"></div>
-                            <div class="day completed"></div>
-                            <div class="day"></div>
+                    <div>
 
-                            <div class="day completed"></div>
-                            <div class="day completed"></div>
-                            <div class="day completed"></div>
-                            <div class="day completed"></div>
-                            <div class="day completed"></div>
+                        <h4>Desafio do dia</h4>
 
-                        </div>
+                        <p>Responda 5 questões</p>
 
                     </div>
 
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             SEQUÊNCIA
+        ========================== -->
+
+        <section class="sequencia-card">
+
+            <div class="sequencia-info">
+
+                <img src="imagens/fogo.svg">
+
+                <div>
+
+                    <span>Sequência Atual</span>
+
+                    <h2 id="diasSequencia">
+                        13 Dias
+                    </h2>
+
+                    <p>Continue assim!</p>
+
                 </div>
 
-            </section>
+            </div>
 
-        </main>
+            <div class="calendario" id="calendarioSequencia">
 
-        <!-- NAVBAR -->
-        <nav class="bottom-navbar">
+            </div>
 
-            <button class="nav-item active">
+        </section>
 
-                <img src="../imagens/home.svg" alt="">
-                <span>Home</span>
+    </main>
 
-            </button>
+    <!-- NAVBAR -->
 
-            <button class="nav-item">
+    <nav class="navbar">
 
-                <img src="../imagens/simulados.svg" alt="">
-                <span>Simulados</span>
+        <a class="nav-item active" href="home.html">
+            <img src="imagens/home-ativo.svg">
+        </a>
 
-            </button>
+        <a class="nav-item" href="simulados.html">
+            <img src="imagens/materias.svg">
+        </a>
 
-            <button class="nav-item">
+        <a class="nav-item" href="desempenho.html">
+            <img src="imagens/desempenho.svg">
+        </a>
 
-                <img src="../imagens/desempenho.svg" alt="">
-                <span>Desempenho</span>
+        <a class="nav-item" href="perfil.html">
+            <img src="imagens/perfil.svg">
+        </a>
 
-            </button>
+    </nav>
 
-            <button class="nav-item">
+</div>
 
-                <img src="../imagens/perfil.svg" alt="">
-                <span>Perfil</span>
-
-            </button>
-
-        </nav>
-
-    </div>
-
-    <script src="../js/home.js"></script>
+<script src="js/home.js"></script>
 
 </body>
-
 </html>
