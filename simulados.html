@@ -1,80 +1,225 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulados</title>
+<html lang="pt-BR">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/simulados.css">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simulados - Saeb Tudo</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/simulados.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-    <div class="container">
+<div class="container simulados-container">
 
-    <header class="topo-desempenho">
-      <div class="topo-imagem">
-      </div>
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+
+            <h1>Simulados</h1>
+
+            <p>
+                Pratique, evolua e conquiste<br>
+                seus melhores resultados!
+            </p>
+
+        </div>
+
+        <img
+            src="imagens/logo saeb tudo.svg"
+            class="logo-header">
+
     </header>
+
+    <!-- CONTEÚDO -->
 
     <main class="conteudo">
 
-      <!-- TREINE POR MATÉRIAS -->
-      <section class="secao">
-        <h2 class="titulo">Treine por Matérias</h2>
+        <!-- MATÉRIAS -->
 
-        <div class="cards-coluna">
+        <section>
 
-          <div class="card-cardapio portugues" data-link="desafios-portugues.html">
-          </div>
+            <h2>Treine Por Matérias</h2>
 
-          <div class="card-cardapio matematica" data-link="desafios-matematica.html">
-          </div>
+            <span class="subtitulo">
+                Estude e domine cada conteúdo
+            </span>
 
-        </div>
-      </section>
+            <!-- PORTUGUÊS -->
 
-      <!-- TESTES E SIMULADOS -->
-      <section class="secao">
-        <h2 class="titulo">Testes e Simulados</h2>
+            <a
+                href="desafios-portugues.html"
+                class="card-materia portugues">
 
-        <div class="cards-coluna">
+                <img
+                    src="imagens/portugues-card-ilustracao.png"
+                    class="img-card">
 
-          <div class="card-cardapio saeb" data-link="simulados-saeb.html">
-          </div>
+                <div class="info-card">
 
-          <div class="card-cardapio desafios" data-link="desafios.html">
-            <div class="rodape">
-          </div>
+                    <h3>Língua Portuguesa</h3>
 
-        </div>
-      </section>
+                    <p>
+                        Pratique interpretação de texto,
+                        gramática e habilidades cobradas
+                        no SAEB.
+                    </p>
+
+                    <button class="btn-card">
+
+                        Entrar
+
+                        <img
+                            src="imagens/seta-direita.svg">
+
+                    </button>
+
+                </div>
+
+            </a>
+
+            <!-- MATEMÁTICA -->
+
+            <a
+                href="desafios-matematica.html"
+                class="card-materia matematica">
+
+                <img
+                    src="imagens/matematica-card-ilustracao.png"
+                    class="img-card">
+
+                <div class="info-card">
+
+                    <h3>Matemática</h3>
+
+                    <p>
+                        Treine raciocínio lógico,
+                        resolução de problemas e
+                        matemática aplicada.
+                    </p>
+
+                    <button class="btn-card verde">
+
+                        Entrar
+
+                        <img
+                            src="imagens/seta-direita.svg">
+
+                    </button>
+
+                </div>
+
+            </a>
+
+        </section>
+
+        <!-- TESTES -->
+
+        <section class="testes">
+
+            <h2>Testes e Simulados</h2>
+
+            <span class="subtitulo">
+                Pratique com diferentes formatos
+            </span>
+
+            <div class="grid-testes">
+
+                <!-- SIMULADOS -->
+
+                <a
+                    href="simulados-saeb.html"
+                    class="card-pequeno roxo">
+
+                    <img
+                        src="imagens/simulados-card-ilustracao.png">
+
+                    <h3>Simulados</h3>
+
+                    <p>
+                        Treine suas habilidades
+                        no ritmo do SAEB
+                    </p>
+
+                    <button class="btn-mini roxo-btn">
+
+                        Entrar
+
+                        <img
+                            src="imagens/seta-direita.svg">
+
+                    </button>
+
+                </a>
+
+                <!-- DESAFIOS -->
+
+                <a
+                    href="desafios.html"
+                    class="card-pequeno amarelo">
+
+                    <img
+                        src="imagens/desafios-card-ilustracao.png">
+
+                    <h3>Desafios</h3>
+
+                    <p>
+                        Desafios diários para
+                        testar seus limites
+                    </p>
+
+                    <button class="btn-mini amarelo-btn">
+
+                        Entrar
+
+                        <img
+                            src="imagens/seta-direita.svg">
+
+                    </button>
+
+                </a>
+
+            </div>
+
+        </section>
 
     </main>
 
     <!-- NAVBAR -->
+
     <nav class="navbar">
 
-      <button class="nav-item" data-page="home">
-        <img src="imagens/home.svg" alt="Home">
-      </button>
+        <a class="nav-item" href="home.html">
+            <img src="imagens/home.svg">
+        </a>
 
-      <button class="nav-item ativo" data-page="simulados">
-        <img src="imagens/simulados-active.svg" class="icone-simulados" alt="Simulados">
-      </button>
+        <a class="nav-item active" href="simulados.html">
+            <img src="imagens/materias-ativo.svg">
+        </a>
 
-     <button class="nav-item" data-page="desempenho">
-        <img src="imagens/desempenho.svg" alt="Desempenho">
-      </button>
+        <a class="nav-item" href="desempenho.html">
+            <img src="imagens/desempenho.svg">
+        </a>
 
-      <button class="nav-item" data-page="perfil">
-        <img src="imagens/perfil.svg" alt="Perfil">
-      </button>
+        <a class="nav-item" href="perfil.html">
+            <img src="imagens/perfil.svg">
+        </a>
 
     </nav>
 
-  </div>
+</div>
 
-  <script src="js/simulados.js"></script>
+<script src="js/simulados.js"></script>
+
 </body>
 </html>
