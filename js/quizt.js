@@ -48,13 +48,13 @@
 
   const CONFIG_MODO = {
     rapido: { nome: "Teste Rápido", quantidade: 5, tempoMinutos: 5, tipo: "materia" },
-    mini: { nome: "Mini Simulado", quantidade: 10, tempoMinutos: 15, tipo: "materia" },
-    completo: { nome: "Simulado Completo", quantidade: 20, tempoMinutos: 30, tipo: "materia" },
+    mini: { nome: "Mini Simulado", quantidade: 16, tempoMinutos: 30, tipo: "materia" },
+    completo: { nome: "Simulado Completo", quantidade: 32, tempoMinutos: 60, tipo: "materia" },
     desafio: { nome: "Desafio", quantidade: 8, tempoMinutos: 10, tipo: "materia" },
     geral_rapido: { nome: "Teste rápido geral", quantidade: 5, tempoMinutos: 5, tipo: "geral" },
     geral_mini: { nome: "Mini simulado geral", quantidade: 10, tempoMinutos: 12, tipo: "geral" },
-    simulado_geral: { nome: "Simulado geral", quantidade: 20, tempoMinutos: 25, tipo: "geral" },
-    tudao: { nome: "Tudão SAEB", quantidade: 30, tempoMinutos: 40, tipo: "geral" }
+    simulado_geral: { nome: "Simulado geral", quantidade: 16, tempoMinutos: 25, tipo: "geral" },
+    tudao: { nome: "Tudão SAEB", quantidade: 32, tempoMinutos: 60, tipo: "geral" }
   };
 
   const NOMES_MATERIAS = {

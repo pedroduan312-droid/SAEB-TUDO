@@ -1,0 +1,351 @@
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    background:var(--azul-escuro);
+    overflow-x:hidden;
+}
+
+.treino-container{
+    width:100%;
+    max-width:390px;
+    min-height:100vh;
+    background:var(--cinza-claro);
+    position:relative;
+    overflow:hidden;
+}
+
+/* HEADER */
+
+.header{
+    background:var(--azul-escuro);
+    color:white;
+
+    padding:28px 22px 38px;
+
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+}
+
+.btn-voltar{
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+.btn-voltar img{
+    width:28px;
+}
+
+.header-textos{
+    flex:1;
+    margin-left:18px;
+}
+
+.header-textos h1{
+    font-family:'Nunito',sans-serif;
+    font-size:2rem;
+    font-weight:800;
+    line-height:1;
+}
+
+.header-textos p{
+    margin-top:4px;
+    color:rgba(255,255,255,.75);
+    font-weight:700;
+}
+
+.logo-header{
+    width:72px;
+}
+
+/* CONTEUDO */
+
+.conteudo{
+    background:white;
+
+    border-top-left-radius:22px;
+    border-top-right-radius:22px;
+
+    margin-top:-18px;
+
+    padding:18px 16px 120px;
+
+    position:relative;
+    z-index:2;
+}
+
+/* PROGRESSO */
+
+.progresso-card{
+    background:white;
+    border-radius:16px;
+    padding:16px;
+
+    box-shadow:var(--shadow-card);
+
+    animation:fadeUp .5s ease;
+}
+
+.progresso-card span{
+    color:var(--texto-sec);
+    font-weight:700;
+}
+
+.barra-wrapper{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-top:14px;
+}
+
+.barra-bg{
+    flex:1;
+    height:10px;
+    border-radius:20px;
+    background:#E5E7EB;
+    overflow:hidden;
+}
+
+.barra-fill{
+    width:65%;
+    height:100%;
+    border-radius:20px;
+    background:var(--cor-principal);
+
+    animation:progresso 1s ease;
+}
+
+#valorProgresso{
+    font-family:'Nunito',sans-serif;
+    font-size:2rem;
+    font-weight:800;
+    color:var(--texto);
+}
+
+/* CARDS */
+
+.cards-principais{
+    margin-top:18px;
+}
+
+.card-opcao{
+    background:white;
+
+    border-radius:16px;
+    padding:18px;
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-bottom:14px;
+
+    box-shadow:var(--shadow-card);
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    animation:fadeUp .6s ease;
+}
+
+.card-opcao:hover{
+    transform:translateY(-2px);
+}
+
+.card-opcao:active{
+    transform:scale(.98);
+}
+
+.icone-card{
+    width:56px;
+    height:56px;
+
+    border-radius:14px;
+
+    background:var(--cor-principal);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+}
+
+.icone-card img{
+    width:30px;
+}
+
+.texto-card{
+    flex:1;
+}
+
+.texto-card h3{
+    font-family:'Nunito',sans-serif;
+    font-size:1.2rem;
+    font-weight:800;
+}
+
+.texto-card p{
+    margin-top:4px;
+    color:var(--texto-sec);
+    font-weight:600;
+}
+
+.seta-card{
+    width:14px;
+}
+
+/* DESAFIOS */
+
+.desafios-section{
+    margin-top:28px;
+}
+
+.desafios-section h2{
+    font-family:'Nunito',sans-serif;
+    margin-bottom:14px;
+}
+
+.desafio-card{
+    border-radius:18px;
+
+    padding:18px;
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    color:white;
+
+    margin-bottom:12px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.desafio-card:hover{
+    transform:translateY(-2px);
+}
+
+.desafio-card:active{
+    transform:scale(.98);
+}
+
+.principal{
+    background:linear-gradient(135deg,#031E61,#8121FF);
+}
+
+.secundario{
+    background:linear-gradient(135deg,#F93C6F,#FFB133);
+}
+
+.desafio-img{
+    width:70px;
+    flex-shrink:0;
+}
+
+.desafio-card div{
+    flex:1;
+}
+
+.desafio-card h3{
+    font-family:'Nunito',sans-serif;
+    font-size:1.25rem;
+}
+
+.desafio-card p{
+    margin-top:4px;
+    line-height:1.35;
+}
+
+.seta-desafio{
+    width:16px;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+
+    bottom:18px;
+
+    width:calc(100% - 32px);
+    max-width:358px;
+
+    height:72px;
+
+    background:white;
+
+    border-radius:14px;
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    box-shadow:0 6px 25px rgba(0,0,0,.08);
+
+    left:50%;
+    transform:translateX(-50%);
+
+    z-index:999;
+}
+
+.nav-item img{
+    width:30px;
+}
+
+/* TABLET */
+
+@media (min-width:768px){
+
+    .treino-container{
+        max-width:600px;
+    }
+
+    .navbar{
+        max-width:560px;
+    }
+
+    .card-opcao{
+        padding:22px;
+    }
+
+    .icone-card{
+        width:68px;
+        height:68px;
+    }
+
+    .icone-card img{
+        width:36px;
+    }
+
+    .desafio-img{
+        width:90px;
+    }
+
+    .logo-header{
+        width:88px;
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes progresso{
+    from{
+        width:0;
+    }
+}

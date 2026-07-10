@@ -1,72 +1,145 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Língua Portuguesa</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/desafios-portugues.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Suimulados</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/desafios.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
-<body>
 
-  <div class="container">
+<body class="Simulados">
 
-    <!-- TOPO ROSA FIXO -->
-    <div class="topo-rosa">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+<div class="treino-container">
 
-    <main class="conteudo">
+<header class="header">
 
-      <!-- CABEÇALHO -->
-      <button class="btn-voltar" id="btnVoltar">
+<button class="btn-voltar" id="btnVoltar">
+<img src="imagens/seta-voltar.svg">
+</button>
 
-     <img src="imagens/seta-voltar.svg">
+<div class="header-textos">
+<h1>Simulados</h1>
+<p>Escolha um tipo de treino</p>
+</div>
 
-     </button>
+<img src="imagens/logo saeb tudo.svg" class="logo-header">
 
-        <div class="textos-cabecalho">
-          <h1>Faça Simulados</h1>
-          <p>escolha o tipo de simulado</p>
-        </div>
-      </section>
+</header>
 
-      <!-- CARDS -->
-      <section class="cards-treino">
+<main class="conteudo">
 
-        <div class="card-treino rapido" data-link="quiz.html?materia=portugues&modo=rapido">
-          <div class="rodape-card">
-            <button class="btn-card branco">Começar</button>
-            <span class="tempo tempo-azul">5min</span>
-          </div>
-        </div>
+<section class="progresso-card">
 
-        <div class="card-treino mini" data-link="quiz.html?materia=portugues&modo=mini">
-          <div class="rodape-card">
-            <button class="btn-card azul">Começar</button>
-            <span class="tempo tempo-azul">15min</span>
-          </div>
-        </div>
+<span>Seu progresso na matéria</span>
 
-        <div class="card-treino completo" data-link="quiz.html?materia=portugues&modo=completo">
-          <div class="rodape-card">
-            <button class="btn-card branco-laranja">Começar</button>
-            <span class="tempo tempo-laranja">30min</span>
-          </div>
-        </div>
+<div class="barra-wrapper">
 
-      </section>
+<div class="barra-bg">
+<div class="barra-fill"></div>
+</div>
 
-    </main>
+<h2 id="valorProgresso">65%</h2>
 
-  </div>
+</div>
 
-  <script src="js/desafios-portugues.js"></script>
+</section>
+
+<section class="cards-principais">
+
+<div class="card-opcao" data-link="quiz.html?geral&modo=geral_rapido">
+
+<div class="icone-card">
+<img src="imagens/cronometro.svg">
+</div>
+
+<div class="texto-card">
+<h3>Teste rápido</h3>
+<p>5 questões rápidas para praticar</p>
+</div>
+
+<img src="imagens/seta-azul.svg" class="seta-card">
+
+</div>
+
+<div class="card-opcao" data-link="quiz.html?geral&modo=simulado_geral">
+
+<div class="icone-card">
+<img src="imagens/mini-simulado.svg">
+</div>
+
+<div class="texto-card">
+<h3>Mini simulado</h3>
+<p>16 questões no estilo SAEB</p>
+</div>
+
+<img src="imagens/seta-azul.svg" class="seta-card">
+
+</div>
+
+<div class="card-opcao" data-link="quiz.html?geral&modo=tudao">
+
+<div class="icone-card">
+<img src="imagens/documento.svg">
+</div>
+
+<div class="texto-card">
+<h3>Simulado completo</h3>
+<p>Treino completo com questões de matemática.</p>
+</div>
+
+<img src="imagens/seta-azul.svg" class="seta-card">
+
+</div>
+
+</section>
+
+<section class="desafios-section">
+
+<h2>Desafios</h2>
+
+<div class="desafio-card principal"
+data-link="quiz.html?geral&modo=desafio">
+
+<img src="imagens/desafio-materia.png" class="desafio-img">
+
+<div>
+<h3>Desafio da matéria</h3>
+<p>Responda 15 questões em 20 minutos</p>
+</div>
+
+<img src="imagens/seta-direita.svg" class="seta-desafio">
+
+</div>
+
+<div class="desafio-card secundario"
+data-link="quiz.html?geral&modo=tempo">
+
+<img src="imagens/desafio-tempo.png" class="desafio-img">
+
+<div>
+<h3>Desafio por tempo</h3>
+<p>Responda quantas questões conseguir em 30 minutos</p>
+</div>
+
+<img src="imagens/seta-direita.svg" class="seta-desafio">
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="js/desafios.js"></script>
+
 </body>
 </html>
