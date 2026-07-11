@@ -86,8 +86,25 @@ form.addEventListener("submit",(e)=>{
 
     }
 
-    localStorage.setItem("usuarioLogado","true");
+const dadosUsuario = {
 
-    window.location.href = "home.html";
+    nome: usuario,
+    email: email,
+    senha: senha.value,
+    foto: "imagens/perfil-padrao.png"
+
+};
+
+localStorage.setItem(
+    "saebTudoUsuario",
+    JSON.stringify(dadosUsuario)
+);
+
+localStorage.setItem(
+    "usuarioLogado",
+    "true"
+);
+
+window.location.href = "home.html";
 
 });

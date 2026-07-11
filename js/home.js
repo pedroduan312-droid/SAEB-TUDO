@@ -44,6 +44,7 @@ if(usuario.foto){
     fotoPerfilHome.src =
         usuario.foto;
 }
+
 /* ==========================
    CARROSSEL
 ========================== */
