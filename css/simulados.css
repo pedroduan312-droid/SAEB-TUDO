@@ -406,6 +406,9 @@ section h2{
     width:30px;
 }
 
+.nav-item.active img{
+    width:50px;
+}
 
 /* ==========================
    TABLET

@@ -53,8 +53,8 @@ body{
 
 .foto-perfil{
 
-    width:44px;
-    height:44px;
+    width:55px;
+    height:55px;
 
     border-radius:50%;
 
@@ -285,19 +285,19 @@ section h3{
 }
 
 .portugues{
-    background:#DDE3FF;
+    background:#1A8FFC;
 }
 
 .matematica{
-    background:#DDF7E6;
+    background:#37E460;
 }
 
 .simulados{
-    background:#E9DBFF;
+    background:#F93C97;
 }
 
 .desafios{
-    background:#FFEBC8;
+    background:#FFB133;
 }
 
 .materia span{
@@ -344,11 +344,11 @@ section h3{
 }
 
 .rapido{
-    background:#EAD8FF;
+    background:#FEC929;
 }
 
 .desafio-dia{
-    background:#FFECC9;
+    background:#F93C97;
 }
 
 .treino-card img{
@@ -357,11 +357,12 @@ section h3{
 
 .treino-card h4{
     font-size:1rem;
+    color:white;
 }
 
 .treino-card p{
     margin-top:4px;
-    color:var(--texto-sec);
+    color:white;
     font-size:.9rem;
 }
 

@@ -415,6 +415,10 @@ body{
     width:30px;
 }
 
+.nav-item.active img{
+    width:60px;
+}
+
 /* ==========================
    TABLET
 ========================== */

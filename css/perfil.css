@@ -367,6 +367,68 @@ body{
     margin:0 auto 18px;
 }
 
+.acoes-foto{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-bottom:10px;
+
+}
+
+.btn-foto{
+
+    flex:1;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-family:'Nunito',sans-serif;
+
+    font-size:.92rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.btn-foto:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.btn-foto:active{
+
+    transform:scale(.98);
+
+}
+
+.btn-alterar{
+
+    background:var(--azul);
+
+    color:white;
+
+}
+
+.btn-remover{
+
+    background:#EAF1FF;
+
+    color:var(--azul);
+
+    border:2px solid rgba(30,80,243,.15);
+
+}
+
 .modal input{
 
     width:100%;
@@ -407,6 +469,91 @@ body{
 
     cursor:pointer;
 }
+
+.modal-confirmacao{
+
+    width:90%;
+    max-width:340px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:28px 24px;
+
+    text-align:center;
+
+    animation:entradaModal .25s ease;
+
+}
+
+.modal-confirmacao h3{
+
+    font-size:1.4rem;
+
+    font-weight:800;
+
+    color:var(--texto);
+
+    font-family:'Nunito',sans-serif;
+
+}
+
+.modal-confirmacao p{
+
+    margin-top:10px;
+
+    color:var(--texto-sec);
+
+    line-height:1.5;
+
+}
+
+.botoes-sair{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:24px;
+
+}
+
+#cancelarSair,
+#confirmarSair{
+
+    flex:1;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:1rem;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+}
+
+#cancelarSair{
+
+    background:#EEF2FF;
+
+    color:var(--azul);
+
+}
+
+#confirmarSair{
+
+    background:#FF4A88;
+
+    color:white;
+
+}
+
 
 /* ==========================
    NAVBAR
@@ -457,6 +604,26 @@ body{
     to{
         opacity:1;
         transform:translateY(0);
+    }
+
+}
+
+@keyframes entradaModal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
     }
 
 }

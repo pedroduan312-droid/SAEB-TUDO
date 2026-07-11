@@ -1,46 +1,49 @@
 /* ==========================
+   USUÁRIO
+========================== */
+
+const usuario = JSON.parse(
+    localStorage.getItem("saebTudoUsuario")
+) || {};
+
+/* ==========================
    SAUDAÇÃO
 ========================== */
 
-const tituloSaudacao = document.getElementById("tituloSaudacao");
+const tituloSaudacao =
+    document.getElementById(
+        "tituloSaudacao"
+    );
 
-const nomeUsuario =
-    localStorage.getItem("nomeUsuario") ||
-    "Aluno";
+const hora =
+    new Date().getHours();
 
-const hora = new Date().getHours();
+let saudacao = "Bom dia";
 
-let saudacao = "Olá";
-
-if(hora >= 5 && hora < 12){
-    saudacao = "Bom dia";
-}
-else if(hora >= 12 && hora < 18){
+if(hora >= 12 && hora < 18){
     saudacao = "Boa tarde";
 }
-else{
+
+if(hora >= 18){
     saudacao = "Boa noite";
 }
 
 tituloSaudacao.textContent =
-`${saudacao}, ${nomeUsuario}!`;
-
+`${saudacao}, ${usuario.nome || "Aluno"}!`;
 
 /* ==========================
    FOTO PERFIL
 ========================== */
 
-const fotoPerfil =
-    document.getElementById("fotoPerfil");
+const fotoPerfilHome =
+    document.getElementById(
+        "fotoPerfil"
+    );
 
-const fotoSalva =
-    localStorage.getItem("fotoPerfil");
-
-if(fotoSalva){
-    fotoPerfil.src = fotoSalva;
+if(usuario.foto){
+    fotoPerfilHome.src =
+        usuario.foto;
 }
-
-
 /* ==========================
    CARROSSEL
 ========================== */
