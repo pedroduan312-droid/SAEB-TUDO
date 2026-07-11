@@ -1,291 +1,369 @@
 (() => {
-  const telaPerfil = document.getElementById("telaPerfil");
-  const telaEditar = document.getElementById("telaEditar");
 
-  const btnVoltarPerfil = document.getElementById("btnVoltarPerfil");
-  const btnVoltarEditar = document.getElementById("btnVoltarEditar");
-  const btnEditarPerfil = document.getElementById("btnEditarPerfil");
-  const btnSairConta = document.getElementById("btnSairConta");
-  const btnSalvarAlteracoes = document.getElementById("btnSalvarAlteracoes");
-  const btnMostrarSenha = document.getElementById("btnMostrarSenha");
+    const STORAGE_USUARIO = "saebTudoUsuario";
+    const STORAGE_STATS = "saebTudoEstatisticas";
 
-  const nomePerfil = document.getElementById("nomePerfil");
-  const emailPerfil = document.getElementById("emailPerfil");
-  const nomeEditarTitulo = document.getElementById("nomeEditarTitulo");
-  const emailEditarTitulo = document.getElementById("emailEditarTitulo");
+    /* ==========================
+       ELEMENTOS
+    ========================== */
 
-  const inputNome = document.getElementById("inputNome");
-  const inputEmail = document.getElementById("inputEmail");
-  const inputSenha = document.getElementById("inputSenha");
+    const nomePerfil = document.getElementById("nomePerfil");
+    const fotoPerfil = document.getElementById("fotoPerfil");
 
-  const fotoPerfil = document.getElementById("fotoPerfil");
-  const fotoEditar = document.getElementById("fotoEditar");
+    const statQuizzes = document.getElementById("statQuizzes");
+    const statQuestoes = document.getElementById("statQuestoes");
+    const statAcertos = document.getElementById("statAcertos");
 
-  const statQuizzes = document.getElementById("statQuizzes");
-  const statQuestoes = document.getElementById("statQuestoes");
-  const statAcertos = document.getElementById("statAcertos");
-  const porcentagemPortugues = document.getElementById("porcentagemPortugues");
-  const porcentagemMatematica = document.getElementById("porcentagemMatematica");
-  const graficoDonut = document.getElementById("graficoDonut");
+    const btnEditarPerfil = document.getElementById("btnEditarPerfil");
+    const btnAjuda = document.getElementById("btnAjuda");
+    const btnSairConta = document.getElementById("btnSairConta");
 
-  const STORAGE_USUARIO = "saebTudoUsuario";
-  const STORAGE_STATS = "saebTudoEstatisticas";
+    const modalEditar = document.getElementById("modalEditar");
+    const fecharModal = document.getElementById("fecharModal");
 
-  function voltarSeguro() {
-    if (history.length > 1) {
-      history.back();
-    } else {
-      window.location.href = "home.html";
-    }
-  }
+    const modalSair = document.getElementById("modalSair");
+    const cancelarSair = document.getElementById("cancelarSair");
+    const confirmarSair = document.getElementById("confirmarSair");
 
-  function obterUsuario() {
-    const usuarioSalvo = localStorage.getItem(STORAGE_USUARIO);
+    const inputNome = document.getElementById("inputNome");
+    const inputEmail = document.getElementById("inputEmail");
+    const inputSenha = document.getElementById("inputSenha");
 
-    if (usuarioSalvo) {
-      try {
-        const usuario = JSON.parse(usuarioSalvo);
-        return {
-          nome: usuario.nome || "Aluno",
-          email: usuario.email || "aluno@gmail.com",
-          senha: usuario.senha || "12345678",
-          foto: usuario.foto || "imagens/user.png"
+    const fotoEditar = document.getElementById("fotoEditar");
+    const inputFoto = document.getElementById("inputFoto");
+
+    const btnTrocarFoto = document.getElementById("btnTrocarFoto");
+    const btnRemoverFoto = document.getElementById("btnRemoverFoto");
+    const btnSalvarAlteracoes = document.getElementById("btnSalvarAlteracoes");
+
+    const btnMostrarSenha = document.getElementById("btnMostrarSenha");
+
+    /* ==========================
+       USUÁRIO
+    ========================== */
+
+    function obterUsuario(){
+
+        const usuarioSalvo = localStorage.getItem(STORAGE_USUARIO);
+
+        if(usuarioSalvo){
+
+            try{
+                return JSON.parse(usuarioSalvo);
+            }
+
+            catch(e){}
+
+        }
+
+        return{
+
+            nome:"Aluno",
+            email:"aluno@email.com",
+            senha:"123456",
+            foto:"imagens/perfil-padrao.png"
+
         };
-      } catch {
-        return {
-          nome: "Aluno",
-          email: "aluno@gmail.com",
-          senha: "12345678",
-          foto: "imagens/user.png"
+
+    }
+
+    function salvarUsuario(usuario){
+
+        localStorage.setItem(
+            STORAGE_USUARIO,
+            JSON.stringify(usuario)
+        );
+
+    }
+
+    /* ==========================
+       ESTATÍSTICAS
+    ========================== */
+
+    function obterStats(){
+
+        const statsSalvas =
+            localStorage.getItem(STORAGE_STATS);
+
+        if(statsSalvas){
+
+            try{
+                return JSON.parse(statsSalvas);
+            }
+
+            catch(e){}
+
+        }
+
+        return{
+
+            quizzes:0,
+            questoes:0,
+            acertos:0
+
         };
-      }
+
     }
 
-    return {
-      nome: "Aluno",
-      email: "aluno@gmail.com",
-      senha: "12345678",
-      foto: "imagens/user.png"
-    };
-  }
+    /* ==========================
+       ANIMAÇÃO DOS NÚMEROS
+    ========================== */
 
-  function salvarUsuario(usuario) {
-    localStorage.setItem(STORAGE_USUARIO, JSON.stringify(usuario));
-  }
+    function animarNumero(
+        elemento,
+        inicio,
+        fim,
+        duracao
+    ){
 
-  function obterEstatisticas() {
-    const statsSalvas = localStorage.getItem(STORAGE_STATS);
+        const inicioAnimacao = performance.now();
 
-    if (statsSalvas) {
-      try {
-        const stats = JSON.parse(statsSalvas);
-        return {
-          quizzes: Number(stats.quizzes) || 0,
-          questoes: Number(stats.questoes) || 0,
-          acertos: Number(stats.acertos) || 0,
-          portugues: Number(stats.portugues) || 0,
-          matematica: Number(stats.matematica) || 0
-        };
-      } catch {
-        return {
-          quizzes: 0,
-          questoes: 0,
-          acertos: 0,
-          portugues: 0,
-          matematica: 0
-        };
-      }
-    }
+        function atualizar(agora){
 
-    return {
-      quizzes: 0,
-      questoes: 0,
-      acertos: 0,
-      portugues: 0,
-      matematica: 0
-    };
-  }
+            const progresso =
+                Math.min(
+                    (agora - inicioAnimacao) / duracao,
+                    1
+                );
 
-  function animarNumero(elemento, inicio, fim, duracao, formatador) {
-  const inicioAnimacao = performance.now();
+            const valor =
+                Math.floor(
+                    inicio + ((fim - inicio) * progresso)
+                );
 
-  function atualizar(agora) {
-    const progresso = Math.min((agora - inicioAnimacao) / duracao, 1);
-    const valor = inicio + (fim - inicio) * progresso;
+            elemento.textContent = valor;
 
-    elemento.textContent = formatador(Math.round(valor));
+            if(progresso < 1){
+                requestAnimationFrame(atualizar);
+            }
 
-    if (progresso < 1) {
-      requestAnimationFrame(atualizar);
-    } else {
-      elemento.textContent = formatador(fim);
-    }
-  }
+        }
 
-  requestAnimationFrame(atualizar);
-}
-
-  function calcularPercentuais(stats) {
-    const total = stats.portugues + stats.matematica;
-
-    if (total <= 0) {
-      return {
-        portugues: 0,
-        matematica: 0
-      };
-    }
-
-    const percentualPortugues = Math.round((stats.portugues / total) * 100);
-    const percentualMatematica = 100 - percentualPortugues;
-
-    return {
-      portugues: percentualPortugues,
-      matematica: percentualMatematica
-    };
-  }
-
-  function atualizarGrafico(percentualPortugues) {
-    graficoDonut.style.setProperty("--portugues", percentualPortugues);
-  }
-
-  function animarGrafico(percentualFinal) {
-    const inicioAnimacao = performance.now();
-
-    function atualizar(agora) {
-      const progresso = Math.min((agora - inicioAnimacao) / 1000, 1);
-      const valor = Math.round(percentualFinal * progresso);
-      atualizarGrafico(valor);
-
-      if (progresso < 1) {
         requestAnimationFrame(atualizar);
-      }
+
     }
 
-    requestAnimationFrame(atualizar);
-  }
+    /* ==========================
+       CARREGAR PERFIL
+    ========================== */
 
-  function preencherPerfil() {
-    const usuario = obterUsuario();
-    const stats = obterEstatisticas();
-    const percentuais = calcularPercentuais(stats);
+    function carregarPerfil(){
 
-    nomePerfil.textContent = usuario.nome;
-    emailPerfil.textContent = usuario.email;
+        const usuario = obterUsuario();
+        const stats = obterStats();
 
-    nomeEditarTitulo.textContent = usuario.nome;
-    emailEditarTitulo.textContent = usuario.email;
+        nomePerfil.textContent = usuario.nome;
 
-    inputNome.value = usuario.nome;
-    inputEmail.value = usuario.email;
-    inputSenha.value = usuario.senha;
+        fotoPerfil.src = usuario.foto;
+        fotoEditar.src = usuario.foto;
 
-    fotoPerfil.src = usuario.foto;
-    fotoEditar.src = usuario.foto;
+        inputNome.value = usuario.nome;
+        inputEmail.value = usuario.email;
+        inputSenha.value = usuario.senha;
 
-    animarNumero(statQuizzes, 0, stats.quizzes, 900, (v) => v);
-    animarNumero(statQuestoes, 0, stats.questoes, 1100, (v) => v);
-    animarNumero(statAcertos, 0, stats.acertos, 1300, (v) => v);
+        animarNumero(
+            statQuizzes,
+            0,
+            stats.quizzes || 0,
+            800
+        );
 
-    animarNumero(porcentagemPortugues, 0, percentuais.portugues, 1000, (v) => `${v}%`);
-    animarNumero(porcentagemMatematica, 0, percentuais.matematica, 1000, (v) => `${v}%`);
+        animarNumero(
+            statQuestoes,
+            0,
+            stats.questoes || 0,
+            1000
+        );
 
-    atualizarGrafico(0);
-    animarGrafico(percentuais.portugues);
-  }
+        animarNumero(
+            statAcertos,
+            0,
+            stats.acertos || 0,
+            1200
+        );
 
-  function abrirEditarPerfil() {
-    telaPerfil.classList.remove("ativa");
-    telaEditar.classList.add("ativa");
-  }
-
-  function voltarParaPerfil() {
-    telaEditar.classList.remove("ativa");
-    telaPerfil.classList.add("ativa");
-  }
-
-  function habilitarEdicao(idCampo) {
-    const campo = document.getElementById(idCampo);
-    campo.disabled = false;
-    campo.focus();
-    campo.setSelectionRange(campo.value.length, campo.value.length);
-  }
-
-  function salvarAlteracoes() {
-    const usuarioAtual = obterUsuario();
-    const novoNome = inputNome.value.trim();
-    const novaSenha = inputSenha.value.trim();
-
-    if (!novoNome) {
-      alert("Digite um nome válido.");
-      return;
     }
 
-    if (!novaSenha || novaSenha.length < 4) {
-      alert("A senha precisa ter pelo menos 4 caracteres.");
-      return;
-    }
+    /* ==========================
+       MODAL EDITAR
+    ========================== */
 
-    const usuarioAtualizado = {
-      ...usuarioAtual,
-      nome: novoNome,
-      senha: novaSenha,
-      email: usuarioAtual.email,
-      foto: usuarioAtual.foto
+    btnEditarPerfil.onclick = () => {
+
+        modalEditar.classList.add("show");
+
     };
 
-    salvarUsuario(usuarioAtualizado);
+    fecharModal.onclick = () => {
 
-    inputNome.disabled = true;
-    inputSenha.disabled = true;
+        modalEditar.classList.remove("show");
 
-    preencherPerfil();
-    voltarParaPerfil();
+    };
 
-    alert("Alterações salvas com sucesso!");
-  }
+    window.addEventListener("click",(e)=>{
 
-  function sairDaConta() {
-    localStorage.removeItem(STORAGE_USUARIO);
-    window.location.href = "index.html";
-  }
+        if(e.target === modalEditar){
+            modalEditar.classList.remove("show");
+        }
 
-  btnVoltarPerfil.addEventListener("click", voltarSeguro);
-  btnVoltarEditar.addEventListener("click", voltarParaPerfil);
-  btnEditarPerfil.addEventListener("click", abrirEditarPerfil);
-  btnSalvarAlteracoes.addEventListener("click", salvarAlteracoes);
-  btnSairConta.addEventListener("click", sairDaConta);
+        if(e.target === modalSair){
+            modalSair.classList.remove("show");
+        }
 
-  document.querySelectorAll(".btn-lapis").forEach((botao) => {
-    botao.addEventListener("click", () => {
-      habilitarEdicao(botao.dataset.target);
     });
-  });
 
-  btnMostrarSenha.addEventListener("click", () => {
-    inputSenha.type = inputSenha.type === "password" ? "text" : "password";
-  });
+    /* ==========================
+       ALTERAR FOTO
+    ========================== */
 
-  document.querySelectorAll(".nav-item").forEach(btn => {
-  btn.onclick = () => {
-    const page = btn.dataset.page;
+    btnTrocarFoto.onclick = () => {
 
-    if (page === "home") {
-      window.location.href = "home.html";
-    }
+        inputFoto.click();
 
-    if (page === "simulados") {
-      window.location.href = "simulados.html";
-    }
+    };
 
-     if (page === "desempenho") {
-      window.location.href = "desempenho.html";
-    }
+    inputFoto.addEventListener(
+        "change",
+        function(){
 
-    if (page === "perfil") {
-      window.location.href = "perfil.html";
-    }
-  };
-});
+            const arquivo = this.files[0];
 
-  preencherPerfil();
+            if(!arquivo) return;
+
+            const leitor = new FileReader();
+
+            leitor.onload = function(e){
+
+                fotoEditar.src = e.target.result;
+
+            };
+
+            leitor.readAsDataURL(arquivo);
+
+        }
+    );
+
+    btnRemoverFoto.onclick = () => {
+
+        fotoEditar.src =
+            "imagens/perfil-padrao.png";
+
+    };
+
+    /* ==========================
+       MOSTRAR SENHA
+    ========================== */
+
+    btnMostrarSenha.onclick = () => {
+
+        if(inputSenha.type === "password"){
+
+            inputSenha.type = "text";
+
+        }
+
+        else{
+
+            inputSenha.type = "password";
+
+        }
+
+    };
+
+    /* ==========================
+       SALVAR ALTERAÇÕES
+    ========================== */
+
+    btnSalvarAlteracoes.onclick = () => {
+
+        const usuario = {
+
+            nome:inputNome.value.trim(),
+            email:inputEmail.value.trim(),
+            senha:inputSenha.value.trim(),
+            foto:fotoEditar.src
+
+        };
+
+        if(usuario.nome.length < 2){
+
+            alert("Digite um nome válido.");
+            return;
+
+        }
+
+        if(usuario.email.length < 5){
+
+            alert("Digite um e-mail válido.");
+            return;
+
+        }
+
+        if(usuario.senha.length < 4){
+
+            alert(
+                "A senha deve possuir pelo menos 4 caracteres."
+            );
+
+            return;
+
+        }
+
+        salvarUsuario(usuario);
+
+        carregarPerfil();
+
+        modalEditar.classList.remove("show");
+
+        alert(
+            "Perfil atualizado com sucesso!"
+        );
+
+    };
+
+    /* ==========================
+       AJUDA
+    ========================== */
+
+    btnAjuda.onclick = () => {
+
+        alert(
+            "Central de ajuda em breve."
+        );
+
+    };
+
+    /* ==========================
+       SAIR
+    ========================== */
+
+    btnSairConta.onclick = () => {
+
+        modalSair.classList.add("show");
+
+    };
+
+    cancelarSair.onclick = () => {
+
+        modalSair.classList.remove("show");
+
+    };
+
+    confirmarSair.onclick = () => {
+
+        localStorage.removeItem(
+            STORAGE_USUARIO
+        );
+
+        window.location.href =
+            "index.html";
+
+    };
+
+    /* ==========================
+       INICIAR
+    ========================== */
+
+    carregarPerfil();
+
 })();

@@ -1,163 +1,306 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/perfil.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Perfil - SAEB Tudo</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/perfil.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-  <div class="container">
 
-    <!-- TELA PERFIL -->
-    <section id="telaPerfil" class="tela tela-perfil ativa">
+<div class="perfil-container">
 
-      <header class="topo topo-azul">
-        <button class="btn-voltar" id="btnVoltarPerfil" aria-label="Voltar">
-          <img src="imagens/seta-voltar.svg" alt="Voltar">
-        </button>
+    <!-- HEADER -->
 
-        <img src="imagens/logo saeb tudo.svg" alt="SAEB Tudo" class="logo-topo">
-      </header>
+    <header class="header">
 
-      <main class="conteudo">
-        <div class="avatar-bloco">
-          <div class="avatar-circulo">
-            <img id="fotoPerfil" src="imagens/user.png" alt="Foto do perfil">
-          </div>
+        <h1>Perfil</h1>
 
-          <h1 id="nomePerfil">Aluno</h1>
-          <p id="emailPerfil">aluno@gmail.com</p>
-        </div>
+        <img
+            src="imagens/logo saeb tudo.svg"
+            class="logo-header">
 
-        <section class="card-principal">
-          <div class="stats-grid">
-            <div class="stat-box stat-rosa">
-              <span id="statQuizzes" class="stat-numero">0</span>
-              <span class="stat-label">quizzes</span>
+    </header>
+
+    <!-- CONTEÚDO -->
+
+    <main class="conteudo">
+
+        <!-- CARD USUÁRIO -->
+
+        <section class="usuario-card aparecer">
+
+            <div class="foto-wrapper">
+
+                <img
+                    src="imagens/perfil-padrao.png"
+                    id="fotoPerfil"
+                    class="foto-perfil">
+
+                <div class="camera-icon">
+                    <img src="imagens/camera.svg">
+                </div>
+
             </div>
 
-            <div class="stat-box stat-rosa">
-              <span id="statQuestoes" class="stat-numero">0</span>
-              <span class="stat-label">questões</span>
+            <div class="usuario-info">
+
+                <h2 id="nomePerfil">
+                    Olá, Aluno!
+                </h2>
+
+                <p>
+                    Continue evoluindo todos os dias
+                </p>
+
             </div>
 
-            <div class="stat-box stat-rosa">
-              <span id="statAcertos" class="stat-numero">0</span>
-              <span class="stat-label">acertos</span>
-            </div>
-          </div>
-
-          <div class="grafico-area">
-            <div class="grafico-wrapper">
-              <div class="grafico-donut" id="graficoDonut"></div>
-            </div>
-
-            <div class="legenda-desempenho">
-              <p><span class="texto-portugues" id="porcentagemPortugues">0%</span> Portugues</p>
-              <p><span class="texto-matematica" id="porcentagemMatematica">0%</span> Matematica</p>
-            </div>
-          </div>
-
-          <div class="acoes-perfil">
-            <button id="btnEditarPerfil" class="btn-acao btn-editar" type="button">
-              <span>Editar perfil</span>
-              <span class="seta-acao">›</span>
-            </button>
-
-            <button id="btnSairConta" class="btn-acao btn-sair" type="button">
-              <span>Sair</span>
-              <span class="seta-acao">›</span>
-            </button>
-          </div>
         </section>
-      </main>
-    </section>
 
-    <!-- TELA EDITAR PERFIL -->
-    <section id="telaEditar" class="tela tela-editar">
+        <!-- ESTATÍSTICAS -->
 
-      <header class="topo topo-rosa">
-        <button class="btn-voltar" id="btnVoltarEditar" aria-label="Voltar para perfil">
-          <img src="imagens/seta-voltar.svg" alt="Voltar">
-        </button>
+        <section class="stats-card aparecer">
 
-        <img src="imagens/logo saeb tudo.svg" alt="SAEB Tudo" class="logo-topo">
-      </header>
+            <div class="stat-item">
 
-      <main class="conteudo">
-        <div class="avatar-bloco">
-          <div class="avatar-circulo">
-            <img id="fotoEditar" src="imagens/user.png" alt="Foto do perfil">
-          </div>
+                <span class="stat-label">
+                    quizzes
+                </span>
 
-          <h1 id="nomeEditarTitulo">Aluno</h1>
-          <p id="emailEditarTitulo">aluno@gmail.com</p>
-        </div>
+                <span
+                    class="stat-num azul"
+                    id="statQuizzes">
+                    0
+                </span>
 
-        <section class="card-edicao">
-          <div class="campo-bloco">
-            <label for="inputNome">nome</label>
-            <div class="campo-com-icone">
-              <input id="inputNome" type="text" value="Aluno" disabled>
-              <button class="btn-lapis" type="button" data-target="inputNome" aria-label="Editar nome">
-                <img src="imagens/lapis.svg" alt="Editar">
-              </button>
             </div>
-          </div>
 
-          <div class="campo-bloco">
-            <label for="inputEmail">E-mail</label>
-            <div class="campo-com-icone">
-              <input id="inputEmail" type="email" value="aluno@gmail.com" disabled>
+            <div class="divider"></div>
+
+            <div class="stat-item">
+
+                <span class="stat-label">
+                    questões
+                </span>
+
+                <span
+                    class="stat-num amarelo"
+                    id="statQuestoes">
+                    0
+                </span>
+
             </div>
-          </div>
 
-          <div class="campo-bloco">
-            <label for="inputSenha">senha</label>
-            <div class="campo-com-icone campo-senha">
-              <input id="inputSenha" type="password" value="12345678" disabled>
-              <button class="btn-olho" id="btnMostrarSenha" type="button" aria-label="Mostrar ou ocultar senha">
-                <img src="imagens/olho.svg" alt="Mostrar senha">
-              </button>
-              <button class="btn-lapis" type="button" data-target="inputSenha" aria-label="Editar senha">
-                <img src="imagens/lapis.svg" alt="Editar">
-              </button>
+            <div class="divider"></div>
+
+            <div class="stat-item">
+
+                <span class="stat-label">
+                    acertos
+                </span>
+
+                <span
+                    class="stat-num rosa"
+                    id="statAcertos">
+                    0
+                </span>
+
             </div>
-          </div>
 
-          <button id="btnSalvarAlteracoes" class="btn-confirmar" type="button">
-            confirmar alterações
-          </button>
         </section>
-      </main>
-    </section>
+
+        <!-- MENU -->
+
+        <section class="menu-card aparecer" id="btnEditarPerfil">
+
+            <div class="menu-esquerda">
+
+                <img
+                    src="imagens/editar.svg"
+                    class="menu-icon">
+
+                <span>
+                    Editar perfil
+                </span>
+
+            </div>
+
+            <img
+                src="imagens/seta-direita.svg"
+                class="seta-menu">
+
+        </section>
+
+        <section class="menu-card aparecer" id="btnAjuda">
+
+            <div class="menu-esquerda">
+
+                <img
+                    src="imagens/ajuda.svg"
+                    class="menu-icon">
+
+                <span>
+                    Ajuda e suporte
+                </span>
+
+            </div>
+
+            <img
+                src="imagens/seta-direita.svg"
+                class="seta-menu">
+
+        </section>
+
+        <section class="menu-card aparecer" id="btnSairConta">
+
+            <div class="menu-esquerda">
+
+                <img
+                    src="imagens/sair.svg"
+                    class="menu-icon">
+
+                <span>
+                    Sair
+                </span>
+
+            </div>
+
+            <img
+                src="imagens/seta-direita.svg"
+                class="seta-menu">
+
+        </section>
+
+    </main>
 
     <!-- NAVBAR -->
+
     <nav class="navbar">
 
-      <button class="nav-item" data-page="home">
-        <img src="imagens/home.svg" alt="Home">
-      </button>
+        <a class="nav-item" href="home.html">
+            <img src="imagens/home.svg">
+        </a>
 
-      <button class="nav-item" data-page="simulados">
-        <img src="imagens/simulados.svg" class="icone-simulados" alt="Simulados">
-      </button>
+        <a class="nav-item" href="simulados.html">
+            <img src="imagens/materias.svg">
+        </a>
 
-     <button class="nav-item" data-page="desempenho">
-        <img src="imagens/desempenho.svg" alt="Desempenho">
-      </button>
+        <a class="nav-item" href="desempenho.html">
+            <img src="imagens/desempenho.svg">
+        </a>
 
-      <button class="nav-item ativo" data-page="perfil">
-        <img src="imagens/perfil-active.svg" alt="Perfil">
-      </button>
+        <a class="nav-item active" href="perfil.html">
+            <img src="imagens/perfil-ativo.svg">
+        </a>
 
     </nav>
 
-  </div>
+</div>
 
-  <script src="js/perfil.js"></script>
+<!-- MODAL EDITAR -->
+
+<div class="modal" id="modalEditar">
+
+    <div class="modal-content">
+
+        <button class="fechar-modal" id="fecharModal">
+            <img src="imagens/fechar.svg">
+        </button>
+
+        <div class="foto-editar-wrapper">
+
+            <img
+                src="imagens/perfil-padrao.png"
+                id="fotoEditar"
+                class="foto-editar">
+
+            <input
+                type="file"
+                id="inputFoto"
+                accept="image/*"
+                hidden>
+
+            <button id="btnTrocarFoto">
+                Alterar foto
+            </button>
+
+            <button id="btnRemoverFoto">
+                Remover foto
+            </button>
+
+        </div>
+
+        <input
+            type="text"
+            id="inputNome"
+            placeholder="Nome">
+
+        <input
+            type="email"
+            id="inputEmail"
+            placeholder="E-mail">
+
+        <div class="senha-container">
+
+            <input
+                type="password"
+                id="inputSenha"
+                placeholder="Senha">
+
+            <img
+                src="imagens/olho.svg"
+                id="btnMostrarSenha">
+
+        </div>
+
+        <button id="btnSalvarAlteracoes">
+            Salvar alterações
+        </button>
+
+    </div>
+
+</div>
+
+<!-- MODAL SAIR -->
+
+<div class="modal" id="modalSair">
+
+    <div class="modal-confirmacao">
+
+        <h3>
+            Deseja realmente sair?
+        </h3>
+
+        <p>
+            Você precisará entrar novamente para acessar sua conta.
+        </p>
+
+        <div class="botoes-sair">
+
+            <button id="cancelarSair">
+                Cancelar
+            </button>
+
+            <button id="confirmarSair">
+                Sair
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/perfil.js"></script>
+
 </body>
 </html>
